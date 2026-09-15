@@ -1,0 +1,88 @@
+button {
+    /* transition: all 0.7 ease; */
+    /* transition-duration:1s; */
+    transition:
+}
+
+button:hover {
+    /* background-color: green; */
+
+    /* transform: scale(1.05); */
+    /* transform: rotate(5deg); */
+    /* transform: translate(1200px); */
+    /* transform: skew(10deg); */
+    transform: translatex(1200px) scale(3);
+}
+
+.hello {
+    margin:100px;
+    width: 300px;
+    padding: 30px;
+    background-color: red;
+    transition: all 0.7 ease;
+    item-align:center;
+    justify-content:center;
+    box-shadow: 0 2px 8px rgba?(0, 0, 0, 0.1);
+    /* animation: move 2s ease-in-out infinite; */
+    /* animation:move 2s linear infinite alternate; */
+    /* animation: move 2s ease-in infinite alternate ; */
+    animation:  movecolorchange 5s infinite alternate;
+    /* animation: colorchange 5s infinite alternate; */
+  
+            
+
+
+                
+}
+.loader{
+    width:50px;
+    height:50px;
+    border: 5px solid #ddd;
+    border-top:5px solid #333;
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+}
+.hello:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 2);
+
+
+}
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+
+    }
+    to{
+        transform:rotate(360deg);
+
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translatex(0);
+
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+  
+    @keyframes movecolorchange {
+        0% {
+        transform: translatex(0) scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: translateX(200px) scale(1);
+    }
+
+
+    }

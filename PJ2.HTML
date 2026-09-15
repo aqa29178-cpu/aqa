@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edutechy | Web Devlopment</title>
+
+    <meta name="description"
+        content="Edutechy is a passionate Full stack Developer specializing in HTML, CSS, JavaScript, responsive design, and modern websites.">
+
+    <meta name="keywords"
+        content="Edutechy, Full stack Developer, HTML, CSS, JavaScript, Web Developer, Responsive Web Design">
+
+    <meta name="author" content="Edutechy">
+
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="Untitled2.png">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+
+        }
+
+        .hello {
+            color: rgb(221, 221, 230);
+            background-color: rgb(43, 223, 236);
+            font-size: larger;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+
+        }
+
+        ul {
+            display: flex;
+            gap: 20px;
+            width: 1000px;
+
+
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        nav li a {
+            text-decoration: none;
+        }
+
+        .bot1 {
+            padding: 10px;
+            width: 100px;
+            merge: 20px;
+            border-radius: 100px;
+
+        }
+
+
+        button:hover {
+            color: rgb(240, 204, 204);
+            background-color: rgb(245, 144, 28);
+            /* transform: translateY(1200px); */
+
+        }
+
+        .hii {
+            height: calc(100vh-80px);
+            padding: 200px;
+            merge: 40px;
+            background-color: rgba(236, 233, 233, 0.6);
+            /* display: flex; */
+            /* flex-direction: row; */
+            /* justify-content:space-around; */
+            text-align: center;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXfGv9cVafmTP5jUelS2nKXSFR5Ohcp5xAyjCjH38kkA&s=10);
+
+            /* background-repeat:no-repeat; */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+
+        }
+
+        /* .grid:hover {
+            background-color: rgb(228, 226, 226);
+        } */
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            background-color: white;
+
+
+        }
+
+        .grid .grid2 {
+            text-align: center;
+            padding: 150px;
+        }
+
+        .grid .grid3 img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid black;
+
+        }
+
+        .grid3 img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+
+
+        }
+
+        /* .container2:hover {
+            background-color: rgb(184, 181, 181);
+        } */
+
+
+        .container2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            background-color: white;
+
+
+        }
+
+        .grid4 img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+
+
+
+        }
+
+        .container2 .grid5 {
+            text-align: center;
+            padding: 150px;
+            place-items: center;
+        }
+
+        /* .container3:hover {
+            background-color: rgb(236, 232, 232);
+        } */
+
+        .container3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            background-color: white;
+        }
+
+        .grid6 {
+            text-align: center;
+            padding: 150px;
+
+            /* width: 400px; */
+        }
+
+        .grid7 img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+        }
+
+        /* .container4:hover {
+            background-color: rgb(199, 196, 196);
+        } */
+
+        .container4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            background-color: white;
+        }
+
+        .grid8 img {
+            border-radius: 50%;
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+
+
+        }
+
+        .grid9 {
+            text-align: center;
+            padding: 150px;
+
+        }
+
+        /* footer:hover {
+            background-color: rgb(182, 182, 184);
+        } */
+
+        footer {
+            padding: 40px;
+            text-decoration: none;
+            background-color: rgb(235, 228, 216);
+        }
+
+        .container5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+
+
+
+        }
+
+        .copyright {
+            text-align: center;
+
+        }
+
+        .button2 {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            border-radius: 100px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        iframe {
+            widht: 100px;
+            height: 200px;
+
+        }
+
+        .grid0 {
+            display: flex;
+            height: 200px;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 50px;
+            background-color: rgb(216, 235, 235);
+        }
+
+        .grid0 .card {
+            display: grid;
+            items-align: center;
+            width: 250px;
+            height: 50px;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: rgba(53, 232, 245, 0.6);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card2 {
+            text-align: center;
+            /* background-color: rgb(235, 228, 216); */
+            background: beige;
+              color: black;
+
+
+
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+        }
+
+        .let {
+            color: white;
+            /* background-color:orange; */
+            background-color: orange;
+            text-align: center;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        alert("helllo");
+    </script>
+
+    <header>
+        <nav class="hello">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a> </li>
+                <li><a href="">Services</a> </li>
+                <li><a href="">Work</a> </li>
+                <li><a href="">Contact Us</a> </li>
+
+            </ul>
+            <button class="bot1"> <a href="https://edutechy.org/Index/contact.php">Contact Us</a></button>
+            <!-- <button class="bot2">Sign Up</button> -->
+        </nav>
+
+    </header>
+
+
+    <div class="hii">
+        <h1>
+            We Can Make Your Web <br>
+            Amazing
+        </h1>
+        <p>
+            Here is a very diffrent <br> and incredible things
+
+        </p>
+    </div>
+
+    <section>
+        <section>
+            <div class="card2">
+                <h1>Our Services</h1>
+                We create modern, responsive, and user-friendly websites that work smoothly on desktop, tablet, and
+                mobile
+                devices.
+            </div>
+            <div class="grid0">
+                <br>
+                <br>
+
+                <div class="card">
+                    <button class="card">Design</button>
+                </div>
+                <div class="card">
+                    <button class="card">Devlopment</button>
+                </div>
+                <div class="card">
+                    <button class="card"> Marketing</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="grid">
+            <div class="grid2">
+                <h2>A web developer is a tech professional <mark>web devlopment</mark>who designs, builds, and maintains
+                    websites and web
+                    applications.</h2> They write code to ensure digital platforms are visually appealing, fast, secure,
+                and
+                function correctly across various browsers and devices <br>
+                <button class="button2"> <a target="_blank"
+                        href="https://edutechy.org/Index/Website_Designing_Course.php">Learn</a> </button>
+
+            </div>
+            <div class="grid3"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRONrcVPTj5uSg5T_Rtb_eL3OqSsffgPL2Y3f3b3NO6Gg&s=10"
+                    alt="web devlopment"></div>
+
+        </div>
+        <div class="container2">
+            <div class="grid4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7cvmINhiuDDan3G1bEdKHKyL-mpHyGspwrVBefzGSvA&s=10"
+                    alt="web devlopment">
+            </div>
+            <div class="grid5">
+                <h2>Front-End Developer</h2> Focuses on the client-side interface. They build everything users interact
+                with
+                directly using HTML, CSS, and JavaScript. <br>
+                <button class="button2"><a
+                        href="https://edutechy.org/Index/Journal_Website_Development.php">Learn</a></button>
+
+            </div>
+
+
+        </div>
+        <div class="container3">
+            <div class="grid6">
+                <h2>Back-end Developer</h2> Focuses on the server side, managing databases, APIs, and overall system
+                logic
+                that
+                users do not see. <br>
+                <button class="button2"><a href="https://edutechy.org/Index/internship.php">Learn</a></button>
+            </div>
+
+            <div class="grid7">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiQEipn4x3vUXpq0mqhqHBMkP0Dxx2Qv7eNQUjSE2j2g&s=10"
+                    alt="web devlopment">
+            </div>
+        </div>
+        <div class="container4">
+            <div calss="grid8">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnQ9dG_87pyU_eyOHIybm-BCATb5ZyhrQ2uwXP68iV9g&s=10"
+                    alt="web devlopment">
+            </div>
+            <div class="grid9">
+                <h2>Code Editor</h2> Programs like Visual Studio Code help write and edit code efficiently.
+                <br>
+                <button class="button2"><a href="https://en.wikipedia.org/wiki/Web_developer">Learn</a></button>
+
+            </div>
+        </div>
+        <section>
+            <div class="let">
+                <h1>
+                    Let's Do Somthing Do Together
+                </h1><br>
+                <button class="let2">
+                    Let's Started
+
+                </button>
+
+            </div>
+
+
+
+        </section>
+        <section>
+            <footer>
+                <div class="container5">
+                    <div>
+                        <h3>About Me</h3>
+                        I am a passionate Front-End Developer who enjoys creating modern, responsive, and user-friendly
+                        websites
+                        using HTML, CSS, and JavaScript.
+                    </div>
+                    <div>
+                        <h3>
+                            Quiks Links
+                        </h3>
+                        <a href="#">Home</a><br>
+                        <a href="#">About</a><br>
+                        <a href="#">Skills</a><br>
+                        <a href="#">Projects</a><br>
+                        <a href="#">Content</a>
+
+                    </div>
+                    <div>
+                        <h3>Skills</h3>
+                        <p>HTML5</p>
+                        <p>CSS3</p>
+                        <p> JavaScript</p>
+                        <p> Responsive Design</p>
+                        <p> CSS Grid</p>
+                        <p>Flexbox</p>
+                    </div>
+                    <div>
+                        <h3>Contact</h3>
+                        <p>Email: edutechy@gmail.com</p>
+                        <p>Phone: +91 9876543210</p>
+                        <p>Shahjahanpur, Uttar Pradesh</p>
+
+                    </div>
+                    <div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.1160649218277!2d79.9064751!3d27.8677048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399fbdfe84c8f45b%3A0xc137d6de94154eb!2sEduTechy%20Communications%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1788850153172!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+
+
+
+                </div>
+                <p class="copyright">
+                    <strong><mark> © 2026 Edutechy.All Rights Reserved.</mark></strong>
+                </p>
+
+            </footer>
+        </section>
+</body>
+
+</html>

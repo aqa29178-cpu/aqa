@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+    </style>
+    
+</head>
+        
+
+<body>
+    <style>
+        
+    </style>
+    <form>
+        <h1 > Welcom </h1>
+        <br><br>
+        Name;
+        <input type="name" ><br>
+        Class;
+        <input type="class"><br>
+        Email;
+        <input type="email" ><br>
+        Age;
+        <input type="age"><br>
+        <h2>Skill</h2>
+        <input type="checkbox" id="html" name="course" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" id="html" name="course" value="html">
+        <label for="css">css</label><br>
+        <input type="checkbox" id="html" name="course" value="html">
+        <label for="js">Java Script</label><br>
+        <h3>Hobbi</h3>
+        <input type="checkbox" id="html" name="course" value="html">
+        <label for="music">Music</label><br>
+        <input type="checkbox" id="html" name="course" value="html"> 
+        <label for="sports">Sports</label><br>
+        <input type="checkbox" id="html" name="course" value="html">
+        <label for="art">Art</label>
+        <br><br>
+        <button>Submit</button>
+        <table Border="1">
+            <tr>
+                <th>NAME</th>
+                <th>Clsss></th>
+
+            </tr>
+                     
+            <tr>
+              
+            <td>aryan</td>
+            <td>11</td>
+
+
+            </tr>
+
+
+            <tr>
+  
+                  <td>ayush</td>
+                  <td>12</td>
+            </tr>
+        
+
+
+
+
+        </table>
+        <adio control>
+            <source src="https://music.youtube.com/" type="adio/mpeg">
+            Your browser does not support the audio element.
+
+        </adio><br>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <br>
+        <input type="text" placeholder="enter your full name"><br>
+        <label> </label>
+        <input required type="email" name="email" placeholder="ENTER YOUR EMAIL">
+         <button>submit</button><br>
+        <input type="text" value="india" readonly><br>
+        <input type="text" autofocus > <br>
+        <input type="color"><br>
+        <input type="range" min="0" max="100"><br>
+        <label>Volume:</label>
+
+<input type="range"
+       min="0"
+       max="100"
+       value="50"><br>
+       <label>Brightness:</label>
+
+<input type="range"
+       min="0"
+       max="100"
+       step="10"><br>
+       <label>Battery</label>
+
+<meter value="0.8">80%</meter><br>
+<details>
+    <summary>Read more</summary>
+    <p>
+        html is use for creat a web
+    </p>
+</details><br>
+<figure>
+
+<img src="https://onlinejpgtools.com/convert-jpg-to-jpeg" width="300">
+
+<figcaption>
+University Campus
+</figcaption>
+
+</figure><br>
+<p>
+
+HTML is <mark>very important</mark> for web development.
+
+</p><br>
+<p>
+
+Class starts at
+<time>09:00 AM</time>
+
+</p><br>
+<p>
+
+Use
+<code>console.log()</code>
+to print output.
+
+</p><br>
+<pre>
+Name : Rahul
+Age  : 20
+City : Delhi
+</pre><br>
+<a href="notes.pdf" download>
+Download Notes
+</a>
+
+                 
+        
+    </form>
+
+    <button onclick="getlocation()">Get Location</button>
+
+
+    <p id="demo"></p>
+      
+       <script>
+          function  getlocation(){
+            if (navigator.getlocation){
+                navigator.getlocation.getCurrentPosition(showPosition);
+                  } else {
+                    document .getElementById("demo").innerHTML="gelocaton is not spported ."}     
+                    
+          
+                    function showPosition(position){
+                        document .getElementById("Demo")inne rHTML=
+                        "Latitude: "+position.coords.latitude +
+                        "<br>Longitude: "+position.coods.longitude;
+                        
+                    }
+       </script><br>
+       <script>
+        localStorage .setItem("username","Rahul");
+        let user=localStorage.getItem("username");
+        console .log (user);
+       </script><br>
+       <script>
+        sessionStorage.setItem("course","HTML");
+        let course = sessionstorage.grtItem("course");
+        console.log(course);
+       </script><br>
+       <div dragabbel="true">
+        drag me
+       </div><br>
+       <canvas id="myCanvas"
+       width="300"
+       hight="150"
+       style="border:1ps solid black" ></canvas>
+ 
+       <script>
+        let c=document.getElemenetById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx. fillstyle ="blue";
+        ctx.fillRect(20,20,100,50);
+              </script><br>
+              <svg width="300" hight="150">
+                <circle
+                cx="80"
+                cy="80"
+                r="50"
+                fill="green"/>
+              </svg><br>
+              <img
+              src="image.jpg"
+              srcset="
+              small.jpg 480w,
+              medium.jpg 800w,
+              large.jpg 1200w"
+              sizes="(max-widht:600px) 480px,
+              (max-width 900px) 800px,
+              1200px"
+              alt="responsiv image"><br>
+
+              <iframe src="form.html"
+              sendbox></iframe><br>
+              <br>
+              <label for="email">Email</label>
+              <input type="email" id="email">
+              <br>
+              <img
+src="student.jpg"
+alt="Student attending online class">
+<br>
+
+<form>
+    <label for="course">Course:</label>
+
+    <select id="course" name="course " required>
+        <option>BCA</option>
+        <option selected>BBA</option>
+        <option>MCA</option>
+    </select>
+
+
+    <button type="submit">Submit</button><br>
+
+<select name="course" required>
+
+    <option value="bca">BCA</option>
+    <option selected value="bba">BBA</option>
+    <option value="mca">MCA</option>
+    <br>
+    
+   
+
+</select>
+ <button type="okk">click</button>
+
+<br>
+<fieldset>
+    <legend> info</legend>
+        <label for="name">NAME</label>
+        <input type="text" id="name">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email">
+    </fieldset>
+    <br>
+    <form>
+
+    <fieldset>
+
+        <legend>Personal Information</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+
+    </fieldset>
+
+
+    <br>
+
+
+    <fieldset>
+
+        <legend>Education</legend>
+
+        <label for="course">Course:</label>
+
+        <select id="course" name="course">
+            <option>BCA</option>
+            <option>BBA</option>
+            <option>MCA</option>
+        </select>
+
+        <br><br>
+
+        <label for="college">College:</label>
+        <input type="text" id="college" name="college">
+
+    </fieldset>
+
+
+    <br>
+
+
+    <button type="submit">Register</button>
+
+</form>
+
+<form oninput="result.value=Number(a.value)+Number(b.value)">
+<input type="number" id="a" name="a">
++
+<input type="number" id="b" name="b">
+
+
+=
+<output name="result"></output>
+
+</form>
+<form oninput="result.value = Number(a.value) - Number(b.value)">
+
+    <input type="number" id="a" name="a">
+    -
+    <input type="number" id="b" name="b">
+
+    =
+    <output name="result"></output>
+
+</form>
+<form oninput="result.value = Number(a.value) * Number(b.value)">
+
+    <input type="number" id="a" name="a">
+    *
+    <input type="number" id="b" name="b">
+
+    =
+    <output name="result"></output>
+
+</form>
+<form oninput="result.value = (Number(a.value) / Number(b.value))*100">
+
+    <label>mile no.</label>
+    <input type="number" id="a" name="a">
+    <br>
+    <label>kitne mese mile</label>
+    <input type="number" id="b" name="b">
+<br>
+    Percentage:
+    <output name="result"></output>%
+
+</form>
+<form oninput="result.value = volume.value">
+
+    <label for="volume">Volume:</label>
+
+    <input
+        type="range"
+        id="volume"
+        name="volume"
+        min="0"
+        max="100"
+        value="50">
+
+    <output name="result">50</output>
+
+</form>
+<form oninput="result.value = volume.value">
+
+    <label for="volume">Volume:</label>
+
+    <input
+        type="range"
+        id="volume"
+        name="volume"
+        min="0"
+        max="100"
+        value="50">
+
+    <output name="result">50</output>
+
+</form>
+<input list="browsers">
+
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Edge">
+    <option value="Safari">
+</datalist>
+<button>well done</button>
+<select>
+    <optgroup label="Frontend">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+    </optgroup>
+
+    <optgroup label="Backend">
+        <option>PHP</option>
+        <option>Python</option>
+        <option>Java</option>
+    </optgroup>
+</select><br>
+<br>
+
+<progress value="79%" max="100"></progress>
+<label for="courseProgress">
+    Course Progress:
+</label>
+
+<progress
+    id="courseProgress"
+    value="70"
+    max="100">
+</progress>
+<br>
+<br>
+
+<meter value="70" min="0" max="100"></meter>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Website</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+
+        <h2>Welcome to My Website</h2>
+
+        <p>
+            This is the main content of the webpage.
+        </p>
+
+    <section>
+        <h2>About Us</h2>
+        <p>Information about our organization.</p>
+    </section>
+
+    <section>
+        <h2>Services</h2>
+        <p>Website Development and SEO.</p>
+    </section><br>
+    <br>
+
+     <aside>
+        <h3>Related Topics</h3>
+
+        <ul>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>HTML Forms</li>
+        </ul>
+    </aside>
+
+    </main>
+
+    <footer>
+        <p>Copyright 2026</p>
+    </footer>
+    <article>
+
+    <h2>Latest News</h2>
+
+    <p>
+        Our new course registration has started.
+    </p>
+
+</article>
+<main>
+
+    <article>
+        <h1>What is HTML?</h1>
+
+        <p>
+            HTML is used to create the structure of webpages.
+        </p>
+    </article>
+
+    <aside>
+        <h3>Related Topics</h3>
+
+        <ul>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>HTML Forms</li>
+        </ul>
+    </aside>
+
+</main>
+<main>
+
+    <article>
+        <h1>Learn HTML</h1>
+
+        <p>
+            HTML is the foundation of web development.
+        </p>
+    </article>
+
+    <aside>
+        <h3>Quick Links</h3>
+
+        <a href="#">HTML Basics</a><br>
+        <a href="#">CSS Basics</a><br>
+        <a href="#">JavaScript</a>
+    </aside>
+
+</main>
+<details>
+    <summary>What is HTML?</summary>
+
+    <p>
+        HTML stands for HyperText Markup Language.
+        It is used to create the structure of webpages.
+    </p>
+</details>
+
+</body>
+
+</html>
+<details>
+    <summary>What is HTML?</summary>
+
+    <p>
+        HTML stands for HyperText Markup Language.
+        It is used to create the structure of webpages.
+    </p>
+</details>
+<br>
+    
+
+
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dialog Example</title>
+</head>
+
+<body>
+
+    <button onclick="myDialog.showModal()">
+        Open Dialog
+    </button>
+
+    <dialog id="myDialog">
+
+        <h2>Hello!</h2>
+
+        <p>This is a dialog box.</p>
+
+        <button onclick="myDialog.close()">
+            Close
+        </button>
+
+    </dialog>
+
+</body>
+
+</html>
+
+
