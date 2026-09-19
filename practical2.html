@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(70, 70, 70);
+      }
+
+      th,
+      td {
+        /* width: 1200px; */
+        border: 2px solid rgb(218, 212, 212);
+      }
+      table {
+        border: 2px solid rgb(218, 212, 212);
+        border-collapse: collapse;
+        height: 400px;
+        width: 1200px;
+        padding: 10px;
+        font-size:medium;
+        text-align: center;
+
+      }
+      .tittle {
+        /* width: 800px; */
+        /* margin: 5px; */
+        height: 100px;
+        padding: 10px;
+        background-color: white;
+        border: 2px solid rgb(218, 212, 212);
+        box-sizing: border-box;
+      }
+      h2 {
+        color: rgb(14, 15, 34);
+        font-size: 24px;
+      }
+      .tittle-2 {
+        /* right: 10px; */
+        height: 50px;
+        border: 2px solid rgb(218, 212, 212);
+        box-sizing: border-box;
+        background-color: white;
+        text-align: right;
+        padding: 10px;
+      }
+      body {
+        padding: 0%;
+        display: flex;
+        justify-content: center;
+        border-collapse: collapse;
+        background-color: rgb(252, 249, 245);
+                        margin-top: 50px;
+
+      }
+      .content {
+
+        text-align: center;
+        /* border: 2px solid gray; */
+        width: 1200px;
+        background-color: white;
+        border: 2px 2px 2px 2px rgb(233, 230, 230);
+      }
+      th {
+        background-color: rgb(17, 17, 36);
+        color: white;
+      }
+      .footer {
+        text-align: right;
+        color: rgb(1, 1, 22);
+        font-weight: bold;
+      }
+      .footer1{
+         text-align: center;
+        color: rgb(1, 1, 22);
+        font-weight: bold;
+
+      }
+      .imp,.imp2,.imp3{
+        text-align: center;
+      }
+      .imp {
+        color: green;
+        display: inline-block;
+        padding: 5px 12px;
+        background-color: rgb(208, 238, 178);
+        border-radius: 10px;
+        font-weight: 100;
+      }
+      .imp2 {
+        color: chocolate;
+        background-color: rgb(233, 214, 166);
+        border-radius: 10px;
+        padding: 5px 12px;
+        display: inline-block;
+                font-weight: 100;
+
+      }
+      .imp3 {
+        color: red;
+        background-color: rgb(236, 183, 194);
+        border-radius: 10px;
+        padding: 5px 12px;
+        display: inline-block;
+                font-weight: 100;
+
+      }
+
+        
+    </style>
+  </head>
+  <body>
+    <div class="control">
+      <div class="tittle">
+        <h2>Student Enrollment & Fee Report</h2>
+        <p>
+          comprihesive ovverviwe of department-wise student rgistration & Fee
+          status
+        </p>
+      </div>
+      <div class="tittle-2">Acamic Year 2025-2026 Summary</div>
+      <div class="content">
+        <table>
+          <tr>
+            <th rowspan="2">S.R No.</th>
+            <th rowspan="2">DEPARTMENT</th>
+            <th rowspan="2">COURSE</th>
+            <th colspan="2">ENROLLED STUDENT</th>
+            <th rowspan="2">FEE STATUS</th>
+            <th rowspan="2">TOTAL REVENUE(0)</th>
+          </tr>
+          <tr>
+            <th>DISTANCE</th>
+
+            <th>DISTANCE</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td rowspan="2">Engineering & Tecnology</td>
+            <td>B.Tech Computer Science</td>
+            <td>120</td>
+            <td>45</td>
+            <td class="imp">Paid</td>
+            <td>$160,000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>B.TECH Machanicle</td>
+            <td>95</td>
+            <td>30</td>
+            <td class="imp2">Pending</td>
+            <td>$125,000</td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td>Management Studies</td>
+            <td>M.B.A.</td>
+            <td>150</td>
+            <td>85</td>
+            <td class="imp">Paid</td>
+            <td>$235,000</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td>Art & Humanities</td>
+            <td>Bachelers Of Arts(English)</td>
+            <td>80</td>
+            <td>20</td>
+            <td class="imp3">Overdue</td>
+            <td>$50,000</td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td>Science</td>
+            <td>B.Sc Data Science</td>
+            <td>110</td>
+            <td>50</td>
+            <td class="imp">Paid</td>
+            <td>$160,000</td>
+          </tr>
+          <tr>
+            <td class="footer" colspan="3">Total/Summary:</td>
+            <td class="footer1">555</td>
+            <td class="footer1">230</td>
+            <td class="footer1">Overall Status</td>
+            <td class="footer1">$735,000</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -86,3 +86,29 @@ button:hover {
 
 
     }
+    body {
+    background: rgb(23, 122, 214);
+}
+
+@media (max-width: 600px) {
+
+    body {
+        background: rgb(184, 42, 17);
+    }
+
+}
+.card{
+    display: flex;
+    gap:20px;
+
+}
+.card{
+    flex: 1;
+
+}
+@media(max-width:600px){
+    .card{
+        flex-direction: column;
+    }
+}
+
