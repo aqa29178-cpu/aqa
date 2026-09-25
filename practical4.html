@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        /* gap: 20px; */
+        /* padding: 10px; */
+        border-radius: 5px;
+      }
+      legend {
+        padding: 15px;
+        border: 1px, solid, gray;
+        padding-left: 13px;
+        font-size: 20px;
+        color: rgb(9, 86, 150);
+      }
+
+      .data {
+        border: 1px, solid, gray;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        /* max-height:100vh ; */
+      }
+      .data {
+        display: flex;
+        height: 300px;
+        width: 900px;
+        justify-content: space-evenly;
+        margin: 30px;
+      }
+      .input-data {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 10px;
+        width: stretch;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="content">
+        <h1>Professinal Registration Form</h1>
+        <p>Please Fill Out all the details carefully below</p>
+        <section>
+          <fieldset class="data">
+            <legend>1. Personal Imformation</legend>
+            <div class="input-data">
+              <label for="name"> Full Name</label>
+              <input
+                type="text"
+                placeholder="Enter Your Full Name"
+                id="name"
+                required
+              />
+              <label for="email">Email</label>
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                id="email"
+                required
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                placeholder="Enter Your password "
+                id="password"
+                required
+              />
+            </div>
+            <div class="input-data">
+              <label for="username"> Username</label>
+              <input
+                type="text"
+                placeholder="Choose a unique username"
+                id="username"
+                required
+              />
+              <label for="number">Phone Number</label>
+              <input
+                type="tel"
+                placeholder="Enter Your Phone Number"
+                id="number"
+                required
+                maxlength="10"
+              />
+              <label for="pass">Confirm Password</label>
+              <input
+                type="text"
+                placeholder="Confirm Your Password"
+                id="pass"
+                required
+              />
+            </div>
+          </fieldset>
+        </section>
+        <section>
+          <fieldset class="data">
+            <legend>2. Demographics & Prefrence</legend>
+            <div class="input-data">
+              <label for="date">Date Of Birth</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="dd/mm/yyyy"
+                required
+              />
+              <label for="gender">Gender</label> <br />
+              <label for="gender">Male</label>
+              <input type="radio" required id="gender" value="m" />
+              <label for="gender">Female</label>
+              <input type="radio" id="gender" value="f" />
+              <label for="gender">Others</label>
+              <input type="radio" id="gender" value="o" />
+            </div>
+            <div class="input-data">
+              <label for="select">Select Coure/Service</label>
+            </div>
+          </fieldset>
+        </section>
+        <section>
+          <fieldset class="data">
+            <legend>3. Document & Message</legend>
+            <div class="input-data">
+              <label for="file">Upload Resume & Document(PDF/DOC)</label>
+              <input type="file" accept=".pdf,.doc,image" />
+              <label for="textarea">Bio / Message</label> <br />
+              <textarea
+                name="text"
+                id="textarea"
+                cols="10"
+                rows="5"
+                placeholder="Type Here"
+              ></textarea>
+            </div>
+          </fieldset>
+        </section>
+      </div>
+    </form>
+  </body>
+</html>
