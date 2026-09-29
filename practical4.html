@@ -9,29 +9,44 @@
         /* gap: 20px; */
         /* padding: 10px; */
         border-radius: 5px;
+        font-family: serif;
+      }
+      body,
+      .data {
+        background: whitesmoke;
+      }
+      .content {
+        background: white;
+        padding: 40px;
+      }
+      form{
+        /* background: aqua; */
       }
       legend {
-        padding: 15px;
+        padding: 8px;
         border: 1px, solid, gray;
         padding-left: 13px;
         font-size: 20px;
         color: rgb(9, 86, 150);
+        background: none;
       }
 
       .data {
         border: 1px, solid, gray;
       }
-      body {
+      body,
+      button {
         display: flex;
         justify-content: center;
+
         /* max-height:100vh ; */
       }
       .data {
         display: flex;
-        height: 300px;
-        width: 900px;
+        height: 319px;
+        width: 790px;
         justify-content: space-evenly;
-        margin: 30px;
+        margin: 30px 0px;
       }
       .input-data {
         display: grid;
@@ -39,112 +54,128 @@
         margin: 10px;
         width: stretch;
       }
+      input,
+      .data {
+        padding: 10px;
+        border: 1px solid rgb(216, 215, 215);
+      }
       h1,
       p {
         text-align: center;
       }
+
+      label {
+        padding-top: 12px;
+        margin-top: 2px;
+      }
+      button {
+        width: 100%;
+        text-align: center;
+        background: #2961c7;
+        padding: 12px;
+        color: white;
+        font-size: 20px;
+      }
     </style>
   </head>
   <body>
-    <form action="">
-      <div class="content">
-        <h1>Professinal Registration Form</h1>
-        <p>Please Fill Out all the details carefully below</p>
-        <section>
-          <fieldset class="data">
-            <legend>1. Personal Imformation</legend>
-            <div class="input-data">
-              <label for="name"> Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter Your Full Name"
-                id="name"
-                required
-              />
-              <label for="email">Email</label>
-              <input
-                type="email"
-                placeholder="Enter Your Email"
-                id="email"
-                required
-              />
-              <label for="password">Password</label>
-              <input
-                type="password"
-                placeholder="Enter Your password "
-                id="password"
-                required
-              />
-            </div>
-            <div class="input-data">
-              <label for="username"> Username</label>
-              <input
-                type="text"
-                placeholder="Choose a unique username"
-                id="username"
-                required
-              />
-              <label for="number">Phone Number</label>
-              <input
-                type="tel"
-                placeholder="Enter Your Phone Number"
-                id="number"
-                required
-                maxlength="10"
-              />
-              <label for="pass">Confirm Password</label>
-              <input
-                type="text"
-                placeholder="Confirm Your Password"
-                id="pass"
-                required
-              />
-            </div>
-          </fieldset>
-        </section>
-        <section>
-          <fieldset class="data">
-            <legend>2. Demographics & Prefrence</legend>
-            <div class="input-data">
-              <label for="date">Date Of Birth</label>
-              <input
-                type="date"
-                name="date"
-                id="date"
-                placeholder="dd/mm/yyyy"
-                required
-              />
-              <label for="gender">Gender</label> <br />
-              <label for="gender">Male</label>
-              <input type="radio" required id="gender" value="m" />
-              <label for="gender">Female</label>
-              <input type="radio" id="gender" value="f" />
-              <label for="gender">Others</label>
-              <input type="radio" id="gender" value="o" />
-            </div>
-            <div class="input-data">
-              <label for="select">Select Coure/Service</label>
-            </div>
-          </fieldset>
-        </section>
-        <section>
-          <fieldset class="data">
-            <legend>3. Document & Message</legend>
-            <div class="input-data">
-              <label for="file">Upload Resume & Document(PDF/DOC)</label>
-              <input type="file" accept=".pdf,.doc,image" />
-              <label for="textarea">Bio / Message</label> <br />
-              <textarea
-                name="text"
-                id="textarea"
-                cols="10"
-                rows="5"
-                placeholder="Type Here"
-              ></textarea>
-            </div>
-          </fieldset>
-        </section>
-      </div>
-    </form>
+    <div class="content">
+      <h1>Professinal Registration Form</h1>
+      <p>Please Fill Out all the details carefully below</p>
+
+      <form action="">
+        <fieldset class="data">
+          <legend>1. Personal Imformation</legend>
+          <div class="input-data">
+            <label for="name"> Full Name</label>
+            <input
+              type="text"
+              placeholder="Enter Your Full Name"
+              id="name"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              id="email"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              placeholder="Enter Your password "
+              id="password"
+              required
+            />
+          </div>
+          <div class="input-data">
+            <label for="username"> Username</label>
+            <input
+              type="text"
+              placeholder="Choose a unique username"
+              id="username"
+              required
+            />
+            <label for="number">Phone Number</label>
+            <input
+              type="tel"
+              placeholder="Enter Your Phone Number"
+              id="number"
+              required
+              maxlength="10"
+            />
+            <label for="pass">Confirm Password</label>
+            <input
+              type="text"
+              placeholder="Confirm Your Password"
+              id="pass"
+              required
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="data">
+          <legend>2. Demographics & Prefrence</legend>
+          <div class="input-data">
+            <label for="date">Date Of Birth</label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              placeholder="dd/mm/yyyy"
+              required
+            />
+            <label for="gender">Gender</label> <br />
+            <label for="gender">Male</label>
+            <input type="radio" required id="gender" value="m" />
+            <label for="gender">Female</label>
+            <input type="radio" id="gender" value="f" />
+            <label for="gender">Others</label>
+            <input type="radio" id="gender" value="o" />
+          </div>
+          <div class="input-data">
+            <label for="select">Select Coure/Service</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="data">
+          <legend>3. Document & Message</legend>
+          <div class="input-data">
+            <label for="file">Upload Resume & Document(PDF/DOC)</label>
+            <input type="file" accept=".pdf,.doc,image" />
+            <label for="textarea">Bio / Message</label> <br />
+            <textarea
+              name="text"
+              id="textarea"
+              cols="10"
+              rows="5"
+              placeholder="Type Here"
+            ></textarea>
+          </div>
+        </fieldset>
+        <button>Submit</button>
+      </form>
+    </div>
   </body>
 </html>

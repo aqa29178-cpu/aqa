@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+              .block{
+                  display: grid;
+                  /* align-items: center; */
+                  text-align: center;
+
+                  grid-template-areas:"header header header"
+                  "sidebar content1 content1"
+                  "sidebar content2 content3"
+                  /* "sidebar item7 item8" */
+                  "footer footer footer ";
+                  grid-template-columns:600px 400px 400px;
+                  /* grid-template-rows: repeat(6,1fr); */
+                  grid-auto-rows: 100px;
+                  gap: 20px;
+
+              }
+              .item1,.item2,.item3,.item4,.item5,.item6{
+                  border: 2px solid black;
+                  background: linear-gradient( red,blue);
+              }
+              .item1{
+
+
+                grid-area: header;
+              }
+              .item2{
+                grid-area: sidebar;
+
+
+
+              }
+              .item3{
+                grid-area: content1;
+
+              }
+              .item4{
+                grid-area: content2;
+
+              }
+              .item5{
+                grid-area: content3;
+
+              }
+              .item6{
+                grid-area: footer;
+              }
+    </style>
+  </head>
+  <body>
+    <div class="block">
+      <div class="item1">box1</div>
+      <div class="item2">box2</div>
+      <div class="item3">box3</div>
+      <div class="item4">box4</div>
+      <div class="item5">box5</div>
+      <div class="item6">box6</div>
+      <!-- <div class="item7">box7</div>
+      <div class="item8">box8</div>
+      <div class="item9">box9</div>
+      <div class="item10">box10</div> -->
+    </div>
+  </body>
+</html>
