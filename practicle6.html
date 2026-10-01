@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        display: grid;
+
+        grid-template-areas:
+          "header header header header"
+          "sidebar sidebar content1 content2"
+          "sidebar sidebar content3 content3"
+          "content4 content5 content6 content6"
+          "content4 content5 content6 content6"
+          "footer footer footer footer";
+        grid-template-columns: 350px 350px 350px 350px;
+        grid-template-rows: 85px;
+        gap: 20px;
+      }
+      .item1,
+      .item2,
+      .item3,
+      .item4,
+      .item5,
+      .item6,
+      .item7,
+      .item8,
+      .item9 {
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+      input {
+        height: 39px;
+        margin-top: -41px;
+        width: 259px;
+      }
+
+      .item1 {
+        grid-area: header;
+        height: 85px;
+      }
+    
+      .paragraph {
+        margin: 0px;
+        padding-left: 30px;
+      }
+      .first-heading , .heading{
+        margin: 0px;
+        margin-top: 20px;
+        /* padding-top: 0px; */
+        padding-left: 30px;
+      }
+      .big-heading,
+      .third-heading {
+        margin: 14px;
+        padding-left: 12px;
+      }
+
+      input {
+        float: right;
+        margin-top: -41px;
+        margin-right: 22px;
+        border-radius: 6px;
+        border: 1px solid gray;
+        text-align: center;
+      }
+
+      .item2 {
+        grid-area: sidebar;
+        height: 400px;
+        padding: 0px;
+        margin: 0px;
+            font-size: large;
+      }
+      .item3 {
+        grid-area: content1;
+      }
+      .item4 {
+        grid-area: content2;
+      }
+      .item5 {
+        grid-area: content3;
+      }
+
+      .item6 {
+        grid-area: content4;
+        height: 400px;
+      }
+      .item7 {
+        grid-area: content5;
+        width: 350px;
+        height: 200px;
+      }
+      .item8 {
+        grid-area: content6;
+        width: 350px;
+        height: 200px;
+      }
+      .item9 {
+        grid-area: footer;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block">
+      <div class="item1">
+        <h2 class="heading">Advance Work Space</h2>
+
+        <p class="paragraph">System status Oprational</p>
+        <input type="search" placeholder="Search" />
+      </div>
+      <div class="item2">
+        <h4 class="first-heading">SYSTEM OVERVIEW</h4>
+
+        <h1 class="big-heading">Q3 Performance spike</h1>
+        <h4 class="third-heading">
+          Advanced grid span coordination succesfully distributing layout nodes
+          across asymmetric viewport metrics.
+        </h4>
+        <button>
+          Generate Report
+        </button>
+      </div>
+      <div class="item3">box3</div>
+      <div class="item4">box4</div>
+      <div class="item5">box5</div>
+      <div class="item6">box6</div>
+      <div class="item7">box7</div>
+      <div class="item8">box8</div>
+      <div class="item9">box9</div>
+      <!-- <div class="item10">box10</div> -->
+    </div>
+  </body>
+</html>
