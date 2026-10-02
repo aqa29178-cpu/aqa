@@ -251,4 +251,11 @@ h1::after {
     background: #005598;
     margin-right: 10px; */
 }
+img {
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+img:hover {
+    filter: grayscale(0%);
 

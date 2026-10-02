@@ -30,6 +30,7 @@
       .item9 {
         border: 2px solid black;
         border-radius: 20px;
+        font-size:20px;
       }
       input {
         height: 39px;
@@ -42,20 +43,23 @@
         height: 85px;
       }
     
-      .paragraph {
+      .paragraph ,span{
         margin: 0px;
         padding-left: 30px;
+        font-size:17px;
       }
-      .first-heading , .heading{
+      .first-heading{
         margin: 0px;
         margin-top: 20px;
         /* padding-top: 0px; */
         padding-left: 30px;
+         font-size: large;
       }
       .big-heading,
       .third-heading {
-        margin: 14px;
-        padding-left: 12px;
+        margin: 0px;
+        padding-left: 24px;
+        margin-top:10px;
       }
 
       input {
@@ -68,11 +72,19 @@
       }
 
       .item2 {
+       grid-column: span 2;
+    grid-row: span 2;
         grid-area: sidebar;
-        height: 400px;
+        /* height: 400px; */
         padding: 0px;
         margin: 0px;
             font-size: large;
+           
+    /* justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; */
+
       }
       .item3 {
         grid-area: content1;
@@ -82,6 +94,7 @@
       }
       .item5 {
         grid-area: content3;
+     padding:50px;
       }
 
       .item6 {
@@ -107,25 +120,35 @@
   <body>
     <div class="block">
       <div class="item1">
-        <h2 class="heading">Advance Work Space</h2>
+        <h2 class="first-heading">Advance Work Space</h2>
 
         <p class="paragraph">System status Oprational</p>
         <input type="search" placeholder="Search" />
       </div>
       <div class="item2">
-        <h4 class="first-heading">SYSTEM OVERVIEW</h4>
+       <div class="content-big">
+         <h4 class="first-heading">SYSTEM OVERVIEW</h4>
 
         <h1 class="big-heading">Q3 Performance spike</h1>
         <h4 class="third-heading">
           Advanced grid span coordination succesfully distributing layout nodes
           across asymmetric viewport metrics.
         </h4>
-        <button>
+       </div>
+        <div class="buttun-content">
+          <button>
           Generate Report
         </button>
+        </div>
       </div>
-      <div class="item3">box3</div>
-      <div class="item4">box4</div>
+      <div class="item3">
+        <h4 class="first-heading">Server latency</h4>
+        <h1 class="big-heading">24ms</h1>
+        <span>Optimal</span>
+      </div> 
+      <div class="item4">
+        <h4 class="first-heading"></h4>
+      </div>
       <div class="item5">box5</div>
       <div class="item6">box6</div>
       <div class="item7">box7</div>
