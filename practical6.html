@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body{
+        margin:0px;
+            padding: 15px;
+    margin: 5px;
+    background: #0f172a;
+  
+      }
       .block {
         display: grid;
 
@@ -18,6 +25,7 @@
         grid-template-columns: 350px 350px 350px 350px;
         grid-template-rows: 85px;
         gap: 20px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
       }
       .item1,
       .item2,
@@ -30,12 +38,20 @@
       .item9 {
         border: 2px solid black;
         border-radius: 20px;
-        font-size:20px;
+        font-size:large;
+        background:#1e293b;
+        color:white;
+      }
+      .item7,.item8{
+        /* width: 312px; */
+    height: 140px;
       }
       input {
         height: 39px;
         margin-top: -41px;
         width: 259px;
+        background:#1e293b ;
+        border-radius: 5px;
       }
 
       .item1 {
@@ -54,6 +70,8 @@
         /* padding-top: 0px; */
         padding-left: 30px;
          font-size: large;
+         color:rgb(216, 208, 208)
+         /* font-weight:50; */
       }
       .big-heading,
       .third-heading {
@@ -61,6 +79,7 @@
         padding-left: 24px;
         margin-top:10px;
       }
+
 
       input {
         float: right;
@@ -72,13 +91,16 @@
       }
 
       .item2 {
-       grid-column: span 2;
+           grid-column: span 2;
     grid-row: span 2;
-        grid-area: sidebar;
-        /* height: 400px; */
-        padding: 0px;
-        margin: 0px;
-            font-size: large;
+    grid-area: sidebar;
+    height: 283px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background:linear-gradient(rgb(134, 84, 228), rgb(177, 35, 177))
            
     /* justify-content: space-around;
     display: flex;
@@ -86,6 +108,18 @@
     padding: 20px; */
 
       }
+      
+      .badge,.success {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+        }
+
+        .badge,.danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+        }
+
+  
       .item3 {
         grid-area: content1;
       }
@@ -94,39 +128,103 @@
       }
       .item5 {
         grid-area: content3;
-     padding:50px;
+     padding:10px;
       }
+
+
+   .mini-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 60px;
+            margin-top: 15px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: rgba(97, 92, 92, 0.1);
+            border-radius: 4px 4px 0 0;
+            transition: background 0.3s;
+        }
+        .chart-bar:hover,
+        .chart-bar.active {
+            background: #6366f1;
+        }
 
       .item6 {
         grid-area: content4;
-        height: 400px;
+        height: 300px;
       }
+       .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+        .danger{
+         padding-right: 197px;
+    margin-left: 21px;
+    padding-left: 11px;
+    font-size: smaller;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 18px;
+        }
+        .badge1{
+          /* background:rgba(26, 211, 26, 0.1);
+    color: #095e09; */
+    font-weight: 100;
+    font-size: smaller;
+    margin-right: 0px;
+    padding-right: 236px;
+    margin-left: 23px;
+    padding-left: 8px;
+     padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 18px;
+        }
+      .badge2{
+         font-size: smaller;
+      }
+
       .item7 {
         grid-area: content5;
         width: 350px;
-        height: 200px;
+        /* height: 200px; */
       }
       .item8 {
         grid-area: content6;
         width: 350px;
-        height: 200px;
+        /* height: 200px; */
       }
       .item9 {
         grid-area: footer;
         height: 150px;
+        color:rgb(216, 208, 208);
+        display:flex
       }
     </style>
   </head>
   <body>
     <div class="block">
       <div class="item1">
-        <h2 class="first-heading">Advance Work Space</h2>
+        <h2 class="first-heading" style="color: white;">Advance Work Space</h2>
 
         <p class="paragraph">System status Oprational</p>
         <input type="search" placeholder="Search" />
       </div>
       <div class="item2">
-       <div class="content-big">
+       <div class="big-content" style="margin-top: -35px;">
          <h4 class="first-heading">SYSTEM OVERVIEW</h4>
 
         <h1 class="big-heading">Q3 Performance spike</h1>
@@ -135,8 +233,11 @@
           across asymmetric viewport metrics.
         </h4>
        </div>
-        <div class="buttun-content">
-          <button>
+        <div class="buttun-content" style=" padding: 3px 31px;
+    margin-bottom: -18px;
+">
+         
+            <button style="padding: 10px; border-radius: 8px;">
           Generate Report
         </button>
         </div>
@@ -144,17 +245,82 @@
       <div class="item3">
         <h4 class="first-heading">Server latency</h4>
         <h1 class="big-heading">24ms</h1>
-        <span>Optimal</span>
+        <span class="success badge1 ">Optimal</span>
       </div> 
       <div class="item4">
-        <h4 class="first-heading"></h4>
+        <h4 class="first-heading">Memory allocation</h4>
+        <h1 class="big-heading" >78.4%</h1>
+         <span class="danger">High load<span>
+
+
       </div>
-      <div class="item5">box5</div>
-      <div class="item6">box6</div>
-      <div class="item7">box7</div>
-      <div class="item8">box8</div>
-      <div class="item9">box9</div>
+      <!-- <div class="item5">
+        <h4 class="first-heading">Network throughput</h4>
+         <div class="chart-bar" style="height: 30%;"></div>
+                        <div class="chart-bar" style="height: 50%;"></div>
+                        <div class="chart-bar" style="height: 40%;"></div>
+                        <div class="chart-bar active" style="height: 90%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 45%;"></div>
+      </div> -->
+     
+      <div class="item5 ">
+                <div>
+                    <div class="card-title">Network Throughput (Hourly)</div>
+                    <div class="mini-chart">
+                        <div class="chart-bar" style="height: 30%;"></div>
+                        <div class="chart-bar" style="height: 50%;"></div>
+                        <div class="chart-bar" style="height: 40%;"></div>
+                        <div class="chart-bar active" style="height: 90%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+      <div class="item6 ">
+                <div>
+                    <div class="first-heading">Active Queue Items</div>
+                    <div class="task-list">
+                        <div class="task-item"><span>Database Backup</span> <span>Done</span></div>
+                        <div class="task-item"><span>Cache Purge</span> <span >Running</span></div>
+                        <div class="task-item"><span>SSL Sync</span> <span >Pending</span></div>
+                        <div class="task-item"><span>Asset Minification</span> <span  >Done</span></div>
+                    </div>
+                </div>
+                <p style="font-size: 11px; margin-top: 15px;">Auto-refreshing every 30s</p>
+      </div>
+      <div class="item7">
+        <h4 class="first-heading">Active Nodes</h4>
+        <h1 class="big-heading">1,402</h1>
+        <span class="success badge1">+14 today</span>
+      </div>
+      <div class="item8">
+        <h3 class="first-heading">Error Rate</h3>
+                    <h1 class="big-heading">0.02%</h1>
+                
+                <span class="success badge1">Stable</span>
+      </div>
+      <div class="item9" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                <div>
+                    <h3 class="first-heading">Global Distribution Gateway</h3>
+                    <h1 style="font-size: 13px;
+    margin-top: 4px;
+    padding-left: 24px;
+    margin: 6px;
+">All edge clusters are
+                        synchronized and routing data smoothly across zones.</p>
+                </div>
+                <div style="padding: 25px;">
+                    <span class="success badge2" style="padding: 6px;
+    border-radius: 20px;">Cluster A: Active</span>
+                    <span class="success badge2" style="padding: 6px;
+    border-radius: 20px;">Cluster B: Active</span>
+                </div>
+      </div>
       <!-- <div class="item10">box10</div> -->
+    </div>
     </div>
   </body>
 </html>
