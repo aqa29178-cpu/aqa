@@ -11,7 +11,7 @@ button:hover {
     /* transform: rotate(5deg); */
     /* transform: translate(1200px); */
     /* transform: skew(10deg); */
-    transform: translatex(1200px) scale(3);
+    /* transform: translatex(1200px) scale(3); */
 }
 :root{
     --blue: #69aee2;
