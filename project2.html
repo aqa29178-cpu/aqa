@@ -6,78 +6,203 @@
     <title>Document</title>
     <style>
       *{
-        padding: 0px;
-        margin:0px;
+        /* padding: 0px; */
+        /* margin:0px; */
       }
       body{
-        background: #9e0909;
+
+        margin:0px;
       }
       .navbar{
-        display: flex;
+       display: flex;
     justify-content: space-between;
-   
     border: 1px solid gray;
-    /* width: 1310px; */
-    height: 53px;
-
+    /* box-shadow: 2px 2px 2px 2px gray; */
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
       }
-      nav div button{
-            padding: 9px;
+    .button1-navbar{
+            padding: 12px 30px;
     border-radius: 10px;
     border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+      }
+      .button1-navbar:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
       }
       .button-navbar{
-        padding:8px;
+        padding:20px 12px;
       }
       ul{
           display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     list-style: none;
+    color: black;
+    padding-top:10px;
     
 
         }
         ul li a{
           text-decoration: none;
+          color:black;
         }
-        /* .hero-section{
-              display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 1310px;
-    height: 500px;
-    background: #ebf1f5;
-    padding-right: 15px;
-    margin: 0px;
+        .hero-section{
+             display: flex;
+             flex-direction: column;
+    
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: center;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkyhYNZKI9_GuhN6Bd08dRQJHM6bWyJ_BGbd2yyg7CfA&s=10);
+height: calc(100vh-80px);
+    
+    background-color: rgba(236, 233, 233, 0.6);
+   
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+  }
+  .search-input{
+    padding: 12px 90px;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+  .input{
+    text-align: center;
+  }
+  .hero-content-text{
+    text-align: center;
+        font-size: x-large;
+  }
+  .blank{
+    height: 200px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS94Z3KwwuAoVWlEggqkZw11Eg9Yv1F6n0WcPtx2K27Qw&s=10);
+   display: flex;
+             flex-direction: column;
+    
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: center;
+    
+    background-color: rgba(209, 207, 207, 0.6);
+   
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
 
-        } */
-        .about-web{
-              
-    /* width: 1310px; */
-    height: 500px;
-    background: #e6e9eb;
+   
+.our-services-text{
+          text-align:center;
+    
         }
-        .our-services{
-          /* width: 1310px; */
-    height: 250px;
-    background: #e6e9eb;
+        .services-card{
+          display: flex;
+          justify-content: center;
+          gap:20px;
+          padding:25px;
+
+        }
+        .card1{
+          padding: 20px 50px;
+          border-radius:10px;
+          /* border:1px solid gray; */
+           border-radius: 10px;
+    border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+        }
+       
+      
+      .card1:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
+      }
+        
+    
+    .our-service, .latest-articles,.cta{
+           font-size: larger;
+           /* margin-top: 20px; */
+    padding: 20px;   
+     height: 400px;
+    background: white;
+    box-shadow: 1px 2px 2px 2px gray;
+    
         }
         .latest-articles{
-                     
-    /* width: 1310px; */
-    height: 500px;
-    background: #e6e9eb;
-        }
-        .about-me{
-                       
-    /* width: 1310px; */
-    height: 500px;
+           font-size: larger;
+           /* margin-top: 20px; */
+    padding: 20px;   
+     height: 250px;
     background: #e6e9eb;
         }
         .cta{
-           /* width: 1310px; */
-    height: 500px;
+           font-size: larger;
+    
+    padding: 20px;   
+     height: 250px;
     background: #e6e9eb;
+    text-align: center;
         }
+        .cta-button{
+            padding: 10px 20px;
+            /* background: #007bff; */
+            color: white;
+         padding: 15px 50px;
+    border-radius: 10px;
+    /* border: 1px solid gray; */
+       border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+        }
+       
+      
+      .cta-button:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
+      
+        }
+        .cta-button1{
+          padding-top: 25px;
+        }
+        .about-me{
+              display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px;
+    padding: 0PX;
+}
+.about-web1,.about-web2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 500px;
+}
+
+.about-web1 img{
+  height: 50%;
+  margin-right: -100px;
+  border-radius: 10px;
+}
+.about-web2 img{
+   height: 50%;
+   border-radius: 10px;
+}
+.web-content1{
+  padding-left: 50px;
+    padding-right: 35px;
+}
+        
 
     </style>
   </head>
@@ -94,41 +219,45 @@
            
           </ul>
            <div class="button-navbar"> 
-            <button>Sign Up</button></div>
+            <button class="button1-navbar">Sign Up</button></div>
         </div>
        
       </nav>
     </header>
     <section class="hero-section">
-      <div>
-          <h1>Web Devlopment</h1>
-          <p>We Provide Top Class Qaulity</p>
+      <div class="hero-content-text">
+          <h1 >Web Devlopment</h1>
+          <p >We Provide Top Class Qaulity</p> <br>
+         
         </div>
-        <div><img src="images.png"  alt="Web Devlopment" /></div>
+        <div class="input"> <input  class="search-input" type="search" placeholder="Search Here" style="text-align: center;"></div>
+       
     </section>
    <section class="our-services">
-     <div><div>
+     <div class="our-services-text">
       <h1>Our Services</h1>
       <p>
         Creating clean, modern, and attractive website designs with a focus on
         user experience.
       </p></div>
     </div>
-    <div>
-      <div>
-        <button>Web Design</button>
+    <div class="services-card">
+      <div class="card" >
+        <button class="card1">Web Design</button>
       </div>
-      <div>
-        <button>Web Devlopment</button>
+      <div class="card">
+        <button class="card1">Web Devlopment</button>
       </div>
-      <div>
-        <button>Creat a Web</button>
+      <div class="card">
+        <button class="card1">Creat a Web</button>
       </div>
-    </div>
+  
 
    </section>
     <section class="about-web">
-      <h2>About Web Development</h2>
+      <div class="about-web1">
+      <div class="web-content1">
+          <h2>About Web Development</h2>
       <p>
         Web development is the process of creating, building, and maintaining
         websites and web applications. It includes everything from designing the
@@ -147,7 +276,37 @@
       <strong>Responsive Design</strong> Makes websites work on mobile, tablet,
       and desktop devices. <br />
       <strong>CSS Grid & Flexbox</strong> Creates modern and flexible <br />
+      </div>
+      <div>
+        <img src="Gemini_Generated_Image_amg13lamg13lamg1.png" alt="web devlopment">
+      </div>
+      </div>
+      <div class="about-web2">
+       <div> <img src="Gemini_Generated_Image_wghaagwghaagwgha.png" alt=""></div>
+       <div class="web-content2">
+        <h2>
+         Core Pillars of Modern Web Development
+       </h2>
+<p>
+  Web development encompasses building and maintaining applications that run on web browsers.
+ It spans visual UI components, server-side data routing, and database architecture.
+Key Layers of Web Architecture
+Frontend Development: Everything users directly interact with in their browser.
+HTML5: Defines structural semantic elements like page headings,
+ sections, layout wrappers, and form controls.
+CSS3: Handles styling, responsive layouts, flexbox, grid grids, dynamic animations, and typography.
+JavaScript: Adds interactivity, handles DOM events, fetches remote APIs
+ and powers single-page applications (SPAs).
+Modern Frameworks: Tools like React, Vue.js, and Next.js streamline UI component
+ development and client-side state management.
+</p>
+       </div>
+      </div>
     </section>
+    
+     <div class="blank">
+
+    </div>
     <section class="latest-articles">
       <h2>LATEST ARTICLES</h2>
 
@@ -171,10 +330,11 @@
       for creating clean, attractive, accessible, and user-friendly websites.
       <br />
     </section>
+   
     <section class="maps">
      
       <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.116065703304!2d79.90389481070608!3d27.867704775991378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399fbdfe84c8f45b%3A0xc137d6de94154eb!2sEduTechy%20Communications%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1791265103110!5m2!1sen!2sin" 
-      width="1310px" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+       height="300px" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </section>
     <section class="cta">
      <h2> Ready to Build Something Amazing?</h2> <br>
@@ -182,14 +342,22 @@
       responsive, and user-friendly website. Whether you need a portfolio,<br>
       business website, or landing page, I'm ready to help bring your vision to
       life.<br>
+      <div class="cta-button1">
+        <button class="cta-button">Book Appointment</button>
+      </div>
      
-        <div class="about-me">
+       
+     
+    </section>
+    <footer>
+       <div class="about-me">
                     <div>
                         <h3>About Me</h3>
                         I am a passionate Front-End Developer who enjoys creating modern, responsive, and user-friendly
                         websites
                         using HTML, CSS, and JavaScript.
                     </div>
+                    
                     <div>
                         <h3>
                             Quiks Links
@@ -217,7 +385,7 @@
                         <p>Shahjahanpur, Uttar Pradesh</p>
 
                     </div>
-     
-    </section>
+       </div>
+    </footer>
   </body>
 </html>
