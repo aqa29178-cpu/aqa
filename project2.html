@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      *{
-        /* padding: 0px; */
-        /* margin:0px; */
-      }
+     
       body{
 
         margin:0px;
@@ -17,13 +14,14 @@
        display: flex;
     justify-content: space-between;
     border: 1px solid gray;
-    /* box-shadow: 2px 2px 2px 2px gray; */
     width: 100%;
     height: 80px;
     font-size: 20px;
     text-align: center;
-      }
+
+        }
     .button1-navbar{
+      text-decoration: none;
             padding: 12px 30px;
     border-radius: 10px;
     border:none;
@@ -59,7 +57,7 @@
     padding-top: 100px;
     padding-bottom: 100px;
     justify-content: center;
-    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkyhYNZKI9_GuhN6Bd08dRQJHM6bWyJ_BGbd2yyg7CfA&s=10);
+    background-image:url(Gemini_Generated_Image_ckt8c2ckt8c2ckt8.png);
 height: calc(100vh-80px);
     
     background-color: rgba(236, 233, 233, 0.6);
@@ -84,7 +82,7 @@ height: calc(100vh-80px);
   }
   .blank{
     height: 200px;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS94Z3KwwuAoVWlEggqkZw11Eg9Yv1F6n0WcPtx2K27Qw&s=10);
+    background-image: url(Gemini_Generated_Image_sc06rxsc06rxsc06.png);
    display: flex;
              flex-direction: column;
     
@@ -111,15 +109,19 @@ height: calc(100vh-80px);
           justify-content: center;
           gap:20px;
           padding:25px;
+          text-decoration: none;
 
         }
         .card1{
           padding: 20px 50px;
           border-radius:10px;
-          /* border:1px solid gray; */
            border-radius: 10px;
     border:none;
     background:linear-gradient(#023b79,#057cfc);
+    color: white;
+        }
+        .card1 a{
+              text-decoration: none;
     color: white;
         }
        
@@ -133,7 +135,6 @@ height: calc(100vh-80px);
     
     .our-service, .latest-articles,.cta{
            font-size: larger;
-           /* margin-top: 20px; */
     padding: 20px;   
      height: 400px;
     background: white;
@@ -142,17 +143,16 @@ height: calc(100vh-80px);
         }
         .latest-articles{
            font-size: larger;
-           /* margin-top: 20px; */
     padding: 20px;   
      height: 250px;
-    background: #e6e9eb;
+    background: white;
         }
         .cta{
            font-size: larger;
     
     padding: 20px;   
      height: 250px;
-    background: #e6e9eb;
+    background:white;
     text-align: center;
         }
         .cta-button{
@@ -197,12 +197,31 @@ height: calc(100vh-80px);
 .about-web2 img{
    height: 50%;
    border-radius: 10px;
+   padding-left: 50px;
 }
 .web-content1{
   padding-left: 50px;
     padding-right: 35px;
 }
-        
+.web-content2{
+      margin-left: -98px;
+    margin-right: 1px;
+
+}
+
+.about-me a{
+  font-style: none;
+  list-style: none;
+
+}
+footer{
+  padding-left: 20px;
+   background:linear-gradient(#023b79,#057cfc);
+}
+footer div a{
+  text-decoration: none;
+  color: black;
+}
 
     </style>
   </head>
@@ -210,18 +229,20 @@ height: calc(100vh-80px);
     <header>
       <nav>
         <div class="navbar">
-          <img src="Untitled2.png" alt="web devlopment">
+         <div style="display: flex"> <img src="Untitled2.png" alt="web devlopment"><h3>Edutechy Pvt.Ltd</h3></div>
+          
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Work</a></li>
+            <li><a target="_blank" href="https://edutechy.org/">Home</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/about.php">About Us</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/contact.php">Contact</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/OurWork.php">Work</a></li>
            
           </ul>
-           <div class="button-navbar"> 
-            <button class="button1-navbar">Sign Up</button></div>
-        </div>
-       
+          <div class="button-navbar"> 
+           <form target="_blank" action="practical4.html" method="get">
+            <button  class="button1-navbar">Sign Up</button></div>
+           </form>
+            </div>
       </nav>
     </header>
     <section class="hero-section">
@@ -243,13 +264,19 @@ height: calc(100vh-80px);
     </div>
     <div class="services-card">
       <div class="card" >
-        <button class="card1">Web Design</button>
+        <button class="card1"> 
+          <a target="_blank" href="https://edutechy.org/Index/Custom_Website.php">Web Design</a>
+        </button>
       </div>
       <div class="card">
-        <button class="card1">Web Devlopment</button>
+        <button class="card1">
+           <a target="_blank" href="https://edutechy.org/Index/Journal_Website_Development.php">Web Devlopment</a>
+          </button>
       </div>
       <div class="card">
-        <button class="card1">Creat a Web</button>
+        <button class="card1">
+          <a target="_blank" href="https://edutechy.org/Index/Software_Development.php">Creat a Web</a>
+        </button>
       </div>
   
 
@@ -337,14 +364,20 @@ Modern Frameworks: Tools like React, Vue.js, and Next.js streamline UI component
        height="300px" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </section>
     <section class="cta">
-     <h2> Ready to Build Something Amazing?</h2> <br>
+        <form action="practical4.html" method="get">
+          <h2> Ready to Build Something Amazing?</h2> <br>
      Let's turn your ideas into a modern,<br>
       responsive, and user-friendly website. Whether you need a portfolio,<br>
       business website, or landing page, I'm ready to help bring your vision to
       life.<br>
       <div class="cta-button1">
-        <button class="cta-button">Book Appointment</button>
+      
+          <button class="cta-button">Book Appointment</button>
+        </form>
       </div>
+     
+        </form>
+
      
        
      
@@ -362,11 +395,11 @@ Modern Frameworks: Tools like React, Vue.js, and Next.js streamline UI component
                         <h3>
                             Quiks Links
                         </h3>
-                        <a href="#">Home</a><br>
-                        <a href="#">About</a><br>
-                        <a href="#">Skills</a><br>
-                        <a href="#">Projects</a><br>
-                        <a href="#">Content</a>
+                        <a target="_blank" href="https://edutechy.org/">Home</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/about.php">About</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/OurExperties.php">Skills</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/WhyChoose.php">Projects</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/OurWork.php">Content</a>
 
                     </div>
                     <div>
