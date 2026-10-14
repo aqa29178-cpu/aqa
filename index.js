@@ -41,12 +41,21 @@
 
 // console.log(`My name is ${name} and I am ${age} years old.`);
 
-let a = 10;
-let b = 5;
+// let a = 10;
+// let b = 5;
 
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log(10 % 3);
-console.log(2 ** 3);
+// console.log(a + b);
+// console.log(a - b);
+// console.log(a * b);
+// console.log(a / b);
+// console.log(10 % 3);
+// console.log(2 ** 3);
+
+// let age = 1;
+
+// let result = age >= 18 ? "Eligible" : "Not Eligible";
+
+// console.log(result); // Eligible
+let age = 8;
+let result= age>= 18? "vote kr skte ho ": "vote nhi ker skte";
+console.log(result);
