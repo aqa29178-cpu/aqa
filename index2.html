@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+
+     
+      body{
+
+        margin:0px;
+        /* max-width: 100%; */
+      }
+      .navbar{
+       display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+     position:sticky;
+          top:5px;
+
+        }
+        
+    .button1-navbar{
+      text-decoration: none;
+            padding: 12px 30px;
+    border-radius: 10px;
+    border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+      }
+      .button1-navbar:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
+      }
+      .button-navbar{
+        padding:20px 12px;
+      }
+      ul{
+          display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    color: black;
+    padding-top:10px;
+    
+
+        }
+        ul li a{
+          text-decoration: none;
+          color:black;
+        }
+        .hero-section{
+             display: flex;
+             flex-direction: column;
+    
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: center;
+    background-image:url(Gemini_Generated_Image_ckt8c2ckt8c2ckt8.png);
+height: calc(100vh-80px);
+    
+    background-color: rgba(236, 233, 233, 0.6);
+   
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+  }
+  .search-input{
+    padding: 12px 90px;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+  .input{
+    text-align: center;
+  }
+  .hero-content-text{
+    text-align: center;
+        font-size: x-large;
+  }
+  .blank{
+    height: 200px;
+    background-image: url(Gemini_Generated_Image_sc06rxsc06rxsc06.png);
+   display: flex;
+             flex-direction: column;
+    
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: center;
+    
+    background-color: rgba(209, 207, 207, 0.6);
+   
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+
+   
+.our-services-text{
+          text-align:center;
+    
+        }
+        .services-card{
+          display: flex;
+          justify-content: center;
+          gap:20px;
+          padding:25px;
+          text-decoration: none;
+
+        }
+        .card1{
+          padding: 20px 50px;
+          border-radius:10px;
+           border-radius: 10px;
+    border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+        }
+        .card1 a{
+              text-decoration: none;
+    color: white;
+        }
+       
+      
+      .card1:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
+      }
+        
+    
+    .our-service, .latest-articles,.cta{
+           font-size: larger;
+    padding: 20px;   
+     height: 400px;
+    background: white;
+    box-shadow: 1px 2px 2px 2px gray;
+    
+        }
+        .latest-articles{
+           font-size: larger;
+    padding: 20px;   
+     height: 250px;
+    background: white;
+        }
+        .cta{
+           font-size: larger;
+    
+    padding: 20px;   
+     height: 250px;
+    background:white;
+    text-align: center;
+        }
+        .cta-button{
+            padding: 10px 20px;
+            /* background: #007bff; */
+            color: white;
+         padding: 15px 50px;
+    border-radius: 10px;
+    /* border: 1px solid gray; */
+       border:none;
+    background:linear-gradient(#023b79,#057cfc);
+    color: white;
+        }
+       
+      
+      .cta-button:hover{
+        background:linear-gradient(#057cfc,#023b79);
+        transform: translateY(-5px);
+        color: white;
+      
+        }
+        .cta-button1{
+          padding-top: 25px;
+        }
+        .about-me{
+              display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px;
+    padding: 0PX;
+}
+.about-web1,.about-web2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 500px;
+}
+
+.about-web1 img{
+  height: 50%;
+  margin-right: -100px;
+  border-radius: 10px;
+}
+.about-web2 img{
+   height: 50%;
+   border-radius: 10px;
+   padding-left: 50px;
+}
+.web-content1{
+  padding-left: 50px;
+    padding-right: 35px;
+}
+.web-content2{
+      margin-left: -98px;
+    margin-right: 1px;
+
+}
+
+.about-me a{
+  font-style: none;
+  list-style: none;
+
+}
+footer{
+  padding-left: 20px;
+   background:linear-gradient(#023b79,#057cfc);
+}
+footer div a{
+  text-decoration: none;
+  color: black;
+}
+/* Mobile phones */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+
+@media(max-width:600px){
+ .our-service,.services-card,.about-web1,.about-web2,.navbar,.about-web{
+   display: grid;
+   grid-template-columns: 1fr;
+ }
+ .navbar{
+  background: white;
+ }
+ .web-content2{
+  padding-left: 30px;
+  margin-left: 0px;
+ }
+
+ }
+ @media(max-width:600px max-height:600px){
+   img{
+  /* height: 100%; */
+    margin-right: 0px;
+    border-radius: 0px;
+
+  /* max-width: 100%; */
+  height: auto;
+  display: block;
+}
+
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+         <div style="display: flex"> <img src="Untitled2.png" alt="web devlopment"><h3>Edutechy Pvt.Ltd</h3></div>
+          
+          <ul>
+            <li><a target="_blank" href="https://edutechy.org/">Home</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/about.php">About Us</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/contact.php">Contact</a></li>
+            <li><a target="_blank" href="https://edutechy.org/Index/OurWork.php">Work</a></li>
+           
+          </ul>
+          <div class="button-navbar"> 
+           <form target="_blank" action="practical4.html" method="get">
+            <button  class="button1-navbar">Sign Up</button></div>
+           </form>
+            </div>
+      </nav>
+    </header>
+    <section class="hero-section">
+      <div class="hero-content-text">
+          <h1 >Web Devlopment</h1>
+          <p >We Provide Top Class Qaulity</p> <br>
+         
+        </div>
+        <div class="input"> <input  class="search-input" type="search" placeholder="Search Here" style="text-align: center;"></div>
+       
+    </section>
+   <section class="our-services">
+     <div class="our-services-text">
+      <h1>Our Services</h1>
+      <p>
+        Creating clean, modern, and attractive website designs with a focus on
+        user experience.
+      </p></div>
+    </div>
+    <div class="services-card">
+      <div class="card" >
+        <button class="card1"> 
+          <a target="_blank" href="https://edutechy.org/Index/Custom_Website.php">Web Design</a>
+        </button>
+      </div>
+      <div class="card">
+        <button class="card1">
+           <a target="_blank" href="https://edutechy.org/Index/Journal_Website_Development.php">Web Devlopment</a>
+          </button>
+      </div>
+      <div class="card">
+        <button class="card1">
+          <a target="_blank" href="https://edutechy.org/Index/Software_Development.php">Creat a Web</a>
+        </button>
+      </div>
+  
+
+   </section>
+    <section class="about-web">
+      <div class="about-web1">
+      <div class="web-content1">
+          <h2>About Web Development</h2>
+      <p>
+        Web development is the process of creating, building, and maintaining
+        websites and web applications. It includes everything from designing the
+        user interface to developing the functionality that users interact with.
+      </p>
+      <h3>Front-End Development</h3>
+      <p>
+        Front-end development focuses on the client side of a website. It is the
+        part that users see and interact with directly.
+      </p>
+      <strong> I use technologies such as:</strong> <br />
+      <strong> HTML5</strong> Creates the structure of webpages. <br />
+      <strong>CSS3</strong> Designs and styles webpages. <br />
+      <strong>JavaScript</strong> Adds interaction and dynamic functionality.
+      <br />
+      <strong>Responsive Design</strong> Makes websites work on mobile, tablet,
+      and desktop devices. <br />
+      <strong>CSS Grid & Flexbox</strong> Creates modern and flexible <br />
+      </div>
+      <div>
+        <img src="Gemini_Generated_Image_amg13lamg13lamg1.png" alt="web devlopment">
+      </div>
+      </div>
+      <div class="about-web2">
+       <div> <img src="Gemini_Generated_Image_wghaagwghaagwgha.png" alt=""></div>
+       <div class="web-content2">
+        <h2>
+         Core Pillars of Modern Web Development
+       </h2>
+<p>
+  Web development encompasses building and maintaining applications that run on web browsers.
+ It spans visual UI components, server-side data routing, and database architecture.
+Key Layers of Web Architecture
+Frontend Development: Everything users directly interact with in their browser.
+HTML5: Defines structural semantic elements like page headings,
+ sections, layout wrappers, and form controls.
+CSS3: Handles styling, responsive layouts, flexbox, grid grids, dynamic animations, and typography.
+JavaScript: Adds interactivity, handles DOM events, fetches remote APIs
+ and powers single-page applications (SPAs).
+Modern Frameworks: Tools like React, Vue.js, and Next.js streamline UI component
+ development and client-side state management.
+</p>
+       </div>
+      </div>
+    </section>
+    
+     <div class="blank">
+
+    </div>
+    <section class="latest-articles">
+      <h2>LATEST ARTICLES</h2>
+
+      <strong>1.</strong> Getting Started with Web Development Learn the
+      fundamentals of web development and understand how HTML, CSS, and
+      JavaScript work together to create modern websites. <br />
+
+      <strong>2.</strong> Why Responsive Web Design Matters Discover how
+      responsive design helps websites provide a better experience across mobile
+      phones, tablets, and desktop computers. <br />
+
+      <strong>3.</strong> CSS Grid vs Flexbox Learn the key differences between
+      CSS Grid and Flexbox and understand when to use each layout system in your
+      projects. <br />
+
+      <strong>4.</strong> Introduction to JavaScript Explore the basics of
+      JavaScript and learn how it can make websites interactive, dynamic, and
+      more engaging. <br />
+
+      <strong>5.</strong> Tips for Better Website Design Learn simple techniques
+      for creating clean, attractive, accessible, and user-friendly websites.
+      <br />
+    </section>
+   
+    <section class="maps">
+     
+      <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.116065703304!2d79.90389481070608!3d27.867704775991378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399fbdfe84c8f45b%3A0xc137d6de94154eb!2sEduTechy%20Communications%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1791265103110!5m2!1sen!2sin" 
+       height="300px" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+    <section class="cta">
+        <form action="practical4.html" method="get">
+          <h2> Ready to Build Something Amazing?</h2> <br>
+     Let's turn your ideas into a modern,<br>
+      responsive, and user-friendly website. Whether you need a portfolio,<br>
+      business website, or landing page, I'm ready to help bring your vision to
+      life.<br>
+      <div class="cta-button1">
+      
+          <button class="cta-button">Book Appointment</button>
+        </form>
+      </div>
+     
+        </form>
+
+     
+       
+     
+    </section>
+    <footer>
+       <div class="about-me">
+                    <div>
+                        <h3>About Me</h3>
+                        I am a passionate Front-End Developer who enjoys creating modern, responsive, and user-friendly
+                        websites
+                        using HTML, CSS, and JavaScript.
+                    </div>
+                    
+                    <div>
+                        <h3>
+                            Quick Links
+                        </h3>
+                        <a target="_blank" href="https://edutechy.org/">Home</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/about.php">About</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/OurExperties.php">Skills</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/WhyChoose.php">Projects</a><br>
+                        <a target="_blank" href="https://edutechy.org/Index/OurWork.php">Content</a>
+
+                    </div>
+                    <div>
+                        <h3>Skills</h3>
+                        <p>HTML5</p>
+                        <p>CSS3</p>
+                        <p> JavaScript</p>
+                        <p> Responsive Design</p>
+                        <p> CSS Grid</p>
+                        <p>Flexbox</p>
+                    </div>
+                    <div>
+                        <h3>Contact</h3>
+                        <p>Email: edutechy@gmail.com</p>
+                        <p>Phone: +91 9876543210</p>
+                        <p>Shahjahanpur, Uttar Pradesh</p>
+
+                    </div>
+       </div>
+    </footer>
+  </body>
+</html>
