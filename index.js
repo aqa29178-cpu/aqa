@@ -56,6 +56,38 @@
 // let result = age >= 18 ? "Eligible" : "Not Eligible";
 
 // console.log(result); // Eligible
-let age = 8;
-let result= age>= 18? "vote kr skte ho ": "vote nhi ker skte";
-console.log(result);
+// let age = 8;
+// let result= age>= 18? "vote kr skte ho ": "vote nhi ker skte";
+// console.log(result);
+// let username = "admin";
+// let password = "12345";
+
+// if (username === "admin" && password === "12345") {
+//     console.log("Login successful!");
+// } else {
+//     console.log("Invalid username or password.");
+// }
+// let number = 5;
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log(number + " x " + i + " = " + (number * i));
+// }
+// let number = 5;
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log(number + " x " + i + " = " + (number * i));
+// }
+let number=1;
+for ( let i=2;i<=20;i++){
+    console.log(number+"x"+i+"="+(number*i));
+}
+function sayHello() {
+    console.log("Hello Himanshu!");
+}
+
+sayHello();
+sayHello();
+sayHello();
+sayHello();
+sayHello();
+sayHello();

@@ -44,7 +44,92 @@
     Click Me
 </button>
 <h1 id="tittle">Abhishek</h1>
-    <script src="index.js"></script>
+
+    <input type="password" id="pass">
+    <button onclick="password()">Enter</button>
+    <h2 id="answer"></h2>
+
+<!-- 
+    <h1>Day Finder</h1>
+
+    <input type="number" id="dayNumber" placeholder="Enter 1 to 7">
+    <button onclick="findDay()">Find Day</button>
+
+    <h3 id="result"></h3> -->
+
+    <script>\
+    function password(){
+
+    
+
+        let input = document.getElementById("pass");
+            let password = Number(input.value);
+            let result = document.getElementById("answer");
+
+//         let username = "admin";
+// let password = "12345";
+
+if (input.value === "" 123456 !Number.isInteger(pass)) {
+                result.textContent = "Please enter a whole number from 1 to 7.";
+                return;
+    console.log("Login successful!");
+} else {
+    console.log("Invalid username or password.");
+}
+
+    }
+
+
+
+        function findDay() {
+            let input = document.getElementById("dayNumber");
+            let pass = Number(input.value);
+            let result = document.getElementById("result");
+
+            if (input.value === "" || day < 1 || day > 7 || !Number.isInteger(day)) {
+                result.textContent = "Please enter a whole number from 1 to 7.";
+                return;
+            }
+
+            switch (day) {
+                case 1:
+                    result.textContent = "Monday";
+                    break;
+
+                case 2:
+                    result.textContent = "Tuesday";
+                    break;
+
+                case 3:
+                    result.textContent = "Wednesday";
+                    break;
+
+                case 4:
+                    result.textContent = "Thursday";
+                    break;
+
+                case 5:
+                    result.textContent = "Friday";
+                    break;
+
+                case 6:
+                    result.textContent = "Saturday";
+                    break;
+
+                case 7:
+                    result.textContent = "Sunday";
+                    break;
+
+                default:
+                    result.textContent = "Invalid day";
+            }
+        }
+    </script>
+        <script src="index.js"></script> 
+
+</body>
+</html>
+
     
 
 </body>
