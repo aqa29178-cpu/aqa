@@ -1,194 +1,316 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        /* gap: 20px; */
-        /* padding: 10px; */
-        border-radius: 5px;
-        font-family: serif;
-        font-weight: 100;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Registration Form</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f1f5f9;
+      padding: 30px 16px;
+      color: #1e293b;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 32px);
+      color: #0f2f5f;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    fieldset.data {
+      min-width: 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    legend {
+      padding: 8px 12px;
+      color: #095696;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .input-data {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-data label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]),
+    textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #2961c7;
+      box-shadow: 0 0 0 3px rgba(41, 97, 199, 0.12);
+    }
+
+    input[type="radio"] {
+      accent-color: #2961c7;
+      margin-right: 8px;
+    }
+
+    .gender-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 4px;
+    }
+
+    .gender-options label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 7px;
+      background: #2961c7;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #1e4da8;
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 12px;
       }
-      body,
-      .data {
-        background: whitesmoke;
-      }
+
       .content {
-        background: white;
-        padding: 40px;
-      }
-      form {
-        /* background: aqua; */
-      }
-      legend {
-        padding: 8px;
-        border: 1px, solid, gray;
-        padding-left: 13px;
-        font-size: 20px;
-        color: rgb(9, 86, 150);
-        background: none;
+        padding: 24px 18px;
       }
 
-      .data {
-        border: 1px, solid, gray;
+      fieldset.data {
+        padding: 20px 16px;
+        gap: 16px;
       }
-      body,
-      button {
-        display: flex;
-        justify-content: center;
+    }
 
-        /* max-height:100vh ; */
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 12px 8px;
       }
-      .data {
-        display: flex;
-        height: 319px;
-        width: 790px;
-        justify-content: space-evenly;
-        margin: 30px 0px;
+
+      .content {
+        padding: 22px 14px;
+        border-radius: 8px;
       }
-      .data strong {
-        padding-top: 20px;
-        font-weight: 500;
+
+      h1 {
+        font-size: 24px;
+        line-height: 1.3;
       }
-      .input-data {
-        display: grid;
+
+      .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      fieldset.data {
         grid-template-columns: 1fr;
-        margin: 10px;
-        width: stretch;
-      }
-      input,
-      .data {
-        padding: 10px;
-        border: 1px solid rgb(216, 215, 215);
-      }
-      h1,
-      p {
-        text-align: center;
+        padding: 18px 12px;
+        gap: 18px;
+        margin-bottom: 24px;
       }
 
-      label {
-        padding-top: 12px;
-        margin-top: 2px;
+      legend {
+        font-size: 15px;
+        padding: 6px;
       }
+
+      .full-width {
+        grid-column: auto;
+      }
+
+      input:not([type="radio"]):not([type="checkbox"]),
+      textarea {
+        font-size: 16px;
+      }
+
       button {
-        width: 100%;
-        text-align: center;
-        background: #2961c7;
-        padding: 12px;
-        color: white;
-        font-size: 20px;
+        font-size: 16px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="content">
-      <h1>Professinal Registration Form</h1>
-      <p>Please Fill Out all the details carefully below</p>
+    }
+  </style>
+</head>
 
-      <form action="">
-        <fieldset class="data">
-          <legend>1. Personal Imformation</legend>
-          <div class="input-data">
-            <label for="name"> Full Name</label>
-            <input
-              type="text"
-              placeholder="Enter Your Full Name"
-              id="name"
-              required
-            />
-            <label for="email">Email</label>
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              id="email"
-              required
-            />
-            <label for="password">Password</label>
-            <input
-              type="password"
-              placeholder="Enter Your password "
-              id="password"
-              required
-            />
-          </div>
-          <div class="input-data">
-            <label for="username"> Username</label>
-            <input
-              type="text"
-              placeholder="Choose a unique username"
-              id="username"
-              required
-            />
-            <label for="number">Phone Number</label>
-            <input
-              type="tel"
-              placeholder="Enter Your Phone Number"
-              id="number"
-              required
-              maxlength="10"
-            />
-            <label for="pass">Confirm Password</label>
-            <input
-              type="text"
-              placeholder="Confirm Your Password"
-              id="pass"
-              required
-            />
-          </div>
-        </fieldset>
+<body>
+  <main class="content">
+    <h1>Professional Registration Form</h1>
+    <p class="subtitle">
+      Please fill out all the details carefully below.
+    </p>
 
-        <fieldset class="data">
-          <legend>2. Demographics & Prefrence</legend>
-          <div class="input-data">
-            <label for="date">Date Of Birth</label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              placeholder="dd/mm/yyyy"
-              required
-            />
-            <strong>
-              <label for="gender" style="font-size: 18px"
-                >Select One</label
-              ></strong
-            >
-            <label for="male"
-              >Male <input type="radio" id="male" name="gender" value="male"
-            /></label>
-            <label for="female"
-              >Female
-              <input type="radio" id="female" name="gender" value="female"
-            /></label>
+    <form action="#" method="post" enctype="multipart/form-data">
 
-            <br />
-          </div>
-          <div class="input-data">
-           
-          </div>
-        </fieldset><br>
-        <br>
+      <!-- Personal Information -->
+      <fieldset class="data">
+        <legend>1. Personal Information</legend>
 
-        <fieldset class="data">
-          <legend>3. Document & Message</legend>
-          <div class="input-data">
-            <label for="file">Upload Resume & Document(PDF/DOC)</label>
-            <input type="file" accept=".pdf,.doc,image" />
-            <label for="textarea">Bio / Message</label> <br />
-            <textarea
-              name="text"
-              id="textarea"
-              cols="10"
-              rows="5"
-              placeholder="Type Here"
-            ></textarea>
+        <div class="input-data">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name"
+                 placeholder="Enter your full name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email"
+                 placeholder="Enter your email" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password"
+                 placeholder="Enter your password" required>
+        </div>
+
+        <div class="input-data">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username"
+                 placeholder="Choose a unique username" required>
+
+          <label for="number">Phone Number</label>
+          <input type="tel" id="number" name="phone"
+                 placeholder="Enter your phone number"
+                 inputmode="numeric" pattern="[0-9]{10}"
+                 maxlength="10" required>
+
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password"
+                 name="confirm_password"
+                 placeholder="Confirm your password" required>
+        </div>
+      </fieldset>
+
+      <!-- Demographics -->
+      <fieldset class="data">
+        <legend>2. Demographics &amp; Preference</legend>
+
+        <div class="input-data">
+          <label for="date">Date of Birth</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="input-data">
+          <label>Select Gender</label>
+          <div class="gender-options">
+            <label>
+              <input type="radio" name="gender" value="male" required>
+              Male
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="female">
+              Female
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="other">
+              Other
+            </label>
           </div>
-        </fieldset>
-        <button>Submit</button>
-      </form>
-    </div>
-  </body>
+        </div>
+      </fieldset>
+
+      <!-- Documents and Message -->
+      <fieldset class="data">
+        <legend>3. Document &amp; Message</legend>
+
+        <div class="input-data full-width">
+          <label for="file">Upload Resume / Document (PDF or DOC)</label>
+          <input type="file" id="file" name="resume"
+                 accept=".pdf,.doc,.docx">
+
+          <label for="textarea">Bio / Message</label>
+          <textarea id="textarea" name="message"
+                    placeholder="Type here..."></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </main>
+</body>
 </html>
