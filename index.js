@@ -77,17 +77,174 @@
 // for (let i = 1; i <= 10; i++) {
 //     console.log(number + " x " + i + " = " + (number * i));
 // }
-let number=1;
-for ( let i=2;i<=20;i++){
-    console.log(number+"x"+i+"="+(number*i));
-}
-function sayHello() {
-    console.log("Hello Himanshu!");
+// let number=1;
+// for ( let i=2;i<=20;i++){
+//     console.log(number+"x"+i+"="+(number*i));
+// }
+// function sayHello() {
+//     console.log("Hello Himanshu!");
+// }
+
+// sayHello();
+// sayHello();
+// sayHello();
+// sayHello();
+// sayHello();
+// sayHello();
+// let a = 5;
+// let b = 10;
+// b=a;
+// a=c;
+// c=b;
+// console.log(a);
+// console.log(b);
+// let a = 5;
+// let b = 10;
+// let c;
+
+// c = a;
+// a = b;
+// b = c;
+
+// console.log(a); 
+// console.log(b); 
+// License //
+
+
+// let age = 17;
+
+// let result = age >= 18 ? "License bnwa skte ho " : "Baad me aana";
+
+// console.log(result);
+// divisible check//
+// let a = 10;
+// let b =5;
+// let c;
+// c=a%b;
+// console.log(c);
+// marks//
+// let marks=40;
+// let result =marks>=40? "pass":"Fail";
+// console.log(result);
+// Number//
+// let know=8;
+// let knowresult= know>=0? "Positive":"Negative";
+// console.log(knowresult);
+// for (i=1 ; i<=10; i++){
+//     console.log(i)}
+// let no=7
+// for(i=no;i<=9;i++){
+//     console.log(i)
+// }
+//  let number=2
+//  for(i=1; i<=10;i++){
+//     console.log(number+"x"+i+"="+(i*number))
+//  }
+// let num= 11;
+// if(num % 2===0){
+//     console.log("it is even")
+// }
+// else{
+//     console.log("it is not")
+// }
+// let num=9;
+// let square=num*num;
+// console.log("square"+square);
+// let a =4
+// let b =5
+// let c =3
+// let d =9
+// console.log(a)
+// console.log(d)
+// let vowel='K';
+// vowel.toLowerCase;
+// if(vowel === 'a' || vowel === 'e' || vowel === 'i'|| vowel === 'o' || vowel === 'u' ){
+//     console.log("It is vowel");
+// }else{
+//     console.log("it is constant");
+// }
+// let color ="b";
+// color=color.toLocaleLowerCase();
+// if( color==="r"){
+//     console.log("Red")
+// }
+// else if( color==="y"){
+//     console.log("Yellow")
+// }else if( color==="b"){
+//     console.log("Blue")
+// }else {
+//     console.log(" It is not traffic lite")
+// }
+
+
+// let color = "r";
+
+// color = color.toLowerCase();
+
+// if (color === "r") {
+//     console.log("Red");
+// }
+// else if (color === "y") {
+//     console.log("Yellow");
+// }
+// else if (color === "b") {
+//     console.log("Blue");
+// }
+// else {
+//     console.log("It is not a traffic light color");
+// }
+// let a =9;
+//         let b =6 ;
+//         let c =2;
+
+//         if (a >= b && a >= c) {
+//             console.log("Greatest number is: " + a);
+//         } else if (b >= a && b >= c) {
+//             console.log("Greatest number is: " + b);
+//         } else if(  c>=a && c>=b) {
+//             console.log("Greatest mnuber is: " + c);
+//         }
+      
+// let a = ;
+// let b = ;
+// let c = ;
+
+// let greatest = (a >= b)
+//     ? ((a >= c) ? a : c)
+//     : ((b >= c) ? b : c);
+
+// console.log("Greatest number is: " + greatest);
+
+    // let char = "0"; 
+    // let asciiValue = char.charCodeAt(1);
+    //  console.log(asciiValue);
+//  for(i=1; i<=100; i++){
+//     if(i % 2===0)
+//         {
+//     console.log(i)
+//  }
+//  }
+// for(i=1; i<=100; i++){
+//     if(i % 3===0)
+//         {
+//     console.log(i)
+//  }
+//  }
+
+
+// let sum = 1;
+
+// for ( i = 1; i <= 5; i++) {
+//     console.log(i);
+//     sum = sum *i;
+// }
+
+// console.log("Total Sum =", sum);
+let sum = 1;
+
+for ( i = 1; i <= 5; i++) {
+    console.log(i);
+    sum = sum *i;
 }
 
-sayHello();
-sayHello();
-sayHello();
-sayHello();
-sayHello();
-sayHello();
+console.log("Total Sum =", sum);

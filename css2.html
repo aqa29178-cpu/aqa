@@ -130,6 +130,90 @@ if (input.value === "" 123456 !Number.isInteger(pass)) {
 </body>
 </html>
 
+
+
+    <h1>Student Marks Calculator</h1>
+
+    <input type="number" id="marks1" placeholder="Subject 1 marks">
+    <input type="number" id="marks2" placeholder="Subject 2 marks">
+    <input type="number" id="marks3" placeholder="Subject 3 marks">
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateTotal(a, b, c) {
+            return a + b + c;
+        }
+
+        function calculatePercentage(total) {
+            return (total / 300) * 100;
+        }
+
+        function calculateResult() {
+            let input1 = document.getElementById("marks1").value;
+            let input2 = document.getElementById("marks2").value;
+            let input3 = document.getElementById("marks3").value;
+
+            let result = document.getElementById("result");
+
+            if (input1 === "" || input2 === "" || input3 === "") {
+                result.textContent = "Please enter all subject marks.";
+                return;
+            }
+
+            let a = Number(input1);
+            let b = Number(input2);
+            let c = Number(input3);
+
+            if (
+                !Number.isFinite(a) ||
+                !Number.isFinite(b) ||
+                !Number.isFinite(c) ||
+                a < 0 || a > 100 ||
+                b < 0 || b > 100 ||
+                c < 0 || c > 100
+            ) {
+                result.textContent = "Marks must be between 0 and 100.";
+                return;
+            }
+
+            let total = calculateTotal(a, b, c);
+            let percentage = calculatePercentage(total);
+
+            let status;
+
+            if (a < 33 || b < 33 || c < 33) {
+                status = "Fail";
+            } else {
+                status = "Pass";
+            }
+
+            result.textContent =
+                "Total Marks: " + total + " / 300\n" +
+                "Percentage: " + percentage.toFixed(2) + "%\n" +
+                "Result: " + status;
+        }
+    </script>
+    <script>
+        let a = Number(prompt("Enter first number:"));
+let b = Number(prompt("Enter second number:"));
+let c = Number(prompt("Enter third number:"));
+
+if (a >= b && a >= c) {
+  console.log("Greatest number is: " + a);
+} else if (b >= a && b >= c) {
+  console.log("Greatest number is: " + b);
+} else {
+  console.log("Greatest number is: " + c);
+}
+    </script>
+
+</body>
+</html>
+
+
     
 
 </body>
