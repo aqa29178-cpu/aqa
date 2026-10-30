@@ -130,7 +130,7 @@
         <article class="service-card reveal"><span class="service-symbol">⚡</span><h3>Interactive Features</h3><p>Useful JavaScript interactions such as navigation menus, forms, and small UI tools.</p><a href="#appointment">Ask about features ↗</a></article>
       </div>
     </section>
-   <section class="learning section-shell section-space" id="learn">
+\n    <section class="learning section-shell section-space" id="learn">
       <div class="section-heading reveal"><div><div class="eyebrow">THE FOUNDATIONS</div><h2>Three tools.<br><span class="gradient-text">One amazing web.</span></h2></div><p>Every great website starts with these building blocks. Learn what each one does, then combine them to bring your ideas to life.</p></div>
       <div class="tech-grid">
         <article class="tech-card html-card reveal"><div class="card-top"><div class="tech-icon orange">&lt;/&gt;</div><span class="level">01 / STRUCTURE</span></div><h3>HTML</h3><p>Give your website meaning and structure. Add headings, paragraphs, images, links, forms, and more.</p><div class="tag-row"><span>Elements</span><span>Semantic tags</span><span>Forms</span></div><a href="#roadmap" class="text-link">Explore HTML <span>↗</span></a><div class="card-decoration">&lt;h1&gt;</div></article>
@@ -167,7 +167,7 @@
           <p>Tell us a little about yourself and what you need. After you submit the form, you'll see a confirmation on this page. Once email delivery is configured, your request can also be sent to the site owner's inbox and a confirmation email can be sent to you.</p>
           <div class="contact-points"><div><span>01</span><p><b>Share your details</b><small>Name, email, and what you need.</small></p></div><div><span>02</span><p><b>Choose a service</b><small>Learning help, a website, or a consultation.</small></p></div><div><span>03</span><p><b>Get a response</b><small>We'll follow up using the contact details you provide.</small></p></div></div>
         </div>
-        <form class="booking-form reveal" id="bookingForm" action="https://formsubmit.co/aqa29178@gmail.com" method="POST">
+        <form class="booking-form reveal" id="bookingForm" action="https://formsubmit.co/ajax/aqa29178@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New DevLaunch website enquiry">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="true">
@@ -187,7 +187,7 @@
     </section>
 
     <section class="contact-strip section-shell reveal" id="contact"><div><div class="eyebrow">CONTACT</div><h2>Have a question?</h2><p>Use the appointment form and tell us how we can help.</p></div><a class="button button-quiet" href="#appointment">Contact us through the form <span>↗</span></a></section>
-   <section class="cta-section section-shell reveal" id="about"><div class="cta-glow"></div><div class="eyebrow">EVERY EXPERT STARTED SOMEWHERE</div><h2>Your first line of code<br>can change <span class="gradient-text">everything.</span></h2><p>Open your editor. Try one thing. Keep going. Your future website is waiting.</p><a class="button button-primary" href="#home">Let's build something <span>↑</span></a><div class="cta-code">&lt;you&gt; can do this &lt;/you&gt;</div></section>
+\n    <section class="cta-section section-shell reveal" id="about"><div class="cta-glow"></div><div class="eyebrow">EVERY EXPERT STARTED SOMEWHERE</div><h2>Your first line of code<br>can change <span class="gradient-text">everything.</span></h2><p>Open your editor. Try one thing. Keep going. Your future website is waiting.</p><a class="button button-primary" href="#home">Let's build something <span>↑</span></a><div class="cta-code">&lt;you&gt; can do this &lt;/you&gt;</div></section>
   </main>
 
   <footer class="site-footer section-shell"><a class="logo" href="#home"><span class="logo-mark">&lt;/&gt;</span> DevLaunch<span class="logo-dot">.</span></a><p>Made for curious minds and future builders.</p><a href="#home">Back to top ↑</a><small>© <span id="year"></span> DevLaunch. Learn at your own pace.</small></footer>
@@ -247,9 +247,8 @@ if (preferredDate) {
   preferredDate.min = localToday;
 }
 
-// Submit to FormSubmit in the background, then show a clear on-page response.
-// IMPORTANT: Replace YOUR_EMAIL@example.com in index.html with the site owner's inbox.
-// FormSubmit requires a one-time activation email before it can deliver submissions.
+// Send form data using FormSubmit's documented AJAX endpoint.
+// This requires an internet connection and one-time inbox activation.
 const bookingForm = document.getElementById('bookingForm');
 const formFeedback = document.getElementById('formFeedback');
 const submitButton = document.getElementById('submitButton');
@@ -261,31 +260,42 @@ bookingForm.addEventListener('submit', async (event) => {
 
   if (!bookingForm.reportValidity()) return;
 
-  const endpoint = bookingForm.getAttribute('action');
-  if (endpoint.includes('YOUR_EMAIL@example.com')) {
+  if (!navigator.onLine) {
     formFeedback.className = 'form-feedback error';
-    formFeedback.textContent = 'The form design is ready, but the site owner must add their email address to the form settings before requests can be delivered.';
+    formFeedback.textContent = 'You are offline. Connect to the internet and try submitting again.';
     return;
   }
 
+  const originalButton = submitButton.innerHTML;
   submitButton.disabled = true;
   submitButton.innerHTML = 'Sending request…';
+
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch('https://formsubmit.co/ajax/aqa29178@gmail.com', {
       method: 'POST',
       body: new FormData(bookingForm),
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Accept': 'application/json' },
+      mode: 'cors'
     });
-    if (!response.ok) throw new Error('The form service did not accept the request.');
+
+    const result = await response.json().catch(() => null);
+    if (!response.ok || !result || result.success === 'false' || result.success === false) {
+      throw new Error((result && result.message) || 'The form service could not accept this request.');
+    }
+
     formFeedback.className = 'form-feedback success';
-    formFeedback.textContent = 'Thank you! Your request has been submitted. Please check your email for a confirmation message once the form inbox has been activated.';
+    formFeedback.textContent = 'Thank you! Your request has been sent. The website owner will review it and contact you soon. If this is your first submission, the inbox may still need one-time activation.';
     bookingForm.reset();
   } catch (error) {
     formFeedback.className = 'form-feedback error';
-    formFeedback.textContent = 'We could not send your request right now. Please check your internet connection and try again, or contact the website owner another way.';
+    if (!navigator.onLine) {
+      formFeedback.textContent = 'Internet connection lost. Reconnect and submit the form again.';
+    } else {
+      formFeedback.textContent = 'We could not connect to the form service. Make sure the site is opened with internet access. If you opened this as a local file (file://), publish it on Vercel or GitHub Pages and try again. The FormSubmit inbox must also be activated once.';
+    }
   } finally {
     submitButton.disabled = false;
-    submitButton.innerHTML = 'Send my request <span>→</span>';
+    submitButton.innerHTML = originalButton;
   }
 });
 
