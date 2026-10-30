@@ -1,652 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn web development from HTML and CSS to JavaScript with a clear, animated learning path." />
+  <title>DevLaunch — Learn Web Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* DevLaunch — responsive animated learning website */
+:root{--bg:#0b0d14;--panel:#111521;--panel2:#151a29;--text:#f5f7ff;--muted:#9ca4ba;--line:rgba(255,255,255,.09);--purple:#9b7bff;--cyan:#66e8df;--orange:#ff9c70;--font:'DM Sans',sans-serif;--display:'Space Grotesk',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 78% 9%,rgba(103,74,190,.13),transparent 34%),radial-gradient(ellipse at 6% 47%,rgba(44,133,150,.08),transparent 30%)}a{color:inherit;text-decoration:none}.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:1000}.section-shell{width:min(1160px,calc(100% - 48px));margin-inline:auto}.site-header{height:82px;width:min(1280px,calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:20}.logo{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.7px;display:flex;align-items:center;gap:9px}.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#a58aff,#6c83ff);font-size:.9rem;color:#fff;box-shadow:0 6px 22px #806bff40}.logo-dot{color:var(--cyan);margin-left:-8px}.nav-links{display:flex;align-items:center;gap:34px;color:#bdc2d2;font-size:.9rem}.nav-links>a:not(.nav-cta):hover,.site-footer>a:hover{color:var(--cyan)}.nav-cta{background:#f3f3ff;color:#171624;padding:10px 16px;border-radius:10px;font-weight:700;transition:transform .25s,box-shadow .25s}.nav-cta span{margin-left:8px}.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px #a58aff30}.menu-toggle{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{min-height:670px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:44px;padding-top:52px;padding-bottom:65px;position:relative}.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--cyan);display:flex;align-items:center;gap:10px}.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px #66e8df17;animation:pulse 2s infinite}.hero h1,.section-heading h2,.cta-section h2{font-family:var(--display);font-weight:600;letter-spacing:-2.7px;line-height:1.07;font-size:clamp(3.1rem,5.6vw,5rem);margin:24px 0}.gradient-text{background:linear-gradient(105deg,#a99aff 10%,#79d9ed 60%,#73f0cb);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-description{max-width:510px;color:var(--muted);font-size:1.06rem;line-height:1.85}.hero-actions{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:15px;border-radius:11px;padding:14px 19px;font-weight:700;font-size:.9rem;transition:transform .25s,box-shadow .25s}.button:hover{transform:translateY(-3px)}.button-primary{background:linear-gradient(110deg,#a68cff,#7c9aff);color:#10121d;box-shadow:0 8px 30px #8d7cff28}.button-primary:hover{box-shadow:0 12px 34px #8d7cff4a}.button-quiet{color:#d2d6e4}.play-icon{display:grid;place-items:center;width:28px;height:28px;border:1px solid #53596e;border-radius:50%;font-size:.65rem}.hero-proof{display:flex;align-items:center;gap:14px;margin-top:38px}.avatar-stack{display:flex;padding-left:5px}.avatar-stack span{width:34px;height:34px;margin-left:-5px;border:2px solid var(--bg);border-radius:50%;display:grid;place-items:center;background:#262d43;font-size:.7rem;font-weight:700;color:#b5a5ff}.avatar-stack span:nth-child(2){background:#183e47;color:#75e7dc}.avatar-stack span:nth-child(3){background:#443026;color:#ffc39e}.hero-proof p{font-size:.8rem;line-height:1.45}.hero-proof small{color:var(--muted)}
+.hero-visual{height:440px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #aaa1ff1b;border-radius:50%;width:400px;height:400px;animation:orbit 30s linear infinite}.orbit-two{width:330px;height:330px;border-style:dashed;animation-direction:reverse;animation-duration:38s}.code-window{width:min(430px,100%);border:1px solid #ffffff1c;background:linear-gradient(145deg,#181d2b,#10131e);border-radius:16px;box-shadow:0 30px 80px #0008,0 0 70px #7e6aff12;overflow:hidden;transform:rotate(-2deg);z-index:2;animation:float 6s ease-in-out infinite}.window-top{height:47px;display:flex;align-items:center;gap:15px;padding:0 17px;border-bottom:1px solid var(--line);color:#9ea5bb;font-size:.72rem}.window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#ff7e84}.window-dots i:nth-child(2){background:#ffc46b}.window-dots i:nth-child(3){background:#69e3a7}.window-more{margin-left:auto;letter-spacing:2px}.code-body{padding:28px 17px 32px;font:500 .86rem/2.25 ui-monospace,SFMono-Regular,Menlo,monospace;position:relative}.line{display:flex;white-space:nowrap}.line-no{color:#525b73;width:36px;flex-shrink:0}.indent{padding-left:22px}.pink{color:#ff8ab4}.mint{color:#7be8d4}.yellow{color:#f6d68b}.code-cursor{position:absolute;bottom:28px;left:251px;width:2px;height:18px;background:var(--cyan);animation:blink 1s steps(2,start) infinite}.code-footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:12px 17px;color:#747e98;font-size:.65rem}.code-footer i{display:inline-block;width:6px;height:6px;background:#69e3a7;border-radius:50%;margin-right:5px}.floating-chip{position:absolute;z-index:3;padding:12px 16px;border-radius:12px;background:#1b2031;border:1px solid #ffffff1b;box-shadow:0 15px 35px #0005;font:700 .9rem var(--display);animation:float 5s ease-in-out infinite}.chip-html{top:35px;left:8%;color:#ff9c70;transform:rotate(-8deg)}.chip-css{top:90px;right:0;color:#b19aff;animation-delay:-1.7s}.chip-js{bottom:48px;left:12%;color:#f8d86f;animation-delay:-2.8s}.mini-preview{position:absolute;right:-10px;bottom:5px;width:185px;padding:16px;border-radius:13px;background:#f4f5ff;color:#1b1e2a;box-shadow:0 20px 50px #0006;z-index:4;transform:rotate(3deg);animation:float 5.5s ease-in-out infinite;animation-delay:-1.5s}.preview-spark{float:right;color:#7969e9}.mini-preview>span{display:block;font-size:.55rem;letter-spacing:1.4px;color:#777c91;font-weight:700}.mini-preview strong{display:block;font:700 1.05rem var(--display);margin-top:12px}.mini-preview small{font-size:.65rem;color:#777c91}.preview-line{height:5px;width:70%;background:#ddd8ff;border-radius:9px;margin-top:13px}.scroll-cue{position:absolute;bottom:20px;left:0;display:flex;align-items:center;gap:12px;color:#727c92;font-size:.62rem;letter-spacing:1.8px}.scroll-cue span{height:29px;width:18px;border:1px solid #6d7489;border-radius:10px;position:relative}.scroll-cue span:after{content:"";position:absolute;width:3px;height:6px;background:var(--cyan);border-radius:3px;left:6px;top:5px;animation:scrollDot 1.5s infinite}
+.stats{display:grid;grid-template-columns:repeat(3,1fr) 1.2fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:27px 0;gap:25px}.stats>div:not(.stats-note){display:flex;align-items:center;gap:14px}.stats strong{font:600 2rem var(--display);color:#c2b4ff}.stats span{font-size:.8rem;color:var(--muted)}.stats-note{border-left:1px solid var(--line);padding-left:25px;color:var(--muted);font-size:.82rem;line-height:1.5}.stats-note b{color:#f3f4ff}
+.section-space{padding-top:115px;padding-bottom:115px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:42px}.section-heading h2{font-size:clamp(2.6rem,4.2vw,3.8rem);margin:15px 0 0;letter-spacing:-2px}.section-heading>p{max-width:380px;color:var(--muted);font-size:.94rem;line-height:1.8;margin-bottom:5px}.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tech-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#151a29,#10131e);border:1px solid var(--line);border-radius:17px;padding:25px;min-height:330px;transition:transform .35s,border-color .35s,box-shadow .35s}.tech-card:hover{transform:translateY(-8px);border-color:#a79aff65;box-shadow:0 20px 50px #0003}.card-top{display:flex;align-items:center;justify-content:space-between}.tech-icon{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;font:700 1.15rem var(--display)}.orange{background:#ff9c7019;color:#ff9c70}.purple{background:#a78bfa1c;color:#b6a0ff}.yellow{background:#f6d76d1a;color:#f6d76d}.level{font-size:.61rem;letter-spacing:1.2px;color:#78829b;font-weight:700}.tech-card h3{font:600 1.65rem var(--display);margin:23px 0 8px}.tech-card p{font-size:.85rem;color:var(--muted);line-height:1.8;max-width:310px}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag-row span{font-size:.65rem;color:#b5bdd0;background:#ffffff08;border:1px solid #ffffff0e;padding:5px 9px;border-radius:6px}.text-link{display:inline-flex;gap:9px;align-items:center;margin-top:23px;color:#c1b5ff;font-weight:700;font-size:.8rem}.text-link span{transition:transform .2s}.text-link:hover span{transform:translate(3px,-3px)}.card-decoration{position:absolute;right:13px;bottom:-28px;font:700 6rem var(--display);color:#ffffff04;pointer-events:none}
+.roadmap{background:linear-gradient(180deg,#1115218a,#10131dba);border-block:1px solid #ffffff06}.timeline{max-width:900px;margin:0 auto}.roadmap-item{display:grid;grid-template-columns:66px 1fr 100px;gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}.roadmap-item:last-child{border:0}.step-number{font:600 1.2rem var(--display);color:#b4a4ff;width:53px;height:53px;display:grid;place-items:center;border:1px solid #9c89ff3a;border-radius:14px;background:#a18aff0d}.step-label{font-size:.64rem;letter-spacing:1.4px;color:var(--cyan);font-weight:700}.step-content h3{font:600 1.35rem var(--display);margin:5px 0}.step-content p{font-size:.85rem;color:var(--muted);max-width:650px}.progress-track{height:3px;max-width:300px;background:#ffffff10;margin-top:15px;border-radius:4px;overflow:hidden}.progress-track span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:4px}.step-status{justify-self:end;margin-top:8px;font-size:.58rem;letter-spacing:1px;color:#939bb0;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#111521;transition:transform .3s,border-color .3s}.project-card:hover{transform:translateY(-7px);border-color:#9e8aff70}.project-art{height:205px;margin:12px 12px 0;border-radius:10px;overflow:hidden;position:relative}.portfolio-art{background:linear-gradient(135deg,#292e49,#5e628b);padding:18px}.mock-nav{height:9px;width:100%;border-radius:5px;background:#f4f4ff40}.mock-hero{margin-top:26px}.mock-hero i,.mock-hero b,.mock-hero span{display:block;border-radius:5px}.mock-hero i{height:7px;width:30%;background:#9fe7df;margin-bottom:8px}.mock-hero b{height:14px;width:66%;background:#fff;margin-bottom:8px}.mock-hero span{height:6px;width:48%;background:#fff6}.mock-cards{display:flex;gap:8px;margin-top:20px}.mock-cards i{height:50px;flex:1;border-radius:6px;background:#ffffff20;border:1px solid #ffffff24}.weather-art{background:linear-gradient(145deg,#d9f4ec,#94c8c9);color:#1e4652;padding:17px 20px}.weather-top{display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:1px;font-weight:700}.weather-sun{position:absolute;font-size:4rem;right:25px;top:35px;color:#fff4a5;text-shadow:0 0 25px #ffda7b}.weather-temp{font:500 3rem var(--display);margin-top:12px}.weather-caption{font-size:.65rem}.weather-bars{display:flex;align-items:end;gap:8px;height:35px;margin-top:10px}.weather-bars i{height:35%;width:17px;background:#4b9ca3;border-radius:4px 4px 0 0}.weather-bars i:nth-child(2){height:60%}.weather-bars i:nth-child(3){height:85%}.weather-bars i:nth-child(4){height:55%}.weather-bars i:nth-child(5){height:75%}.todo-art{background:linear-gradient(145deg,#25293e,#171b2a);padding:19px 17px;color:#e9e9f7}.todo-title{font:600 1rem var(--display);margin-bottom:15px}.todo-title span{float:right;color:#b5a5ff}.todo-row{font-size:.65rem;padding:7px 0;border-bottom:1px solid #ffffff12;color:#b7bed1}.todo-row i{display:inline-grid;place-items:center;width:13px;height:13px;border:1px solid #8f83f4;border-radius:4px;margin-right:8px;color:#a99bff;font-size:.55rem;font-style:normal}.todo-row:nth-of-type(2) i,.todo-row:nth-of-type(3) i{background:#8d7bff}.todo-add{font-size:.61rem;color:#a99bff;margin-top:12px}.project-info{padding:20px 20px 23px}.project-number{font-size:.62rem;color:var(--cyan);letter-spacing:1.3px;font-weight:700}.project-info h3{font:600 1.25rem var(--display);margin:7px 0}.project-info p{color:var(--muted);font-size:.82rem;line-height:1.7;min-height:55px}.project-info .tag-row{margin-top:14px}
+.cta-section{position:relative;overflow:hidden;text-align:center;border:1px solid #a18aff2b;border-radius:24px;padding:75px 24px;background:linear-gradient(130deg,#17192a,#151c29);margin-bottom:100px}.cta-glow{position:absolute;width:440px;height:260px;border-radius:50%;background:#8871ff1c;filter:blur(75px);top:-100px;left:calc(50% - 220px);pointer-events:none}.cta-section .eyebrow{justify-content:center}.cta-section h2{position:relative;font-size:clamp(2.4rem,4.5vw,4rem);margin:18px 0}.cta-section p{color:var(--muted);font-size:.92rem;margin-bottom:26px}.cta-section .button{position:relative}.cta-code{position:absolute;right:24px;bottom:13px;color:#ffffff10;font:600 1rem ui-monospace,monospace}.site-footer{display:flex;align-items:center;gap:25px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:25px;padding-bottom:28px}.site-footer .logo{font-size:1.1rem}.site-footer .logo-mark{width:30px;height:30px;font-size:.75rem}.site-footer p{color:var(--muted);font-size:.75rem;margin-right:auto}.site-footer>a:not(.logo){font-size:.75rem;color:#b9c0d3}.site-footer small{width:100%;color:#69738b;font-size:.68rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}.tech-card:nth-child(2),.project-card:nth-child(2){transition-delay:.12s}.tech-card:nth-child(3),.project-card:nth-child(3){transition-delay:.24s}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes blink{to{visibility:hidden}}@keyframes pulse{0%,100%{box-shadow:0 0 0 4px #66e8df14}50%{box-shadow:0 0 0 8px #66e8df05}}@keyframes scrollDot{0%{transform:translateY(0);opacity:1}80%,100%{transform:translateY(10px);opacity:0}}
+@media(max-width:900px){.hero{gap:15px;min-height:610px}.hero h1{font-size:clamp(2.8rem,6vw,4rem)}.hero-visual{transform:scale(.9);transform-origin:center}.section-heading{gap:25px}.section-heading>p{max-width:320px}.tech-card{padding:20px}.level{font-size:.54rem}.stats{grid-template-columns:repeat(3,1fr)}.stats-note{display:none}}
+@media(max-width:700px){.section-shell,.site-header{width:calc(100% - 36px)}.site-header{height:72px}.menu-toggle{display:block;cursor:pointer}.nav-links{display:none;position:absolute;top:63px;left:0;right:0;padding:18px;background:#151927;border:1px solid var(--line);border-radius:14px;flex-direction:column;align-items:stretch;gap:17px;box-shadow:0 20px 35px #0006}.nav-links.open{display:flex}.nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding-top:65px;padding-bottom:75px;gap:10px}.hero h1{font-size:clamp(3rem,11vw,4.3rem);letter-spacing:-2px;margin:19px 0}.hero-description{font-size:.96rem}.hero-visual{height:365px;transform:none;margin-top:5px}.orbit{width:320px;height:320px}.orbit-two{width:260px;height:260px}.code-window{width:min(400px,94%)}.code-body{font-size:.72rem;padding:22px 10px 27px}.line-no{width:28px}.indent{padding-left:12px}.code-cursor{left:220px}.chip-html{left:0;top:23px}.chip-css{right:0;top:67px}.chip-js{left:4%;bottom:25px}.mini-preview{right:0;bottom:0;width:155px;padding:12px}.scroll-cue{bottom:17px}.stats{grid-template-columns:repeat(3,1fr);gap:10px;padding:22px 0}.stats>div:not(.stats-note){display:block;text-align:center}.stats strong{display:block;font-size:1.65rem}.stats span{font-size:.68rem}.section-space{padding-top:80px;padding-bottom:80px}.section-heading{display:block;margin-bottom:30px}.section-heading h2{font-size:clamp(2.45rem,9vw,3.2rem)}.section-heading>p{margin-top:18px;font-size:.88rem}.tech-grid,.project-grid{grid-template-columns:1fr}.tech-card{min-height:0;padding:24px}.tech-card p{max-width:440px}.project-art{height:200px}.roadmap-item{grid-template-columns:48px 1fr;gap:14px;padding:23px 0}.step-number{width:44px;height:44px;font-size:1rem}.step-status{display:none}.step-content h3{font-size:1.2rem}.step-content p{font-size:.81rem}.cta-section{padding:60px 18px;margin-bottom:70px}.cta-section h2{font-size:clamp(2.3rem,8.5vw,3.1rem);letter-spacing:-1.5px}.cta-code{display:none}.site-footer{gap:13px}.site-footer p{width:calc(100% - 150px);margin-right:0}.site-footer>a:not(.logo){margin-left:auto}.site-footer small{margin-top:5px}}
+@media(max-width:390px){.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{justify-content:center}.hero-visual{height:330px}.code-window{width:100%}.code-body{font-size:.64rem}.mini-preview{transform:scale(.88);transform-origin:bottom right}.floating-chip{font-size:.75rem;padding:9px 11px}.stats span{font-size:.62rem}.site-footer p{width:100%;order:3}.site-footer small{order:4}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+
+/* Services, booking form and contact section */
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{padding:27px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(145deg,#151a29,#10131e);transition:transform .3s,border-color .3s}
+.service-card:hover{transform:translateY(-6px);border-color:#a79aff70}
+.service-symbol{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#a18aff17;color:#b6a4ff;font-size:1.35rem}
+.service-card h3{font:600 1.25rem var(--display);margin:20px 0 9px}
+.service-card p{font-size:.86rem;color:var(--muted);line-height:1.8;min-height:80px}
+.service-card>a{display:inline-block;margin-top:18px;color:#c1b5ff;font-size:.8rem;font-weight:700}
+.appointment{padding-top:95px;padding-bottom:95px}
+.appointment-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:start}
+.appointment-copy h2{font:600 clamp(2.5rem,4vw,3.7rem)/1.1 var(--display);letter-spacing:-2px;margin:19px 0}
+.appointment-copy>p{color:var(--muted);font-size:.92rem;line-height:1.85}
+.contact-points{display:grid;gap:22px;margin-top:32px}
+.contact-points>div{display:flex;gap:14px;align-items:flex-start}
+.contact-points>div>span{font:600 .8rem var(--display);color:var(--cyan);border:1px solid #66e8df2a;background:#66e8df0b;border-radius:8px;padding:7px 9px}
+.contact-points p{display:grid;gap:3px;font-size:.86rem}
+.contact-points small{font-size:.76rem;color:var(--muted)}
+.booking-form{padding:29px;border:1px solid #ffffff16;border-radius:18px;background:linear-gradient(145deg,#171c2b,#10131e);box-shadow:0 24px 70px #0002}
+.form-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.form-kicker{font-size:.62rem;letter-spacing:1.5px;color:var(--cyan);font-weight:700}
+.form-heading h3{font:600 1.55rem var(--display);margin-top:4px}
+.form-star{font-size:1.7rem;color:#b3a1ff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.booking-form label{display:block;font-size:.76rem;font-weight:600;color:#dce0ef;margin-bottom:16px}
+.booking-form input:not([type=checkbox]),.booking-form select,.booking-form textarea{display:block;width:100%;margin-top:7px;background:#0c101a;border:1px solid #ffffff17;border-radius:9px;padding:12px 12px;color:#f4f5ff;font:400 .8rem var(--font);outline:none;transition:border-color .2s,box-shadow .2s}
+.booking-form input::placeholder,.booking-form textarea::placeholder{color:#68728a}
+.booking-form select:invalid{color:#68728a}
+.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{border-color:#a99aff;box-shadow:0 0 0 3px #a99aff17}
+.booking-form textarea{resize:vertical;min-height:105px}
+.optional{font-weight:400;color:#78839b}
+.booking-form .consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;color:#aeb7ca;line-height:1.6}
+.consent input{accent-color:#a99aff;margin-top:3px}
+.submit-button{border:0;cursor:pointer;font-family:var(--font)}
+.submit-button:disabled{opacity:.65;cursor:wait;transform:none}
+.form-privacy{font-size:.67rem;color:#78839b;line-height:1.7;margin-top:14px}
+.form-feedback{display:none;padding:12px 14px;margin-top:15px;border-radius:9px;font-size:.8rem;line-height:1.6}
+.form-feedback.success{display:block;color:#a3f3d5;background:#67e6b114;border:1px solid #67e6b13d}
+.form-feedback.error{display:block;color:#ffb6c2;background:#ff829514;border:1px solid #ff82953d}
+.honey-field{position:absolute!important;left:-10000px!important;opacity:0!important}
+.contact-strip{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px;border:1px solid var(--line);border-radius:16px;background:#111521;margin-bottom:90px}
+.contact-strip h2{font:600 1.7rem var(--display);margin:7px 0}
+.contact-strip p{color:var(--muted);font-size:.83rem}
+@media(max-width:900px){.appointment-layout{grid-template-columns:1fr;gap:35px}.appointment-copy{max-width:650px}.contact-points{grid-template-columns:repeat(3,1fr);gap:12px}.contact-points>div{gap:9px}.contact-points small{font-size:.68rem}.service-card{padding:21px}}
+@media(max-width:700px){.service-grid{grid-template-columns:1fr}.service-card p{min-height:0}.appointment{padding-top:70px;padding-bottom:70px}.appointment-layout{gap:28px}.contact-points{grid-template-columns:1fr;gap:16px}.contact-points small{font-size:.76rem}.booking-form{padding:20px}.form-row{grid-template-columns:1fr;gap:0}.contact-strip{align-items:flex-start;flex-direction:column;padding:23px;margin-bottom:65px}.contact-strip .button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.service-card{transition:none}}
 
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 90px;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        overflow-wrap: break-word;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        width: 100%;
-        min-height: 80px;
-        padding: 12px 4%;
-        border: 1px solid #d1d5db;
-        background: #fff;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .navbar > div:first-child {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        min-width: 0;
-      }
-
-      .navbar > div:first-child img {
-        width: 58px;
-        height: 58px;
-        object-fit: contain;
-      }
-
-      .navbar h3 {
-        margin: 0;
-        font-size: clamp(16px, 2vw, 22px);
-      }
-
-      .navbar ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: clamp(12px, 2.5vw, 32px);
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .navbar ul li a {
-        text-decoration: none;
-        color: #111827;
-      }
-
-      .navbar ul li a:hover {
-        color: #057cfc;
-      }
-
-      .button-navbar {
-        padding: 0;
-        flex-shrink: 0;
-      }
-
-      .button1-navbar,
-      .card1,
-      .cta-button {
-        border: none;
-        border-radius: 10px;
-        background: linear-gradient(#023b79, #057cfc);
-        color: white;
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .button1-navbar {
-        padding: 12px 24px;
-      }
-
-      .button1-navbar:hover,
-      .card1:hover,
-      .cta-button:hover {
-        background: linear-gradient(#057cfc, #023b79);
-        transform: translateY(-2px);
-      }
-
-      .hero-section{
-             display: flex;
-             flex-direction: column;
-    
-    padding-top: 100px;
-    padding-bottom: 100px;
-    justify-content: center;
-    background-image:url(Gemini_Generated_Image_ckt8c2ckt8c2ckt8.png);
-height: calc(100vh-80px);
-    
-    background-color: rgba(236, 233, 233, 0.6);
-   
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    
-  }
-      .hero-content-text {
-        text-align: center;
-        font-size: clamp(16px, 2.5vw, 24px);
-      }
-
-      .hero-content-text h1 {
-        font-size: clamp(30px, 5vw, 52px);
-        line-height: 1.15;
-        margin: 0 0 12px;
-      }
-
-      .hero-content-text p {
-        margin: 0;
-      }
-
-      .search-input{
-    padding: 12px 90px;
-    border-radius: 10px;
-    border: 1px solid gray;
-  }
-  .input{
-    text-align: center;
-  }
-
-      .blank{
-    height: 250px;
-    background-image: url(Gemini_Generated_Image_sc06rxsc06rxsc06.png);
-   display: flex;
-             flex-direction: column;
-    
-    padding-top: 100px;
-    padding-bottom: 100px;
-    justify-content: center;
-    
-    background-color: rgba(209, 207, 207, 0.6);
-   
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-  }
-  
-      .our-services,
-      .latest-articles,
-      .cta {
-        padding: clamp(24px, 4vw, 48px) 5%;
-        background: white;
-        box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12);
-      }
-
-      .our-services-text {
-        text-align: center;
-        max-width: 850px;
-        margin: 0 auto 24px;
-      }
-
-      .our-services-text h1 {
-        margin-top: 0;
-      }
-
-      .services-card {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 10px 0;
-      }
-
-      .card {
-        min-width: 0;
-      }
-
-      .card1 {
-        width: 100%;
-        min-height: 58px;
-        padding: 16px 20px;
-      }
-
-      .card1 a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .about-web {
-        width: 100%;
-      }
-
-      .about-web1,
-      .about-web2 {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: center;
-        gap: clamp(24px, 5vw, 60px);
-        width: 100%;
-        height: auto;
-        padding: clamp(30px, 5vw, 65px) 6%;
-      }
-
-      .about-web1 > div,
-      .about-web2 > div {
-        min-width: 0;
-      }
-
-      .about-web1 img,
-      .about-web2 img {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
-        max-height: 420px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin: 0 auto;
-        padding: 0;
-      }
-
-      .web-content1,
-      .web-content2 {
-        padding: 0;
-        margin: 0;
-      }
-
-      .about-me {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 28px;
-        margin: 0;
-        padding: 32px 5%;
-      }
-
-      .about-me > div {
-        min-width: 0;
-      }
-
-      .about-me a {
-        text-decoration: none;
-      }
-
-      footer {
-        padding: 0;
-        background: linear-gradient(#023b79, #057cfc);
-        color: white;
-      }
-
-      footer div a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .latest-articles {
-        line-height: 1.9;
-      }
-
-      .maps {
-        width: 100%;
-      }
-
-      .maps iframe {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        border: 0;
-      }
-
-      .cta {
-        text-align: center;
-      }
-
-      .cta h2 {
-        line-height: 1.3;
-      }
-
-      .cta-button {
-        padding: 14px 28px;
-        font-size: 16px;
-      }
-
-      .cta-button1 {
-        padding-top: 25px;
-      }
-
-      /* Tablets and smaller laptops */
-      @media (max-width: 900px) {
-        .navbar {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .navbar > div:first-child {
-          margin-right: auto;
-        }
-
-        .navbar ul {
-          order: 3;
-          width: 100%;
-        }
-
-        .services-card {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .about-me {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .about-web1,
-        .about-web2 {
-          gap: 24px;
-          padding-left: 5%;
-          padding-right: 5%;
-        }
-      }
-
-      /* Mobile phones */
-      @media (max-width: 600px) {
-        body {
-          font-size: 15px;
-        }
-
-        .navbar {
-          position: sticky;
-          top: 0;
-          padding: 10px 4%;
-          gap: 10px;
-        }
-
-        .navbar > div:first-child {
-          width: 100%;
-          justify-content: center;
-          margin: 0;
-        }
-
-        .navbar > div:first-child img {
-          width: 44px;
-          height: 44px;
-        }
-
-        .navbar ul {
-          gap: 10px 18px;
-          padding: 0;
-        }
-
-        .navbar ul li a {
-          font-size: 14px;
-        }
-
-        .button-navbar {
-          width: 100%;
-          text-align: center;
-        }
-
-        .button1-navbar {
-          padding: 10px 22px;
-        }
-
-        /* .hero-section {
-          min-height: 65vh;
-          padding: 50px 5%;
-          background-attachment: scroll;
-        }
-
-        .hero-content-text h1 {
-          font-size: clamp(28px, 8vw, 40px);
-        }
-
-        .search-input {
-          padding: 12px;
-        } */
-
-        /* .blank {
-          min-height: 150px;
-          background-attachment: scroll;
-        } */
-
-        .services-card {
-          grid-template-columns: 1fr;
-          gap: 14px;
-          padding: 0;
-        }
-
-        .about-web1,
-        .about-web2 {
-          grid-template-columns: 1fr;
-          height: auto;
-          gap: 22px;
-          padding: 30px 6%;
-        }
-
-        .about-web1 img,
-        .about-web2 img {
-          width: 100%;
-          max-height: 300px;
-        }
-
-        .about-web2 > div:first-child {
-          order: 2;
-        }
-
-        .about-web2 .web-content2 {
-          order: 1;
-        }
-
-        .about-me {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          padding: 28px 6%;
-        }
-
-        .latest-articles {
-          padding: 28px 6%;
-          font-size: 16px;
-        }
-
-        .cta {
-          padding: 32px 6%;
-        }
-
-        .cta br {
-          display: none;
-        }
-
-        .cta-button {
-          max-width: 100%;
-          padding: 13px 20px;
-        }
-      }
 </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="navbar">
-         <div> <img src="Untitled2.png" alt="web devlopment"><h3>Edutechy Pvt.Ltd</h3></div>
-          
-          <ul>
-            <li><a target="_blank" href="https://edutechy.org/">Home</a></li>
-            <li><a target="_blank" href="https://edutechy.org/Index/about.php">About Us</a></li>
-            <li><a target="_blank" href="https://edutechy.org/Index/contact.php">Contact</a></li>
-            <li><a target="_blank" href="https://edutechy.org/Index/OurWork.php">Work</a></li>
-           
-          </ul>
-          <div class="button-navbar"> 
-           <form target="_blank" action="practical4.html" method="get">
-            <button  class="button1-navbar">Sign Up</button></div>
-           </form>
-            </div>
-      </nav>
-    </header>
-    <section class="hero-section">
-      <div class="hero-content-text">
-          <h1 >Web Devlopment</h1>
-          <p >We Provide Top Class Qaulity</p> <br>
-         
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="DevLaunch home"><span class="logo-mark">&lt;/&gt;</span> DevLaunch<span class="logo-dot">.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#learn">Learn</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a class="nav-cta" href="#appointment">Book an appointment <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse"></span> YOUR JOURNEY STARTS HERE</div>
+        <h1>Build the web.<br><span class="gradient-text">Shape the future.</span></h1>
+        <p class="hero-description">A clear, beginner-friendly path from your first HTML tag to interactive websites. Learn by building—not just watching.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#learn">Explore the lessons <span>→</span></a>
+          <a class="button button-quiet" href="#roadmap"><span class="play-icon">▶</span> View roadmap</a>
         </div>
-        <div class="input"> <input  class="search-input" type="search" placeholder="Search Here" style="text-align: center;"></div>
-       
+        <div class="hero-proof"><div class="avatar-stack"><span>H</span><span>C</span><span>JS</span></div><p><strong>Start with the basics</strong><br><small>HTML · CSS · JavaScript</small></p></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-chip chip-html">&lt;html&gt;</div><div class="floating-chip chip-css">✦ CSS</div><div class="floating-chip chip-js">JS</div>
+        <div class="code-window">
+          <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>hello-world.html</span><span class="window-more">•••</span></div>
+          <div class="code-body">
+            <div class="line"><span class="line-no">01</span><span><b class="pink">&lt;section</b> <b class="mint">class</b>=<b class="yellow">"future"</b><b class="pink">&gt;</b></span></div>
+            <div class="line"><span class="line-no">02</span><span class="indent"><b class="pink">&lt;h1&gt;</b>Hello, world!<b class="pink">&lt;/h1&gt;</b></span></div>
+            <div class="line"><span class="line-no">03</span><span class="indent"><b class="pink">&lt;p&gt;</b>Your ideas start here.<b class="pink">&lt;/p&gt;</b></span></div>
+            <div class="line"><span class="line-no">04</span><span><b class="pink">&lt;/section&gt;</b></span></div>
+            <div class="code-cursor"></div>
+          </div>
+          <div class="code-footer"><span><i></i> HTML ready</span><span>UTF-8&nbsp; · &nbsp;Live preview</span></div>
+        </div>
+        <div class="mini-preview"><div class="preview-spark">✦</div><span>LIVE PREVIEW</span><strong>Hello, world!</strong><small>Your ideas start here.</small><div class="preview-line"></div></div>
+      </div>
+      <a class="scroll-cue" href="#learn"><span></span> SCROLL TO EXPLORE</a>
     </section>
-   <section class="our-services">
-     <div class="our-services-text">
-      <h1>Our Services</h1>
-      <p>
-        Creating clean, modern, and attractive website designs with a focus on
-        user experience.
-      </p></div>
-    </div>
-    <div class="services-card">
-      <div class="card" >
-        <button class="card1"> 
-          <a target="_blank" href="https://edutechy.org/Index/Custom_Website.php">Web Design</a>
-        </button>
-      </div>
-      <div class="card">
-        <button class="card1">
-           <a target="_blank" href="https://edutechy.org/Index/Journal_Website_Development.php">Web Devlopment</a>
-          </button>
-      </div>
-      <div class="card">
-        <button class="card1">
-          <a target="_blank" href="https://edutechy.org/Index/Software_Development.php">Creat a Web</a>
-        </button>
-      </div>
-  
 
-   </section>
-    <section class="about-web">
-      <div class="about-web1">
-      <div class="web-content1">
-          <h2>About Web Development</h2>
-      <p>
-        Web development is the process of creating, building, and maintaining
-        websites and web applications. It includes everything from designing the
-        user interface to developing the functionality that users interact with.
-      </p>
-      <h3>Front-End Development</h3>
-      <p>
-        Front-end development focuses on the client side of a website. It is the
-        part that users see and interact with directly.
-      </p>
-      <strong> I use technologies such as:</strong> <br />
-      <strong> HTML5</strong> Creates the structure of webpages. <br />
-      <strong>CSS3</strong> Designs and styles webpages. <br />
-      <strong>JavaScript</strong> Adds interaction and dynamic functionality.
-      <br />
-      <strong>Responsive Design</strong> Makes websites work on mobile, tablet,
-      and desktop devices. <br />
-      <strong>CSS Grid & Flexbox</strong> Creates modern and flexible <br />
-      </div>
-      <div>
-        <img src="Gemini_Generated_Image_amg13lamg13lamg1.png" alt="web devlopment">
-      </div>
-      </div>
-      <div class="about-web2">
-       <div> <img src="Gemini_Generated_Image_wghaagwghaagwgha.png" alt=""></div>
-       <div class="web-content2">
-        <h2>
-         Core Pillars of Modern Web Development
-       </h2>
-<p>
-  Web development encompasses building and maintaining applications that run on web browsers.
- It spans visual UI components, server-side data routing, and database architecture.
-Key Layers of Web Architecture
-Frontend Development: Everything users directly interact with in their browser.
-HTML5: Defines structural semantic elements like page headings,
- sections, layout wrappers, and form controls.
-CSS3: Handles styling, responsive layouts, flexbox, grid grids, dynamic animations, and typography.
-JavaScript: Adds interactivity, handles DOM events, fetches remote APIs
- and powers single-page applications (SPAs).
-Modern Frameworks: Tools like React, Vue.js, and Next.js streamline UI component
- development and client-side state management.
-</p>
-       </div>
+    <section class="stats section-shell reveal" aria-label="Learning highlights">
+      <div><strong>03</strong><span>Core technologies</span></div><div><strong>06</strong><span>Learning milestones</span></div><div><strong>∞</strong><span>Things to create</span></div><div class="stats-note">Small steps.<br><b>Big possibilities.</b></div>
+    </section>
+
+
+    <section class="services section-shell section-space" id="services">
+      <div class="section-heading reveal"><div><div class="eyebrow">WHAT WE CAN HELP WITH</div><h2>Ideas into <span class="gradient-text">real websites.</span></h2></div><p>Explore the core services offered through DevLaunch. Choose a topic in the form below and send a request to get started.</p></div>
+      <div class="service-grid">
+        <article class="service-card reveal"><span class="service-symbol">✦</span><h3>Website Design</h3><p>Clean, modern page layouts with thoughtful spacing, colors, and clear content.</p><a href="#appointment">Ask about design ↗</a></article>
+        <article class="service-card reveal"><span class="service-symbol">⌘</span><h3>Responsive Development</h3><p>Pages that adapt smoothly to phones, tablets, laptops, and larger screens.</p><a href="#appointment">Ask about development ↗</a></article>
+        <article class="service-card reveal"><span class="service-symbol">⚡</span><h3>Interactive Features</h3><p>Useful JavaScript interactions such as navigation menus, forms, and small UI tools.</p><a href="#appointment">Ask about features ↗</a></article>
       </div>
     </section>
-    
-     <div class="blank">
-
-    </div>
-    <section class="latest-articles">
-      <h2>LATEST ARTICLES</h2>
-
-      <strong>1.</strong> Getting Started with Web Development Learn the
-      fundamentals of web development and understand how HTML, CSS, and
-      JavaScript work together to create modern websites. <br />
-
-      <strong>2.</strong> Why Responsive Web Design Matters Discover how
-      responsive design helps websites provide a better experience across mobile
-      phones, tablets, and desktop computers. <br />
-
-      <strong>3.</strong> CSS Grid vs Flexbox Learn the key differences between
-      CSS Grid and Flexbox and understand when to use each layout system in your
-      projects. <br />
-
-      <strong>4.</strong> Introduction to JavaScript Explore the basics of
-      JavaScript and learn how it can make websites interactive, dynamic, and
-      more engaging. <br />
-
-      <strong>5.</strong> Tips for Better Website Design Learn simple techniques
-      for creating clean, attractive, accessible, and user-friendly websites.
-      <br />
+   <section class="learning section-shell section-space" id="learn">
+      <div class="section-heading reveal"><div><div class="eyebrow">THE FOUNDATIONS</div><h2>Three tools.<br><span class="gradient-text">One amazing web.</span></h2></div><p>Every great website starts with these building blocks. Learn what each one does, then combine them to bring your ideas to life.</p></div>
+      <div class="tech-grid">
+        <article class="tech-card html-card reveal"><div class="card-top"><div class="tech-icon orange">&lt;/&gt;</div><span class="level">01 / STRUCTURE</span></div><h3>HTML</h3><p>Give your website meaning and structure. Add headings, paragraphs, images, links, forms, and more.</p><div class="tag-row"><span>Elements</span><span>Semantic tags</span><span>Forms</span></div><a href="#roadmap" class="text-link">Explore HTML <span>↗</span></a><div class="card-decoration">&lt;h1&gt;</div></article>
+        <article class="tech-card css-card reveal"><div class="card-top"><div class="tech-icon purple">✳</div><span class="level">02 / DESIGN</span></div><h3>CSS</h3><p>Make it look beautiful. Create layouts, choose colors, add responsive design, transitions, and animations.</p><div class="tag-row"><span>Flexbox</span><span>Grid</span><span>Animation</span></div><a href="#roadmap" class="text-link">Explore CSS <span>↗</span></a><div class="card-decoration">{ }</div></article>
+        <article class="tech-card js-card reveal"><div class="card-top"><div class="tech-icon yellow">JS</div><span class="level">03 / INTERACTION</span></div><h3>JavaScript</h3><p>Bring your pages to life with buttons, menus, form checks, dynamic content, and interactive features.</p><div class="tag-row"><span>Variables</span><span>Events</span><span>DOM basics</span></div><a href="#roadmap" class="text-link">Explore JavaScript <span>↗</span></a><div class="card-decoration">()</div></article>
+      </div>
     </section>
-   
-    <section class="maps">
-     
-      <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.116065703304!2d79.90389481070608!3d27.867704775991378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399fbdfe84c8f45b%3A0xc137d6de94154eb!2sEduTechy%20Communications%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1791265103110!5m2!1sen!2sin" 
-       height="300px" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <section class="roadmap section-space" id="roadmap"><div class="section-shell">
+      <div class="section-heading reveal"><div><div class="eyebrow">YOUR LEARNING PATH</div><h2>From beginner to <span class="gradient-text">builder.</span></h2></div><p>Follow these milestones in order. Practice each skill before moving on, and keep building little projects along the way.</p></div>
+      <div class="timeline">
+        <article class="roadmap-item reveal"><div class="step-number">01</div><div class="step-content"><span class="step-label">WEEK 01 · THE BASICS</span><h3>Meet HTML</h3><p>Learn page structure, headings, paragraphs, links, images, lists, and semantic elements.</p><div class="progress-track"><span style="width:22%"></span></div></div><span class="step-status">START HERE</span></article>
+        <article class="roadmap-item reveal"><div class="step-number">02</div><div class="step-content"><span class="step-label">WEEK 02 · MAKE IT YOURS</span><h3>Style with CSS</h3><p>Practice colors, typography, spacing, borders, Flexbox, Grid, and responsive layouts.</p><div class="progress-track"><span style="width:42%"></span></div></div><span class="step-status">DESIGN</span></article>
+        <article class="roadmap-item reveal"><div class="step-number">03</div><div class="step-content"><span class="step-label">WEEK 03 · ADD MAGIC</span><h3>JavaScript basics</h3><p>Understand variables, functions, conditions, events, and changing page content.</p><div class="progress-track"><span style="width:63%"></span></div></div><span class="step-status">INTERACT</span></article>
+        <article class="roadmap-item reveal"><div class="step-number">04</div><div class="step-content"><span class="step-label">WEEK 04 · BUILD & SHARE</span><h3>Make your first project</h3><p>Combine your skills, test on mobile, fix bugs, and publish your work online.</p><div class="progress-track"><span style="width:84%"></span></div></div><span class="step-status">CREATE</span></article>
+      </div>
+    </div></section>
+
+    <section class="projects section-shell section-space" id="projects">
+      <div class="section-heading reveal"><div><div class="eyebrow">LEARN BY DOING</div><h2>Practice makes <span class="gradient-text">progress.</span></h2></div><p>Turn lessons into real skills with small projects. Start simple, then add your own style and ideas.</p></div>
+      <div class="project-grid">
+        <article class="project-card reveal"><div class="project-art portfolio-art"><div class="mock-nav"></div><div class="mock-hero"><i></i><b></b><span></span></div><div class="mock-cards"><i></i><i></i><i></i></div></div><div class="project-info"><span class="project-number">PROJECT 01</span><h3>Personal portfolio</h3><p>Introduce yourself, show your skills, and share your best work.</p><div class="tag-row"><span>HTML</span><span>CSS</span></div></div></article>
+        <article class="project-card reveal"><div class="project-art weather-art"><div class="weather-top">YOUR CITY <span>•••</span></div><div class="weather-sun">☼</div><div class="weather-temp">26°</div><div class="weather-caption">A bright day to build.</div><div class="weather-bars"><i></i><i></i><i></i><i></i><i></i></div></div><div class="project-info"><span class="project-number">PROJECT 02</span><h3>Weather card</h3><p>Build a clean weather-style UI and practice dynamic values.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JS</span></div></div></article>
+        <article class="project-card reveal"><div class="project-art todo-art"><div class="todo-title">Today's focus <span>✦</span></div><div class="todo-row"><i>✓</i> Learn one new tag</div><div class="todo-row"><i>✓</i> Style a button</div><div class="todo-row"><i></i> Build something small</div><div class="todo-add">+ Add a new task</div></div><div class="project-info"><span class="project-number">PROJECT 03</span><h3>Interactive to-do list</h3><p>Add tasks and check them off using beginner JavaScript.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JS</span></div></div></article>
+      </div>
     </section>
-    <section class="cta">
-        <form action="practical4.html" method="get">
-          <h2> Ready to Build Something Amazing?</h2> <br>
-     Let's turn your ideas into a modern,<br>
-      responsive, and user-friendly website. Whether you need a portfolio,<br>
-      business website, or landing page, I'm ready to help bring your vision to
-      life.<br>
-      <div class="cta-button1">
-      
-          <button class="cta-button">Book An Appointment</button>
+
+
+    <section class="appointment section-shell section-space" id="appointment">
+      <div class="appointment-layout">
+        <div class="appointment-copy reveal">
+          <div class="eyebrow">LET'S TALK ABOUT YOUR IDEA</div>
+          <h2>Book an appointment<br><span class="gradient-text">or sign up.</span></h2>
+          <p>Tell us a little about yourself and what you need. After you submit the form, you'll see a confirmation on this page. Once email delivery is configured, your request can also be sent to the site owner's inbox and a confirmation email can be sent to you.</p>
+          <div class="contact-points"><div><span>01</span><p><b>Share your details</b><small>Name, email, and what you need.</small></p></div><div><span>02</span><p><b>Choose a service</b><small>Learning help, a website, or a consultation.</small></p></div><div><span>03</span><p><b>Get a response</b><small>We'll follow up using the contact details you provide.</small></p></div></div>
+        </div>
+        <form class="booking-form reveal" id="bookingForm" action="https://formsubmit.co/aqa29178@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New DevLaunch website enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting DevLaunch! We have received your request. We will review your details and get back to you soon.">
+          <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-heading"><div><span class="form-kicker">START HERE</span><h3>Your details</h3></div><span class="form-star">✦</span></div>
+          <div class="form-row"><label>Full name <input type="text" name="name" placeholder="Enter your name" autocomplete="name" required minlength="2"></label><label>Email address <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label></div>
+          <div class="form-row"><label>Phone number <span class="optional">(optional)</span><input type="tel" name="phone" placeholder="+91 98765 43210" autocomplete="tel"></label><label>I'm interested in <select name="service" required><option value="" disabled selected>Select a service</option><option>Website design</option><option>Responsive website development</option><option>Learn HTML and CSS</option><option>JavaScript basics</option><option>Book a consultation</option><option>Other</option></select></label></div>
+          <div class="form-row"><label>Preferred date <span class="optional">(optional)</span><input type="date" name="preferred_date" id="preferredDate"></label><label>How should we contact you? <select name="contact_preference" required><option value="" disabled selected>Choose one</option><option>Email</option><option>Phone</option></select></label></div>
+          <label>Tell us about your project <textarea name="message" rows="4" placeholder="What would you like to build or learn?" required minlength="8"></textarea></label>
+          <label class="consent"><input type="checkbox" name="consent" value="I agree to be contacted about this request" required><span>I agree to be contacted about this request.</span></label>
+          <button class="button button-primary submit-button" type="submit" id="submitButton">Send my request <span>→</span></button>
+          <p class="form-privacy">Your details are used to respond to your request. Don't submit passwords or sensitive personal information.</p>
+          <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
         </form>
       </div>
-     
-        </form>
-
-     
-       
-     
     </section>
-    <footer>
-       <div class="about-me">
-                    <div>
-                        <h3>About Me</h3>
-                        I am a passionate Front-End Developer who enjoys creating modern, responsive, and user-friendly
-                        websites
-                        using HTML, CSS, and JavaScript.
-                    </div>
-                    
-                    <div>
-                        <h3>
-                            Quick Links
-                        </h3>
-                        <a target="_blank" href="https://edutechy.org/">Home</a><br>
-                        <a target="_blank" href="https://edutechy.org/Index/about.php">About</a><br>
-                        <a target="_blank" href="https://edutechy.org/Index/OurExperties.php">Skills</a><br>
-                        <a target="_blank" href="https://edutechy.org/Index/WhyChoose.php">Projects</a><br>
-                        <a target="_blank" href="https://edutechy.org/Index/OurWork.php">Content</a>
 
-                    </div>
-                    <div>
-                        <h3>Skills</h3>
-                        <p>HTML5</p>
-                        <p>CSS3</p>
-                        <p> JavaScript</p>
-                        <p> Responsive Design</p>
-                        <p> CSS Grid</p>
-                        <p>Flexbox</p>
-                    </div>
-                    <div>
-                        <h3>Contact</h3>
-                        <p>Email: edutechy@gmail.com</p>
-                        <p>Phone: +91 9876543210</p>
-                        <p>Shahjahanpur, Uttar Pradesh</p>
+    <section class="contact-strip section-shell reveal" id="contact"><div><div class="eyebrow">CONTACT</div><h2>Have a question?</h2><p>Use the appointment form and tell us how we can help.</p></div><a class="button button-quiet" href="#appointment">Contact us through the form <span>↗</span></a></section>
+   <section class="cta-section section-shell reveal" id="about"><div class="cta-glow"></div><div class="eyebrow">EVERY EXPERT STARTED SOMEWHERE</div><h2>Your first line of code<br>can change <span class="gradient-text">everything.</span></h2><p>Open your editor. Try one thing. Keep going. Your future website is waiting.</p><a class="button button-primary" href="#home">Let's build something <span>↑</span></a><div class="cta-code">&lt;you&gt; can do this &lt;/you&gt;</div></section>
+  </main>
 
-                    </div>
-       </div>
-    </footer>
-  </body>
+  <footer class="site-footer section-shell"><a class="logo" href="#home"><span class="logo-mark">&lt;/&gt;</span> DevLaunch<span class="logo-dot">.</span></a><p>Made for curious minds and future builders.</p><a href="#home">Back to top ↑</a><small>© <span id="year"></span> DevLaunch. Learn at your own pace.</small></footer>
+  <script>
+// DevLaunch: small, beginner-friendly JavaScript interactions
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+// Mobile navigation opens and closes from the menu button.
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+
+// Close the mobile menu after choosing a section.
+navLinks.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  });
+});
+
+// Animate sections as they enter the viewport.
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+// Show reading progress at the top of the page.
+const scrollProgress = document.getElementById('scrollProgress');
+function updateScrollProgress() {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+  scrollProgress.style.width = `${progress}%`;
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
+// Keep the footer year current.
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Set the earliest bookable date to today.
+const preferredDate = document.getElementById('preferredDate');
+if (preferredDate) {
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+    .toISOString().split('T')[0];
+  preferredDate.min = localToday;
+}
+
+// Submit to FormSubmit in the background, then show a clear on-page response.
+// IMPORTANT: Replace YOUR_EMAIL@example.com in index.html with the site owner's inbox.
+// FormSubmit requires a one-time activation email before it can deliver submissions.
+const bookingForm = document.getElementById('bookingForm');
+const formFeedback = document.getElementById('formFeedback');
+const submitButton = document.getElementById('submitButton');
+
+bookingForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  formFeedback.className = 'form-feedback';
+  formFeedback.textContent = '';
+
+  if (!bookingForm.reportValidity()) return;
+
+  const endpoint = bookingForm.getAttribute('action');
+  if (endpoint.includes('YOUR_EMAIL@example.com')) {
+    formFeedback.className = 'form-feedback error';
+    formFeedback.textContent = 'The form design is ready, but the site owner must add their email address to the form settings before requests can be delivered.';
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitButton.innerHTML = 'Sending request…';
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: new FormData(bookingForm),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!response.ok) throw new Error('The form service did not accept the request.');
+    formFeedback.className = 'form-feedback success';
+    formFeedback.textContent = 'Thank you! Your request has been submitted. Please check your email for a confirmation message once the form inbox has been activated.';
+    bookingForm.reset();
+  } catch (error) {
+    formFeedback.className = 'form-feedback error';
+    formFeedback.textContent = 'We could not send your request right now. Please check your internet connection and try again, or contact the website owner another way.';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = 'Send my request <span>→</span>';
+  }
+});
+
+</script>
+</body>
 </html>
