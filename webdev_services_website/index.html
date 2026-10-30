@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive web development services website with contact and feedback forms.">
+  <title>WebCraft Studio | Web Development Services</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html"><span class="logo-mark">W</span> WebCraft<span>Studio</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" class="nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Get a Quote <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> WEB DESIGN · DEVELOPMENT · DIGITAL GROWTH</p>
+          <h1>We build websites that <span>move business</span> forward.</h1>
+          <p class="hero-text">Fast, responsive, and thoughtfully designed websites that help your business look professional and turn visitors into customers.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="contact.html">Start a project <span>↗</span></a><a class="text-link" href="services.html">Explore services <span>→</span></a></div>
+          <div class="hero-proof"><div class="avatar-stack"><span>W</span><span>D</span><span>+</span></div><p><strong>Built around your goals</strong><br><small>Design, code, and support in one place</small></p></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a responsive website dashboard">
+          <div class="glow glow-one"></div><div class="glow glow-two"></div>
+          <div class="browser-card">
+            <div class="browser-top"><div class="window-dots"><i></i><i></i><i></i></div><div class="browser-url">yourbusiness.com</div><span class="browser-menu">•••</span></div>
+            <div class="mock-site">
+              <div class="mock-nav"><b><span class="mock-logo"></span> brand.</b><span>About&nbsp;&nbsp; Services&nbsp;&nbsp; Contact</span></div>
+              <div class="mock-content"><div><small>YOUR NEXT CHAPTER</small><h3>Make your<br>ideas happen.</h3><p>Digital experiences made for people.</p><span class="mock-button">Let's talk ↗</span></div><div class="mock-graphic"><div class="graphic-circle"></div><div class="graphic-card card-a">✦<br><b>Design</b></div><div class="graphic-card card-b">↗<br><b>Growth</b></div></div></div>
+              <div class="mock-stats"><div><b>01</b><small>Strategy</small></div><div><b>02</b><small>Design</small></div><div><b>03</b><small>Launch</small></div></div>
+            </div>
+          </div>
+          <div class="floating-tag tag-top"><span>✦</span> Modern design</div><div class="floating-tag tag-bottom"><span class="check">✓</span> Responsive by default</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><div class="container trust-inner"><span>BUILT FOR YOUR NEXT BIG THING</span><div>Startups</div><div>Small Business</div><div>Creators</div><div>Growing Teams</div></div></section>
+
+    <section class="section" id="services-preview">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Everything you need to <span>get online.</span></h2></div><a class="text-link desktop-link" href="services.html">View all services <span>→</span></a></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon icon-blue">⌘</div><p class="card-number">01 / DESIGN</p><h3>Website Design</h3><p>Clean, user-friendly designs that reflect your brand and make every visit count.</p><a href="services.html#design" class="card-link">Explore design <span>↗</span></a></article>
+          <article class="service-card featured"><div class="service-icon icon-orange">〈/〉</div><p class="card-number">02 / DEVELOPMENT</p><h3>Web Development</h3><p>Reliable, responsive websites built with modern front-end and back-end technologies.</p><a href="services.html#development" class="card-link">Explore development <span>↗</span></a></article>
+          <article class="service-card"><div class="service-icon icon-green">↗</div><p class="card-number">03 / GROWTH</p><h3>SEO & Maintenance</h3><p>Keep your website healthy, discoverable, secure, and ready to grow with your business.</p><a href="services.html#maintenance" class="card-link">Explore support <span>↗</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section"><div class="container process-grid"><div><p class="eyebrow">A SIMPLE PROCESS</p><h2>From first idea to <span>launch day.</span></h2><p class="muted">A clear process keeps your project moving, with you involved at every important step.</p><a class="btn btn-dark" href="contact.html">Let's work together <span>↗</span></a></div><div class="process-list"><div class="process-item"><span>01</span><div><h3>Discover</h3><p>We learn about your goals, audience, and requirements.</p></div></div><div class="process-item"><span>02</span><div><h3>Design & build</h3><p>We shape the experience and develop your responsive website.</p></div></div><div class="process-item"><span>03</span><div><h3>Launch & support</h3><p>We test, launch, and help you keep things running smoothly.</p></div></div></div></div></section>
+
+    <section class="section feedback-section"><div class="container feedback-wrap"><div><p class="eyebrow">YOUR VOICE MATTERS</p><h2>Help us make the web <span>better.</span></h2><p class="muted">Share quick feedback about this website. Your message will be validated and confirmed on screen.</p></div><form class="form-card" id="feedback-form" novalidate><label for="feedback-name">Your name</label><input id="feedback-name" name="name" type="text" placeholder="e.g. Priya Sharma" required minlength="2"><label for="feedback-rating">How was your experience?</label><select id="feedback-rating" name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Good</option><option value="3">★★★☆☆ — Okay</option><option value="2">★★☆☆☆ — Needs improvement</option><option value="1">★☆☆☆☆ — Poor</option></select><label for="feedback-message">Your feedback</label><textarea id="feedback-message" name="message" rows="3" placeholder="Tell us what you think..." required minlength="5"></textarea><button class="btn btn-primary full-width" type="submit">Send feedback <span>↗</span></button><p class="form-message" id="feedback-message-status" role="status" aria-live="polite"></p><small class="form-note">Your feedback will be emailed to our team after the website is hosted with PHP mail enabled.</small></form></div></section>
+    <section class="cta-band"><div class="container cta-inner"><div><p class="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Let's make something great.</h2></div><a href="contact.html" class="btn btn-light">Tell us about it <span>↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-main"><div><a class="logo footer-logo" href="index.html"><span class="logo-mark">W</span> WebCraft<span>Studio</span></a><p>Thoughtful websites for ambitious businesses.</p></div><div class="footer-links"><div><b>Explore</b><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About us</a></div><div><b>Get in touch</b><a href="contact.html">Contact</a><a href="contact.html#contact-form">Request a quote</a></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> WebCraft Studio. Demo website.</span><span>Designed to work on every screen.</span></div></footer>
+</body>
+</html>

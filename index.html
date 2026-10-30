@@ -1,304 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn web development from HTML and CSS to JavaScript with a clear, animated learning path." />
-  <title>DevLaunch — Learn Web Development</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-/* DevLaunch — responsive animated learning website */
-:root{--bg:#0b0d14;--panel:#111521;--panel2:#151a29;--text:#f5f7ff;--muted:#9ca4ba;--line:rgba(255,255,255,.09);--purple:#9b7bff;--cyan:#66e8df;--orange:#ff9c70;--font:'DM Sans',sans-serif;--display:'Space Grotesk',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 78% 9%,rgba(103,74,190,.13),transparent 34%),radial-gradient(ellipse at 6% 47%,rgba(44,133,150,.08),transparent 30%)}a{color:inherit;text-decoration:none}.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:1000}.section-shell{width:min(1160px,calc(100% - 48px));margin-inline:auto}.site-header{height:82px;width:min(1280px,calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:20}.logo{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.7px;display:flex;align-items:center;gap:9px}.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#a58aff,#6c83ff);font-size:.9rem;color:#fff;box-shadow:0 6px 22px #806bff40}.logo-dot{color:var(--cyan);margin-left:-8px}.nav-links{display:flex;align-items:center;gap:34px;color:#bdc2d2;font-size:.9rem}.nav-links>a:not(.nav-cta):hover,.site-footer>a:hover{color:var(--cyan)}.nav-cta{background:#f3f3ff;color:#171624;padding:10px 16px;border-radius:10px;font-weight:700;transition:transform .25s,box-shadow .25s}.nav-cta span{margin-left:8px}.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px #a58aff30}.menu-toggle{display:none;background:none;border:0;color:white;font-size:1.5rem}
-.hero{min-height:670px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:44px;padding-top:52px;padding-bottom:65px;position:relative}.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--cyan);display:flex;align-items:center;gap:10px}.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px #66e8df17;animation:pulse 2s infinite}.hero h1,.section-heading h2,.cta-section h2{font-family:var(--display);font-weight:600;letter-spacing:-2.7px;line-height:1.07;font-size:clamp(3.1rem,5.6vw,5rem);margin:24px 0}.gradient-text{background:linear-gradient(105deg,#a99aff 10%,#79d9ed 60%,#73f0cb);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-description{max-width:510px;color:var(--muted);font-size:1.06rem;line-height:1.85}.hero-actions{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:15px;border-radius:11px;padding:14px 19px;font-weight:700;font-size:.9rem;transition:transform .25s,box-shadow .25s}.button:hover{transform:translateY(-3px)}.button-primary{background:linear-gradient(110deg,#a68cff,#7c9aff);color:#10121d;box-shadow:0 8px 30px #8d7cff28}.button-primary:hover{box-shadow:0 12px 34px #8d7cff4a}.button-quiet{color:#d2d6e4}.play-icon{display:grid;place-items:center;width:28px;height:28px;border:1px solid #53596e;border-radius:50%;font-size:.65rem}.hero-proof{display:flex;align-items:center;gap:14px;margin-top:38px}.avatar-stack{display:flex;padding-left:5px}.avatar-stack span{width:34px;height:34px;margin-left:-5px;border:2px solid var(--bg);border-radius:50%;display:grid;place-items:center;background:#262d43;font-size:.7rem;font-weight:700;color:#b5a5ff}.avatar-stack span:nth-child(2){background:#183e47;color:#75e7dc}.avatar-stack span:nth-child(3){background:#443026;color:#ffc39e}.hero-proof p{font-size:.8rem;line-height:1.45}.hero-proof small{color:var(--muted)}
-.hero-visual{height:440px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #aaa1ff1b;border-radius:50%;width:400px;height:400px;animation:orbit 30s linear infinite}.orbit-two{width:330px;height:330px;border-style:dashed;animation-direction:reverse;animation-duration:38s}.code-window{width:min(430px,100%);border:1px solid #ffffff1c;background:linear-gradient(145deg,#181d2b,#10131e);border-radius:16px;box-shadow:0 30px 80px #0008,0 0 70px #7e6aff12;overflow:hidden;transform:rotate(-2deg);z-index:2;animation:float 6s ease-in-out infinite}.window-top{height:47px;display:flex;align-items:center;gap:15px;padding:0 17px;border-bottom:1px solid var(--line);color:#9ea5bb;font-size:.72rem}.window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#ff7e84}.window-dots i:nth-child(2){background:#ffc46b}.window-dots i:nth-child(3){background:#69e3a7}.window-more{margin-left:auto;letter-spacing:2px}.code-body{padding:28px 17px 32px;font:500 .86rem/2.25 ui-monospace,SFMono-Regular,Menlo,monospace;position:relative}.line{display:flex;white-space:nowrap}.line-no{color:#525b73;width:36px;flex-shrink:0}.indent{padding-left:22px}.pink{color:#ff8ab4}.mint{color:#7be8d4}.yellow{color:#f6d68b}.code-cursor{position:absolute;bottom:28px;left:251px;width:2px;height:18px;background:var(--cyan);animation:blink 1s steps(2,start) infinite}.code-footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:12px 17px;color:#747e98;font-size:.65rem}.code-footer i{display:inline-block;width:6px;height:6px;background:#69e3a7;border-radius:50%;margin-right:5px}.floating-chip{position:absolute;z-index:3;padding:12px 16px;border-radius:12px;background:#1b2031;border:1px solid #ffffff1b;box-shadow:0 15px 35px #0005;font:700 .9rem var(--display);animation:float 5s ease-in-out infinite}.chip-html{top:35px;left:8%;color:#ff9c70;transform:rotate(-8deg)}.chip-css{top:90px;right:0;color:#b19aff;animation-delay:-1.7s}.chip-js{bottom:48px;left:12%;color:#f8d86f;animation-delay:-2.8s}.mini-preview{position:absolute;right:-10px;bottom:5px;width:185px;padding:16px;border-radius:13px;background:#f4f5ff;color:#1b1e2a;box-shadow:0 20px 50px #0006;z-index:4;transform:rotate(3deg);animation:float 5.5s ease-in-out infinite;animation-delay:-1.5s}.preview-spark{float:right;color:#7969e9}.mini-preview>span{display:block;font-size:.55rem;letter-spacing:1.4px;color:#777c91;font-weight:700}.mini-preview strong{display:block;font:700 1.05rem var(--display);margin-top:12px}.mini-preview small{font-size:.65rem;color:#777c91}.preview-line{height:5px;width:70%;background:#ddd8ff;border-radius:9px;margin-top:13px}.scroll-cue{position:absolute;bottom:20px;left:0;display:flex;align-items:center;gap:12px;color:#727c92;font-size:.62rem;letter-spacing:1.8px}.scroll-cue span{height:29px;width:18px;border:1px solid #6d7489;border-radius:10px;position:relative}.scroll-cue span:after{content:"";position:absolute;width:3px;height:6px;background:var(--cyan);border-radius:3px;left:6px;top:5px;animation:scrollDot 1.5s infinite}
-.stats{display:grid;grid-template-columns:repeat(3,1fr) 1.2fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:27px 0;gap:25px}.stats>div:not(.stats-note){display:flex;align-items:center;gap:14px}.stats strong{font:600 2rem var(--display);color:#c2b4ff}.stats span{font-size:.8rem;color:var(--muted)}.stats-note{border-left:1px solid var(--line);padding-left:25px;color:var(--muted);font-size:.82rem;line-height:1.5}.stats-note b{color:#f3f4ff}
-.section-space{padding-top:115px;padding-bottom:115px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:42px}.section-heading h2{font-size:clamp(2.6rem,4.2vw,3.8rem);margin:15px 0 0;letter-spacing:-2px}.section-heading>p{max-width:380px;color:var(--muted);font-size:.94rem;line-height:1.8;margin-bottom:5px}.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tech-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#151a29,#10131e);border:1px solid var(--line);border-radius:17px;padding:25px;min-height:330px;transition:transform .35s,border-color .35s,box-shadow .35s}.tech-card:hover{transform:translateY(-8px);border-color:#a79aff65;box-shadow:0 20px 50px #0003}.card-top{display:flex;align-items:center;justify-content:space-between}.tech-icon{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;font:700 1.15rem var(--display)}.orange{background:#ff9c7019;color:#ff9c70}.purple{background:#a78bfa1c;color:#b6a0ff}.yellow{background:#f6d76d1a;color:#f6d76d}.level{font-size:.61rem;letter-spacing:1.2px;color:#78829b;font-weight:700}.tech-card h3{font:600 1.65rem var(--display);margin:23px 0 8px}.tech-card p{font-size:.85rem;color:var(--muted);line-height:1.8;max-width:310px}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag-row span{font-size:.65rem;color:#b5bdd0;background:#ffffff08;border:1px solid #ffffff0e;padding:5px 9px;border-radius:6px}.text-link{display:inline-flex;gap:9px;align-items:center;margin-top:23px;color:#c1b5ff;font-weight:700;font-size:.8rem}.text-link span{transition:transform .2s}.text-link:hover span{transform:translate(3px,-3px)}.card-decoration{position:absolute;right:13px;bottom:-28px;font:700 6rem var(--display);color:#ffffff04;pointer-events:none}
-.roadmap{background:linear-gradient(180deg,#1115218a,#10131dba);border-block:1px solid #ffffff06}.timeline{max-width:900px;margin:0 auto}.roadmap-item{display:grid;grid-template-columns:66px 1fr 100px;gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}.roadmap-item:last-child{border:0}.step-number{font:600 1.2rem var(--display);color:#b4a4ff;width:53px;height:53px;display:grid;place-items:center;border:1px solid #9c89ff3a;border-radius:14px;background:#a18aff0d}.step-label{font-size:.64rem;letter-spacing:1.4px;color:var(--cyan);font-weight:700}.step-content h3{font:600 1.35rem var(--display);margin:5px 0}.step-content p{font-size:.85rem;color:var(--muted);max-width:650px}.progress-track{height:3px;max-width:300px;background:#ffffff10;margin-top:15px;border-radius:4px;overflow:hidden}.progress-track span{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:4px}.step-status{justify-self:end;margin-top:8px;font-size:.58rem;letter-spacing:1px;color:#939bb0;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#111521;transition:transform .3s,border-color .3s}.project-card:hover{transform:translateY(-7px);border-color:#9e8aff70}.project-art{height:205px;margin:12px 12px 0;border-radius:10px;overflow:hidden;position:relative}.portfolio-art{background:linear-gradient(135deg,#292e49,#5e628b);padding:18px}.mock-nav{height:9px;width:100%;border-radius:5px;background:#f4f4ff40}.mock-hero{margin-top:26px}.mock-hero i,.mock-hero b,.mock-hero span{display:block;border-radius:5px}.mock-hero i{height:7px;width:30%;background:#9fe7df;margin-bottom:8px}.mock-hero b{height:14px;width:66%;background:#fff;margin-bottom:8px}.mock-hero span{height:6px;width:48%;background:#fff6}.mock-cards{display:flex;gap:8px;margin-top:20px}.mock-cards i{height:50px;flex:1;border-radius:6px;background:#ffffff20;border:1px solid #ffffff24}.weather-art{background:linear-gradient(145deg,#d9f4ec,#94c8c9);color:#1e4652;padding:17px 20px}.weather-top{display:flex;justify-content:space-between;font-size:.6rem;letter-spacing:1px;font-weight:700}.weather-sun{position:absolute;font-size:4rem;right:25px;top:35px;color:#fff4a5;text-shadow:0 0 25px #ffda7b}.weather-temp{font:500 3rem var(--display);margin-top:12px}.weather-caption{font-size:.65rem}.weather-bars{display:flex;align-items:end;gap:8px;height:35px;margin-top:10px}.weather-bars i{height:35%;width:17px;background:#4b9ca3;border-radius:4px 4px 0 0}.weather-bars i:nth-child(2){height:60%}.weather-bars i:nth-child(3){height:85%}.weather-bars i:nth-child(4){height:55%}.weather-bars i:nth-child(5){height:75%}.todo-art{background:linear-gradient(145deg,#25293e,#171b2a);padding:19px 17px;color:#e9e9f7}.todo-title{font:600 1rem var(--display);margin-bottom:15px}.todo-title span{float:right;color:#b5a5ff}.todo-row{font-size:.65rem;padding:7px 0;border-bottom:1px solid #ffffff12;color:#b7bed1}.todo-row i{display:inline-grid;place-items:center;width:13px;height:13px;border:1px solid #8f83f4;border-radius:4px;margin-right:8px;color:#a99bff;font-size:.55rem;font-style:normal}.todo-row:nth-of-type(2) i,.todo-row:nth-of-type(3) i{background:#8d7bff}.todo-add{font-size:.61rem;color:#a99bff;margin-top:12px}.project-info{padding:20px 20px 23px}.project-number{font-size:.62rem;color:var(--cyan);letter-spacing:1.3px;font-weight:700}.project-info h3{font:600 1.25rem var(--display);margin:7px 0}.project-info p{color:var(--muted);font-size:.82rem;line-height:1.7;min-height:55px}.project-info .tag-row{margin-top:14px}
-.cta-section{position:relative;overflow:hidden;text-align:center;border:1px solid #a18aff2b;border-radius:24px;padding:75px 24px;background:linear-gradient(130deg,#17192a,#151c29);margin-bottom:100px}.cta-glow{position:absolute;width:440px;height:260px;border-radius:50%;background:#8871ff1c;filter:blur(75px);top:-100px;left:calc(50% - 220px);pointer-events:none}.cta-section .eyebrow{justify-content:center}.cta-section h2{position:relative;font-size:clamp(2.4rem,4.5vw,4rem);margin:18px 0}.cta-section p{color:var(--muted);font-size:.92rem;margin-bottom:26px}.cta-section .button{position:relative}.cta-code{position:absolute;right:24px;bottom:13px;color:#ffffff10;font:600 1rem ui-monospace,monospace}.site-footer{display:flex;align-items:center;gap:25px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:25px;padding-bottom:28px}.site-footer .logo{font-size:1.1rem}.site-footer .logo-mark{width:30px;height:30px;font-size:.75rem}.site-footer p{color:var(--muted);font-size:.75rem;margin-right:auto}.site-footer>a:not(.logo){font-size:.75rem;color:#b9c0d3}.site-footer small{width:100%;color:#69738b;font-size:.68rem}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}.tech-card:nth-child(2),.project-card:nth-child(2){transition-delay:.12s}.tech-card:nth-child(3),.project-card:nth-child(3){transition-delay:.24s}
-@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes blink{to{visibility:hidden}}@keyframes pulse{0%,100%{box-shadow:0 0 0 4px #66e8df14}50%{box-shadow:0 0 0 8px #66e8df05}}@keyframes scrollDot{0%{transform:translateY(0);opacity:1}80%,100%{transform:translateY(10px);opacity:0}}
-@media(max-width:900px){.hero{gap:15px;min-height:610px}.hero h1{font-size:clamp(2.8rem,6vw,4rem)}.hero-visual{transform:scale(.9);transform-origin:center}.section-heading{gap:25px}.section-heading>p{max-width:320px}.tech-card{padding:20px}.level{font-size:.54rem}.stats{grid-template-columns:repeat(3,1fr)}.stats-note{display:none}}
-@media(max-width:700px){.section-shell,.site-header{width:calc(100% - 36px)}.site-header{height:72px}.menu-toggle{display:block;cursor:pointer}.nav-links{display:none;position:absolute;top:63px;left:0;right:0;padding:18px;background:#151927;border:1px solid var(--line);border-radius:14px;flex-direction:column;align-items:stretch;gap:17px;box-shadow:0 20px 35px #0006}.nav-links.open{display:flex}.nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding-top:65px;padding-bottom:75px;gap:10px}.hero h1{font-size:clamp(3rem,11vw,4.3rem);letter-spacing:-2px;margin:19px 0}.hero-description{font-size:.96rem}.hero-visual{height:365px;transform:none;margin-top:5px}.orbit{width:320px;height:320px}.orbit-two{width:260px;height:260px}.code-window{width:min(400px,94%)}.code-body{font-size:.72rem;padding:22px 10px 27px}.line-no{width:28px}.indent{padding-left:12px}.code-cursor{left:220px}.chip-html{left:0;top:23px}.chip-css{right:0;top:67px}.chip-js{left:4%;bottom:25px}.mini-preview{right:0;bottom:0;width:155px;padding:12px}.scroll-cue{bottom:17px}.stats{grid-template-columns:repeat(3,1fr);gap:10px;padding:22px 0}.stats>div:not(.stats-note){display:block;text-align:center}.stats strong{display:block;font-size:1.65rem}.stats span{font-size:.68rem}.section-space{padding-top:80px;padding-bottom:80px}.section-heading{display:block;margin-bottom:30px}.section-heading h2{font-size:clamp(2.45rem,9vw,3.2rem)}.section-heading>p{margin-top:18px;font-size:.88rem}.tech-grid,.project-grid{grid-template-columns:1fr}.tech-card{min-height:0;padding:24px}.tech-card p{max-width:440px}.project-art{height:200px}.roadmap-item{grid-template-columns:48px 1fr;gap:14px;padding:23px 0}.step-number{width:44px;height:44px;font-size:1rem}.step-status{display:none}.step-content h3{font-size:1.2rem}.step-content p{font-size:.81rem}.cta-section{padding:60px 18px;margin-bottom:70px}.cta-section h2{font-size:clamp(2.3rem,8.5vw,3.1rem);letter-spacing:-1.5px}.cta-code{display:none}.site-footer{gap:13px}.site-footer p{width:calc(100% - 150px);margin-right:0}.site-footer>a:not(.logo){margin-left:auto}.site-footer small{margin-top:5px}}
-@media(max-width:390px){.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{justify-content:center}.hero-visual{height:330px}.code-window{width:100%}.code-body{font-size:.64rem}.mini-preview{transform:scale(.88);transform-origin:bottom right}.floating-chip{font-size:.75rem;padding:9px 11px}.stats span{font-size:.62rem}.site-footer p{width:100%;order:3}.site-footer small{order:4}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Responsive web development services website with contact and feedback forms.">
+<title>WebCraft Studio | Web Development Services</title>
+<style>:root{--navy:#0a2540;--orange:#f7941d;--ink:#10243a;--muted:#617084;--line:#e5eaf0;--light:#f6f8fb;--white:#fff;--green:#1e9b79;--shadow:0 24px 70px rgba(10,37,64,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}.container{width:min(1160px,calc(100% - 48px));margin-inline:auto}.site-header{height:82px;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(229,234,240,.8);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px)}.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{display:inline-flex;align-items:center;gap:8px;font-size:1.13rem;font-weight:850;letter-spacing:-.6px;color:var(--navy);white-space:nowrap}.logo>span:last-child{margin-left:-7px;color:#738094;font-weight:650}.logo-mark{display:grid;place-items:center;width:34px;height:34px;background:var(--orange);border-radius:10px;color:var(--navy);font-weight:900;font-size:1.1rem}.nav{display:flex;align-items:center;gap:30px}.nav>a:not(.nav-cta){font-size:.91rem;color:#526176;font-weight:650;transition:color .2s}.nav>a:hover,.nav>a.active{color:var(--navy)}.nav-cta{padding:11px 16px;border-radius:9px;background:var(--navy);color:white;font-size:.9rem;font-weight:750;transition:transform .2s,background .2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px)}.nav-cta span,.btn span{margin-left:8px}.menu-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}.menu-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px}
+.hero{padding:78px 0 85px;overflow:hidden;background:radial-gradient(ellipse at 85% 25%,rgba(247,148,29,.10),transparent 34%),linear-gradient(180deg,#fff,#fbfcfe)}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:52px}.eyebrow{font-size:.73rem;font-weight:850;letter-spacing:1.8px;color:#69778a;margin:0 0 18px}.eyebrow-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--orange);margin-right:8px;vertical-align:middle}.hero h1,.page-hero h1{font-size:clamp(2.7rem,5vw,4.45rem);line-height:1.08;letter-spacing:-3px;color:var(--navy);margin:0;max-width:670px}.hero h1 span,.page-hero h1 span,.section h2 span,.about-copy h2 span,.contact-info h2 span{color:#ed8a16}.hero-text{max-width:530px;font-size:1.08rem;color:var(--muted);margin:25px 0 28px;line-height:1.8}.hero-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:14px 20px;font-weight:750;font-size:.93rem;cursor:pointer;transition:transform .2s,box-shadow .2s;background:none}.btn-primary{background:var(--orange);color:var(--navy);box-shadow:0 9px 20px rgba(247,148,29,.19)}.btn-dark{background:var(--navy);color:white;margin-top:18px}.btn-light{background:#fff;color:var(--navy)}.text-link{font-weight:750;font-size:.92rem;color:var(--navy)}.text-link span{margin-left:7px;color:#ed8a16}.hero-proof{display:flex;align-items:center;gap:13px;margin-top:37px}.avatar-stack{display:flex;padding-left:2px}.avatar-stack span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#dce8f4;color:var(--navy);font-size:.75rem;font-weight:850;border:2px solid #fff;margin-left:-3px}.avatar-stack span:nth-child(2){background:#ffe1bb}.avatar-stack span:nth-child(3){background:#d8f2e8}.hero-proof p{font-size:.82rem;line-height:1.45;margin:0;color:var(--navy)}.hero-proof small{color:var(--muted)}
+.hero-art{position:relative;min-height:420px;display:grid;place-items:center}.glow{position:absolute;border-radius:50%;filter:blur(1px)}.glow-one{width:300px;height:300px;background:rgba(247,148,29,.13);right:6%;top:7%}.glow-two{width:190px;height:190px;background:rgba(41,125,184,.10);left:2%;bottom:4%}.browser-card{width:min(100%,510px);position:relative;z-index:2;border-radius:16px;background:#fff;box-shadow:0 28px 80px rgba(10,37,64,.18);overflow:hidden;transform:rotate(-1.5deg);border:1px solid #e6eaf0}.browser-top{height:43px;background:#f5f7fa;border-bottom:1px solid #e8edf2;display:flex;align-items:center;padding:0 14px;gap:14px}.window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#f4a49d}.window-dots i:nth-child(2){background:#f3ce79}.window-dots i:nth-child(3){background:#8ad2ad}.browser-url{margin:auto;background:#fff;border:1px solid #e7ebf0;border-radius:5px;color:#98a3b2;padding:3px 50px;font-size:.62rem}.browser-menu{font-size:.7rem;color:#8591a1}.mock-site{padding:23px 27px 20px}.mock-nav{display:flex;justify-content:space-between;align-items:center;font-size:.62rem;color:#748096}.mock-nav b{display:flex;align-items:center;gap:7px;color:var(--navy);font-size:.85rem}.mock-logo{display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--orange)}.mock-content{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:33px 0 26px}.mock-content small{font-size:.48rem;letter-spacing:1.5px;color:#ed8a16;font-weight:850}.mock-content h3{font-size:2rem;line-height:1.05;letter-spacing:-1px;color:var(--navy);margin:10px 0}.mock-content p{font-size:.61rem;color:#8a95a4;margin:0 0 14px}.mock-button{display:inline-block;background:var(--navy);color:white;border-radius:5px;padding:8px 11px;font-size:.57rem}.mock-graphic{height:175px;position:relative;display:grid;place-items:center}.graphic-circle{width:138px;height:138px;border-radius:50%;background:linear-gradient(135deg,#fbd9a9,#f7941d);position:absolute}.graphic-circle:after{content:"";position:absolute;inset:23px;border:1px solid rgba(10,37,64,.24);border-radius:50%}.graphic-card{position:absolute;padding:13px 16px;border-radius:9px;background:#fff;box-shadow:0 8px 22px #0a25401c;color:#ed8a16;font-size:1rem}.graphic-card b{font-size:.57rem;color:var(--navy)}.card-a{left:-3px;top:20px}.card-b{right:-2px;bottom:14px}.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #edf0f4;padding-top:16px}.mock-stats div{display:flex;flex-direction:column}.mock-stats b{font-size:.92rem;color:var(--navy)}.mock-stats small{font-size:.56rem;color:#8894a4}.floating-tag{position:absolute;z-index:3;background:white;border:1px solid #e9edf2;box-shadow:0 12px 35px #0a25401a;border-radius:10px;padding:12px 15px;font-size:.76rem;font-weight:750;color:var(--navy)}.floating-tag span{color:#ed8a16;margin-right:6px}.tag-top{top:25px;right:-5px}.tag-bottom{bottom:20px;left:-6px}.floating-tag .check{color:var(--green)}
+.trust-strip{border-block:1px solid var(--line);padding:22px 0}.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}.trust-inner>span{font-size:.66rem;letter-spacing:1.5px;font-weight:850;color:#8792a1}.trust-inner>div{font-weight:800;color:#9aa4b2;font-size:.93rem}
+.section{padding:88px 0}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}.section h2,.about-copy h2,.contact-info h2{font-size:clamp(2rem,3.5vw,3rem);line-height:1.15;letter-spacing:-1.6px;color:var(--navy);margin:0}.desktop-link{margin-bottom:8px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{border:1px solid var(--line);border-radius:15px;padding:28px 27px 25px;background:#fff;transition:transform .2s,box-shadow .2s}.service-card:hover,.detail-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.service-card.featured{background:var(--navy);border-color:var(--navy);color:white}.service-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;font-size:1.35rem;font-weight:800;margin-bottom:23px}.icon-blue{background:#e4efff;color:#2364b5}.icon-orange{background:#fff0dc;color:#d77a08}.icon-green{background:#dff7ed;color:#168764}.icon-purple{background:#eee7ff;color:#7752c9}.card-number{font-size:.66rem;letter-spacing:1.4px;font-weight:850;color:#95a0ae;margin:0 0 10px}.service-card h3,.detail-card h2{font-size:1.35rem;color:var(--navy);margin:0 0 10px;letter-spacing:-.5px}.featured h3{color:white}.service-card>p:not(.card-number),.detail-card>p:not(.card-number){font-size:.91rem;color:var(--muted);margin:0 0 25px;line-height:1.75}.featured>p:not(.card-number){color:#c5d0df}.card-link{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:17px;font-size:.84rem;font-weight:800;color:var(--navy)}.featured .card-link{color:white;border-color:#ffffff2b}.card-link span{color:var(--orange)}
+.process-section{background:var(--light)}.process-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:center}.muted{color:var(--muted);line-height:1.8}.process-grid .muted{max-width:410px}.process-list{display:grid;gap:0}.process-item{display:flex;gap:22px;padding:22px 0;border-bottom:1px solid #e0e6ed}.process-item:first-child{padding-top:0}.process-item>span,.value-row>span,.contact-point>span{font-size:.8rem;font-weight:900;color:#ed8a16;padding-top:4px}.process-item h3,.value-row h3{margin:0 0 4px;color:var(--navy);font-size:1.08rem}.process-item p,.value-row p{margin:0;color:var(--muted);font-size:.9rem}
+.feedback-section{background:#fff}.feedback-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.feedback-wrap>div{padding-top:30px}.feedback-wrap>div>p:last-child{max-width:400px}.form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:0 14px 45px rgba(10,37,64,.06)}.form-card label,.field label{display:block;font-size:.82rem;font-weight:750;color:var(--navy);margin:0 0 8px}.form-card input:not([type=checkbox]),.form-card select,.form-card textarea{display:block;width:100%;padding:12px 13px;border:1px solid #dce3eb;border-radius:8px;background:#fff;color:var(--ink);outline:none;transition:border .2s,box-shadow .2s;margin-bottom:17px;font-size:.9rem}.form-card input:focus,.form-card select:focus,.form-card textarea:focus{border-color:#f2a33d;box-shadow:0 0 0 3px rgba(247,148,29,.14)}.form-card input::placeholder,.form-card textarea::placeholder{color:#a1aab7}.form-card textarea{resize:vertical;min-height:90px}.full-width{width:100%}.form-message{font-size:.87rem;font-weight:700;margin:12px 0 0;min-height:0}.form-message.success{color:#168764;background:#e6f8f0;border-radius:8px;padding:11px 12px}.form-message.error{color:#b42318;background:#fff0ee;border-radius:8px;padding:11px 12px}.form-note{display:block;color:#8a96a6;font-size:.72rem;margin-top:12px}.cta-band{background:var(--navy);padding:44px 0}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}.cta-inner .eyebrow{color:#aebed0;margin-bottom:9px}.cta-inner h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;letter-spacing:-1px;color:#fff;margin:0}.site-footer{background:#071b2e;color:#b7c4d2;padding:40px 0 0}.footer-main{display:flex;justify-content:space-between;gap:40px;padding-bottom:32px}.footer-logo{color:white}.footer-logo>span:last-child{color:#9eafc1}.footer-main>div:first-child p{font-size:.86rem;color:#9eafc1;margin:13px 0 0}.footer-links{display:flex;gap:70px}.footer-links>div{display:grid;gap:8px;align-content:start}.footer-links b{font-size:.83rem;color:white;margin-bottom:5px}.footer-links a{font-size:.82rem;color:#aebed0}.footer-links a:hover{color:var(--orange)}.footer-bottom{border-top:1px solid #ffffff1c;display:flex;justify-content:space-between;gap:15px;padding:17px 0;font-size:.74rem;color:#879bad}
+.page-hero{padding:78px 0 72px;background:radial-gradient(ellipse at 83% 10%,rgba(247,148,29,.12),transparent 35%),var(--light);text-align:center}.page-hero h1{font-size:clamp(2.5rem,5vw,4rem);max-width:850px;margin:0 auto}.page-hero>div>p:last-child{max-width:650px;color:var(--muted);margin:20px auto 0;font-size:1.05rem}.services-detail{padding-top:65px}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.detail-card{padding:30px;border:1px solid var(--line);border-radius:15px;transition:transform .2s,box-shadow .2s;scroll-margin-top:100px}.detail-card h2{font-size:1.55rem}.detail-card ul{padding-left:20px;margin:0 0 24px;color:#5f6d80;font-size:.9rem}.detail-card li{padding:4px 0}.detail-card li::marker{color:var(--orange)}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:85px;align-items:center}.about-highlight{min-height:350px;background:var(--navy);border-radius:20px;padding:38px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.about-highlight:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff2b;border-radius:50%;right:-70px;top:20px;box-shadow:0 0 0 30px #ffffff08,0 0 0 60px #ffffff06}.about-symbol{font-size:6rem;line-height:1;font-weight:900;color:var(--orange);letter-spacing:-8px}.about-highlight p{position:relative;z-index:1;color:#d4deea;font-size:1.25rem;line-height:1.5}.about-highlight strong{color:white}.about-copy h2{margin-bottom:20px}.about-copy>.muted{margin-bottom:28px}.value-row{display:flex;gap:20px;padding:17px 0;border-top:1px solid var(--line)}.value-row:last-of-type{margin-bottom:22px}.contact-hero{padding-bottom:60px}.contact-section{padding-top:55px}.contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:75px;align-items:start}.contact-info h2{font-size:clamp(2rem,3vw,2.7rem)}.contact-info>.muted{margin:20px 0 27px}.contact-point{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}.contact-point b{font-size:.91rem;color:var(--navy)}.contact-point p{margin:3px 0 0;color:var(--muted);font-size:.83rem;line-height:1.6}.contact-note{display:flex;gap:12px;background:#fff6e9;padding:15px;border-radius:10px;margin-top:24px;color:#8e5a15}.contact-note>span{font-size:1.1rem}.contact-note p{margin:0;font-size:.79rem;line-height:1.65}.contact-note b{color:#6d420c}.form-heading{margin-bottom:22px}.form-heading h2{font-size:1.5rem;color:var(--navy);margin:0 0 3px}.form-heading p{font-size:.8rem;color:var(--muted);margin:0}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{min-width:0}.field-error{display:block;color:#b42318;font-size:.74rem;margin:-12px 0 12px;min-height:0}.invalid{border-color:#d92d20!important;background:#fffafa!important}.checkbox-label{display:flex!important;align-items:flex-start;gap:10px;font-weight:550!important;line-height:1.5;margin:5px 0 7px!important}.checkbox-label input{margin-top:5px;accent-color:var(--orange)}.consent-error{margin:0 0 13px 26px}
+@media(max-width:950px){.nav{gap:18px}.hero-grid{gap:25px}.hero-art{min-height:360px}.mock-site{padding:18px}.mock-content{padding:25px 0 18px}.mock-content h3{font-size:1.6rem}.graphic-circle{width:115px;height:115px}.graphic-card{padding:10px}.process-grid,.feedback-wrap,.about-grid,.contact-grid{gap:45px}.trust-inner>span{width:100%;text-align:center}.trust-inner{justify-content:center}.service-card{padding:23px 20px}}
+@media(max-width:760px){.container{width:min(100% - 36px,560px)}.site-header{height:72px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:71px;left:0;right:0;padding:15px 22px 22px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 25px #0a254014;align-items:stretch;gap:0;flex-direction:column}.nav.open{display:flex}.nav>a:not(.nav-cta){padding:12px 4px;border-bottom:1px solid #f0f2f5}.nav-cta{margin-top:14px;text-align:center}.hero{padding:55px 0 50px}.hero-grid{grid-template-columns:1fr;gap:20px}.hero h1{font-size:clamp(2.65rem,11vw,3.8rem);letter-spacing:-2px}.hero-text{font-size:1rem;margin:20px 0 24px}.hero-art{min-height:330px;margin:0 -6px}.browser-card{width:94%}.mock-content h3{font-size:1.65rem}.tag-top{right:0;top:7px}.tag-bottom{left:0;bottom:6px}.trust-strip{padding:18px 0}.trust-inner{gap:12px 20px}.trust-inner>div{font-size:.82rem}.section{padding:62px 0}.section-heading{align-items:start;flex-direction:column;margin-bottom:25px}.section h2,.about-copy h2,.contact-info h2{font-size:2.2rem}.desktop-link{margin:0}.service-grid{grid-template-columns:1fr;gap:14px}.service-card{padding:24px}.service-icon{margin-bottom:18px}.process-grid,.feedback-wrap,.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}.process-grid .muted{margin-bottom:10px}.process-item{padding:18px 0}.feedback-wrap>div{padding-top:0}.form-card{padding:23px 20px}.cta-band{padding:34px 0}.cta-inner{align-items:flex-start;flex-direction:column}.footer-main{flex-direction:column;gap:30px}.footer-links{gap:55px}.footer-bottom{flex-direction:column;gap:4px}.page-hero{padding:58px 0 50px}.page-hero h1{font-size:clamp(2.45rem,10vw,3.4rem);letter-spacing:-2px}.page-hero>div>p:last-child{font-size:.98rem}.detail-grid{grid-template-columns:1fr}.detail-card{padding:25px}.about-highlight{min-height:260px}.about-symbol{font-size:5rem}.contact-section{padding-top:40px}.form-row{grid-template-columns:1fr;gap:0}.contact-info h2{max-width:500px}}
+@media(max-width:390px){.container{width:calc(100% - 28px)}.logo{font-size:1rem}.hero-actions{gap:16px}.btn{padding:12px 15px}.hero-art{min-height:285px}.mock-site{padding:13px}.mock-nav>span{font-size:.5rem}.mock-content{padding:19px 0 14px}.mock-content h3{font-size:1.35rem}.mock-graphic{height:140px}.graphic-circle{width:95px;height:95px}.graphic-card{padding:8px;font-size:.8rem}.browser-url{padding:3px 25px}.floating-tag{font-size:.66rem;padding:9px 10px}.form-card{padding:20px 16px}.footer-links{gap:35px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
-
-/* Services, booking form and contact section */
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service-card{padding:27px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(145deg,#151a29,#10131e);transition:transform .3s,border-color .3s}
-.service-card:hover{transform:translateY(-6px);border-color:#a79aff70}
-.service-symbol{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#a18aff17;color:#b6a4ff;font-size:1.35rem}
-.service-card h3{font:600 1.25rem var(--display);margin:20px 0 9px}
-.service-card p{font-size:.86rem;color:var(--muted);line-height:1.8;min-height:80px}
-.service-card>a{display:inline-block;margin-top:18px;color:#c1b5ff;font-size:.8rem;font-weight:700}
-.appointment{padding-top:95px;padding-bottom:95px}
-.appointment-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:start}
-.appointment-copy h2{font:600 clamp(2.5rem,4vw,3.7rem)/1.1 var(--display);letter-spacing:-2px;margin:19px 0}
-.appointment-copy>p{color:var(--muted);font-size:.92rem;line-height:1.85}
-.contact-points{display:grid;gap:22px;margin-top:32px}
-.contact-points>div{display:flex;gap:14px;align-items:flex-start}
-.contact-points>div>span{font:600 .8rem var(--display);color:var(--cyan);border:1px solid #66e8df2a;background:#66e8df0b;border-radius:8px;padding:7px 9px}
-.contact-points p{display:grid;gap:3px;font-size:.86rem}
-.contact-points small{font-size:.76rem;color:var(--muted)}
-.booking-form{padding:29px;border:1px solid #ffffff16;border-radius:18px;background:linear-gradient(145deg,#171c2b,#10131e);box-shadow:0 24px 70px #0002}
-.form-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-.form-kicker{font-size:.62rem;letter-spacing:1.5px;color:var(--cyan);font-weight:700}
-.form-heading h3{font:600 1.55rem var(--display);margin-top:4px}
-.form-star{font-size:1.7rem;color:#b3a1ff}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.booking-form label{display:block;font-size:.76rem;font-weight:600;color:#dce0ef;margin-bottom:16px}
-.booking-form input:not([type=checkbox]),.booking-form select,.booking-form textarea{display:block;width:100%;margin-top:7px;background:#0c101a;border:1px solid #ffffff17;border-radius:9px;padding:12px 12px;color:#f4f5ff;font:400 .8rem var(--font);outline:none;transition:border-color .2s,box-shadow .2s}
-.booking-form input::placeholder,.booking-form textarea::placeholder{color:#68728a}
-.booking-form select:invalid{color:#68728a}
-.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{border-color:#a99aff;box-shadow:0 0 0 3px #a99aff17}
-.booking-form textarea{resize:vertical;min-height:105px}
-.optional{font-weight:400;color:#78839b}
-.booking-form .consent{display:flex;align-items:flex-start;gap:9px;font-weight:400;color:#aeb7ca;line-height:1.6}
-.consent input{accent-color:#a99aff;margin-top:3px}
-.submit-button{border:0;cursor:pointer;font-family:var(--font)}
-.submit-button:disabled{opacity:.65;cursor:wait;transform:none}
-.form-privacy{font-size:.67rem;color:#78839b;line-height:1.7;margin-top:14px}
-.form-feedback{display:none;padding:12px 14px;margin-top:15px;border-radius:9px;font-size:.8rem;line-height:1.6}
-.form-feedback.success{display:block;color:#a3f3d5;background:#67e6b114;border:1px solid #67e6b13d}
-.form-feedback.error{display:block;color:#ffb6c2;background:#ff829514;border:1px solid #ff82953d}
-.honey-field{position:absolute!important;left:-10000px!important;opacity:0!important}
-.contact-strip{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px;border:1px solid var(--line);border-radius:16px;background:#111521;margin-bottom:90px}
-.contact-strip h2{font:600 1.7rem var(--display);margin:7px 0}
-.contact-strip p{color:var(--muted);font-size:.83rem}
-@media(max-width:900px){.appointment-layout{grid-template-columns:1fr;gap:35px}.appointment-copy{max-width:650px}.contact-points{grid-template-columns:repeat(3,1fr);gap:12px}.contact-points>div{gap:9px}.contact-points small{font-size:.68rem}.service-card{padding:21px}}
-@media(max-width:700px){.service-grid{grid-template-columns:1fr}.service-card p{min-height:0}.appointment{padding-top:70px;padding-bottom:70px}.appointment-layout{gap:28px}.contact-points{grid-template-columns:1fr;gap:16px}.contact-points small{font-size:.76rem}.booking-form{padding:20px}.form-row{grid-template-columns:1fr;gap:0}.contact-strip{align-items:flex-start;flex-direction:column;padding:23px;margin-bottom:65px}.contact-strip .button{width:100%;justify-content:center}}
-@media(prefers-reduced-motion:reduce){.service-card{transition:none}}
-
+/* Single-file page switching */
+.page-view[hidden]{display:none!important}
+.page-view{animation:pageFade .22s ease}
+@keyframes pageFade{from{opacity:.55;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.nav a.active{color:var(--orange,#f7941d)}
+button:disabled{opacity:.7;cursor:wait}
 </style>
-</head>
-<body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <header class="site-header">
-    <a class="logo" href="#home" aria-label="DevLaunch home"><span class="logo-mark">&lt;/&gt;</span> DevLaunch<span class="logo-dot">.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a><a href="#services">Services</a><a href="#learn">Learn</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
-      <a class="nav-cta" href="#appointment">Book an appointment <span>↗</span></a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero section-shell" id="home">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse"></span> YOUR JOURNEY STARTS HERE</div>
-        <h1>Build the web.<br><span class="gradient-text">Shape the future.</span></h1>
-        <p class="hero-description">A clear, beginner-friendly path from your first HTML tag to interactive websites. Learn by building—not just watching.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#learn">Explore the lessons <span>→</span></a>
-          <a class="button button-quiet" href="#roadmap"><span class="play-icon">▶</span> View roadmap</a>
-        </div>
-        <div class="hero-proof"><div class="avatar-stack"><span>H</span><span>C</span><span>JS</span></div><p><strong>Start with the basics</strong><br><small>HTML · CSS · JavaScript</small></p></div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="floating-chip chip-html">&lt;html&gt;</div><div class="floating-chip chip-css">✦ CSS</div><div class="floating-chip chip-js">JS</div>
-        <div class="code-window">
-          <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>hello-world.html</span><span class="window-more">•••</span></div>
-          <div class="code-body">
-            <div class="line"><span class="line-no">01</span><span><b class="pink">&lt;section</b> <b class="mint">class</b>=<b class="yellow">"future"</b><b class="pink">&gt;</b></span></div>
-            <div class="line"><span class="line-no">02</span><span class="indent"><b class="pink">&lt;h1&gt;</b>Hello, world!<b class="pink">&lt;/h1&gt;</b></span></div>
-            <div class="line"><span class="line-no">03</span><span class="indent"><b class="pink">&lt;p&gt;</b>Your ideas start here.<b class="pink">&lt;/p&gt;</b></span></div>
-            <div class="line"><span class="line-no">04</span><span><b class="pink">&lt;/section&gt;</b></span></div>
-            <div class="code-cursor"></div>
-          </div>
-          <div class="code-footer"><span><i></i> HTML ready</span><span>UTF-8&nbsp; · &nbsp;Live preview</span></div>
-        </div>
-        <div class="mini-preview"><div class="preview-spark">✦</div><span>LIVE PREVIEW</span><strong>Hello, world!</strong><small>Your ideas start here.</small><div class="preview-line"></div></div>
-      </div>
-      <a class="scroll-cue" href="#learn"><span></span> SCROLL TO EXPLORE</a>
-    </section>
-
-    <section class="stats section-shell reveal" aria-label="Learning highlights">
-      <div><strong>03</strong><span>Core technologies</span></div><div><strong>06</strong><span>Learning milestones</span></div><div><strong>∞</strong><span>Things to create</span></div><div class="stats-note">Small steps.<br><b>Big possibilities.</b></div>
-    </section>
-
-
-    <section class="services section-shell section-space" id="services">
-      <div class="section-heading reveal"><div><div class="eyebrow">WHAT WE CAN HELP WITH</div><h2>Ideas into <span class="gradient-text">real websites.</span></h2></div><p>Explore the core services offered through DevLaunch. Choose a topic in the form below and send a request to get started.</p></div>
-      <div class="service-grid">
-        <article class="service-card reveal"><span class="service-symbol">✦</span><h3>Website Design</h3><p>Clean, modern page layouts with thoughtful spacing, colors, and clear content.</p><a href="#appointment">Ask about design ↗</a></article>
-        <article class="service-card reveal"><span class="service-symbol">⌘</span><h3>Responsive Development</h3><p>Pages that adapt smoothly to phones, tablets, laptops, and larger screens.</p><a href="#appointment">Ask about development ↗</a></article>
-        <article class="service-card reveal"><span class="service-symbol">⚡</span><h3>Interactive Features</h3><p>Useful JavaScript interactions such as navigation menus, forms, and small UI tools.</p><a href="#appointment">Ask about features ↗</a></article>
-      </div>
-    </section>
-\n    <section class="learning section-shell section-space" id="learn">
-      <div class="section-heading reveal"><div><div class="eyebrow">THE FOUNDATIONS</div><h2>Three tools.<br><span class="gradient-text">One amazing web.</span></h2></div><p>Every great website starts with these building blocks. Learn what each one does, then combine them to bring your ideas to life.</p></div>
-      <div class="tech-grid">
-        <article class="tech-card html-card reveal"><div class="card-top"><div class="tech-icon orange">&lt;/&gt;</div><span class="level">01 / STRUCTURE</span></div><h3>HTML</h3><p>Give your website meaning and structure. Add headings, paragraphs, images, links, forms, and more.</p><div class="tag-row"><span>Elements</span><span>Semantic tags</span><span>Forms</span></div><a href="#roadmap" class="text-link">Explore HTML <span>↗</span></a><div class="card-decoration">&lt;h1&gt;</div></article>
-        <article class="tech-card css-card reveal"><div class="card-top"><div class="tech-icon purple">✳</div><span class="level">02 / DESIGN</span></div><h3>CSS</h3><p>Make it look beautiful. Create layouts, choose colors, add responsive design, transitions, and animations.</p><div class="tag-row"><span>Flexbox</span><span>Grid</span><span>Animation</span></div><a href="#roadmap" class="text-link">Explore CSS <span>↗</span></a><div class="card-decoration">{ }</div></article>
-        <article class="tech-card js-card reveal"><div class="card-top"><div class="tech-icon yellow">JS</div><span class="level">03 / INTERACTION</span></div><h3>JavaScript</h3><p>Bring your pages to life with buttons, menus, form checks, dynamic content, and interactive features.</p><div class="tag-row"><span>Variables</span><span>Events</span><span>DOM basics</span></div><a href="#roadmap" class="text-link">Explore JavaScript <span>↗</span></a><div class="card-decoration">()</div></article>
-      </div>
-    </section>
-
-    <section class="roadmap section-space" id="roadmap"><div class="section-shell">
-      <div class="section-heading reveal"><div><div class="eyebrow">YOUR LEARNING PATH</div><h2>From beginner to <span class="gradient-text">builder.</span></h2></div><p>Follow these milestones in order. Practice each skill before moving on, and keep building little projects along the way.</p></div>
-      <div class="timeline">
-        <article class="roadmap-item reveal"><div class="step-number">01</div><div class="step-content"><span class="step-label">WEEK 01 · THE BASICS</span><h3>Meet HTML</h3><p>Learn page structure, headings, paragraphs, links, images, lists, and semantic elements.</p><div class="progress-track"><span style="width:22%"></span></div></div><span class="step-status">START HERE</span></article>
-        <article class="roadmap-item reveal"><div class="step-number">02</div><div class="step-content"><span class="step-label">WEEK 02 · MAKE IT YOURS</span><h3>Style with CSS</h3><p>Practice colors, typography, spacing, borders, Flexbox, Grid, and responsive layouts.</p><div class="progress-track"><span style="width:42%"></span></div></div><span class="step-status">DESIGN</span></article>
-        <article class="roadmap-item reveal"><div class="step-number">03</div><div class="step-content"><span class="step-label">WEEK 03 · ADD MAGIC</span><h3>JavaScript basics</h3><p>Understand variables, functions, conditions, events, and changing page content.</p><div class="progress-track"><span style="width:63%"></span></div></div><span class="step-status">INTERACT</span></article>
-        <article class="roadmap-item reveal"><div class="step-number">04</div><div class="step-content"><span class="step-label">WEEK 04 · BUILD & SHARE</span><h3>Make your first project</h3><p>Combine your skills, test on mobile, fix bugs, and publish your work online.</p><div class="progress-track"><span style="width:84%"></span></div></div><span class="step-status">CREATE</span></article>
-      </div>
-    </div></section>
-
-    <section class="projects section-shell section-space" id="projects">
-      <div class="section-heading reveal"><div><div class="eyebrow">LEARN BY DOING</div><h2>Practice makes <span class="gradient-text">progress.</span></h2></div><p>Turn lessons into real skills with small projects. Start simple, then add your own style and ideas.</p></div>
-      <div class="project-grid">
-        <article class="project-card reveal"><div class="project-art portfolio-art"><div class="mock-nav"></div><div class="mock-hero"><i></i><b></b><span></span></div><div class="mock-cards"><i></i><i></i><i></i></div></div><div class="project-info"><span class="project-number">PROJECT 01</span><h3>Personal portfolio</h3><p>Introduce yourself, show your skills, and share your best work.</p><div class="tag-row"><span>HTML</span><span>CSS</span></div></div></article>
-        <article class="project-card reveal"><div class="project-art weather-art"><div class="weather-top">YOUR CITY <span>•••</span></div><div class="weather-sun">☼</div><div class="weather-temp">26°</div><div class="weather-caption">A bright day to build.</div><div class="weather-bars"><i></i><i></i><i></i><i></i><i></i></div></div><div class="project-info"><span class="project-number">PROJECT 02</span><h3>Weather card</h3><p>Build a clean weather-style UI and practice dynamic values.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JS</span></div></div></article>
-        <article class="project-card reveal"><div class="project-art todo-art"><div class="todo-title">Today's focus <span>✦</span></div><div class="todo-row"><i>✓</i> Learn one new tag</div><div class="todo-row"><i>✓</i> Style a button</div><div class="todo-row"><i></i> Build something small</div><div class="todo-add">+ Add a new task</div></div><div class="project-info"><span class="project-number">PROJECT 03</span><h3>Interactive to-do list</h3><p>Add tasks and check them off using beginner JavaScript.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JS</span></div></div></article>
-      </div>
-    </section>
-
-
-    <section class="appointment section-shell section-space" id="appointment">
-      <div class="appointment-layout">
-        <div class="appointment-copy reveal">
-          <div class="eyebrow">LET'S TALK ABOUT YOUR IDEA</div>
-          <h2>Book an appointment<br><span class="gradient-text">or sign up.</span></h2>
-          <p>Tell us a little about yourself and what you need. After you submit the form, you'll see a confirmation on this page. Once email delivery is configured, your request can also be sent to the site owner's inbox and a confirmation email can be sent to you.</p>
-          <div class="contact-points"><div><span>01</span><p><b>Share your details</b><small>Name, email, and what you need.</small></p></div><div><span>02</span><p><b>Choose a service</b><small>Learning help, a website, or a consultation.</small></p></div><div><span>03</span><p><b>Get a response</b><small>We'll follow up using the contact details you provide.</small></p></div></div>
-        </div>
-        <form class="booking-form reveal" id="bookingForm" action="https://formsubmit.co/ajax/aqa29178@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New DevLaunch website enquiry">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_autoresponse" value="Thanks for contacting DevLaunch! We have received your request. We will review your details and get back to you soon.">
-          <input type="text" name="_honey" class="honey-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="form-heading"><div><span class="form-kicker">START HERE</span><h3>Your details</h3></div><span class="form-star">✦</span></div>
-          <div class="form-row"><label>Full name <input type="text" name="name" placeholder="Enter your name" autocomplete="name" required minlength="2"></label><label>Email address <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label></div>
-          <div class="form-row"><label>Phone number <span class="optional">(optional)</span><input type="tel" name="phone" placeholder="+91 98765 43210" autocomplete="tel"></label><label>I'm interested in <select name="service" required><option value="" disabled selected>Select a service</option><option>Website design</option><option>Responsive website development</option><option>Learn HTML and CSS</option><option>JavaScript basics</option><option>Book a consultation</option><option>Other</option></select></label></div>
-          <div class="form-row"><label>Preferred date <span class="optional">(optional)</span><input type="date" name="preferred_date" id="preferredDate"></label><label>How should we contact you? <select name="contact_preference" required><option value="" disabled selected>Choose one</option><option>Email</option><option>Phone</option></select></label></div>
-          <label>Tell us about your project <textarea name="message" rows="4" placeholder="What would you like to build or learn?" required minlength="8"></textarea></label>
-          <label class="consent"><input type="checkbox" name="consent" value="I agree to be contacted about this request" required><span>I agree to be contacted about this request.</span></label>
-          <button class="button button-primary submit-button" type="submit" id="submitButton">Send my request <span>→</span></button>
-          <p class="form-privacy">Your details are used to respond to your request. Don't submit passwords or sensitive personal information.</p>
-          <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
-
-    <section class="contact-strip section-shell reveal" id="contact"><div><div class="eyebrow">CONTACT</div><h2>Have a question?</h2><p>Use the appointment form and tell us how we can help.</p></div><a class="button button-quiet" href="#appointment">Contact us through the form <span>↗</span></a></section>
-\n    <section class="cta-section section-shell reveal" id="about"><div class="cta-glow"></div><div class="eyebrow">EVERY EXPERT STARTED SOMEWHERE</div><h2>Your first line of code<br>can change <span class="gradient-text">everything.</span></h2><p>Open your editor. Try one thing. Keep going. Your future website is waiting.</p><a class="button button-primary" href="#home">Let's build something <span>↑</span></a><div class="cta-code">&lt;you&gt; can do this &lt;/you&gt;</div></section>
-  </main>
-
-  <footer class="site-footer section-shell"><a class="logo" href="#home"><span class="logo-mark">&lt;/&gt;</span> DevLaunch<span class="logo-dot">.</span></a><p>Made for curious minds and future builders.</p><a href="#home">Back to top ↑</a><small>© <span id="year"></span> DevLaunch. Learn at your own pace.</small></footer>
-  <script>
-// DevLaunch: small, beginner-friendly JavaScript interactions
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-// Mobile navigation opens and closes from the menu button.
-menuToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.textContent = isOpen ? '✕' : '☰';
-});
-
-// Close the mobile menu after choosing a section.
-navLinks.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.textContent = '☰';
-  });
-});
-
-// Animate sections as they enter the viewport.
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
-
-// Show reading progress at the top of the page.
-const scrollProgress = document.getElementById('scrollProgress');
-function updateScrollProgress() {
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-  scrollProgress.style.width = `${progress}%`;
-}
-window.addEventListener('scroll', updateScrollProgress, { passive: true });
-updateScrollProgress();
-
-// Keep the footer year current.
-document.getElementById('year').textContent = new Date().getFullYear();
-
-
-// Set the earliest bookable date to today.
-const preferredDate = document.getElementById('preferredDate');
-if (preferredDate) {
-  const today = new Date();
-  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-    .toISOString().split('T')[0];
-  preferredDate.min = localToday;
-}
-
-// Send form data using FormSubmit's documented AJAX endpoint.
-// This requires an internet connection and one-time inbox activation.
-const bookingForm = document.getElementById('bookingForm');
-const formFeedback = document.getElementById('formFeedback');
-const submitButton = document.getElementById('submitButton');
-
-bookingForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  formFeedback.className = 'form-feedback';
-  formFeedback.textContent = '';
-
-  if (!bookingForm.reportValidity()) return;
-
-  if (!navigator.onLine) {
-    formFeedback.className = 'form-feedback error';
-    formFeedback.textContent = 'You are offline. Connect to the internet and try submitting again.';
-    return;
-  }
-
-  const originalButton = submitButton.innerHTML;
-  submitButton.disabled = true;
-  submitButton.innerHTML = 'Sending request…';
-
-  try {
-    const response = await fetch('https://formsubmit.co/ajax/aqa29178@gmail.com', {
-      method: 'POST',
-      body: new FormData(bookingForm),
-      headers: { 'Accept': 'application/json' },
-      mode: 'cors'
+</head><body>
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="logo" data-page="home" href="#home"><span class="logo-mark">W</span> WebCraft<span>Studio</span></a>
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span><span></span></button>
+<nav class="nav" id="primary-nav">
+<a data-page="home" href="#home">Home</a>
+<a data-page="services" href="#services">Services</a>
+<a data-page="about" href="#about">About</a>
+<a data-page="contact" href="#contact">Contact</a>
+<a class="nav-cta" data-page="contact" href="#contact">Get a Quote <span>↗</span></a>
+</nav>
+</div>
+</header>
+<main>
+<div class="page-view" data-view="home" id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> WEB DESIGN · DEVELOPMENT · DIGITAL GROWTH</p>
+<h1>We build websites that <span>move business</span> forward.</h1>
+<p class="hero-text">Fast, responsive, and thoughtfully designed websites that help your business look professional and turn visitors into customers.</p>
+<div class="hero-actions"><a class="btn btn-primary" data-page="contact" href="#contact">Start a project <span>↗</span></a><a class="text-link" data-page="services" href="#services">Explore services <span>→</span></a></div>
+<div class="hero-proof"><div class="avatar-stack"><span>W</span><span>D</span><span>+</span></div><p><strong>Built around your goals</strong><br/><small>Design, code, and support in one place</small></p></div>
+</div>
+<div aria-label="Illustration of a responsive website dashboard" class="hero-art">
+<div class="glow glow-one"></div><div class="glow glow-two"></div>
+<div class="browser-card">
+<div class="browser-top"><div class="window-dots"><i></i><i></i><i></i></div><div class="browser-url">yourbusiness.com</div><span class="browser-menu">•••</span></div>
+<div class="mock-site">
+<div class="mock-nav"><b><span class="mock-logo"></span> brand.</b><span>About   Services   Contact</span></div>
+<div class="mock-content"><div><small>YOUR NEXT CHAPTER</small><h3>Make your<br/>ideas happen.</h3><p>Digital experiences made for people.</p><span class="mock-button">Let's talk ↗</span></div><div class="mock-graphic"><div class="graphic-circle"></div><div class="graphic-card card-a">✦<br/><b>Design</b></div><div class="graphic-card card-b">↗<br/><b>Growth</b></div></div></div>
+<div class="mock-stats"><div><b>01</b><small>Strategy</small></div><div><b>02</b><small>Design</small></div><div><b>03</b><small>Launch</small></div></div>
+</div>
+</div>
+<div class="floating-tag tag-top"><span>✦</span> Modern design</div><div class="floating-tag tag-bottom"><span class="check">✓</span> Responsive by default</div>
+</div>
+</div>
+</section>
+<section class="trust-strip"><div class="container trust-inner"><span>BUILT FOR YOUR NEXT BIG THING</span><div>Startups</div><div>Small Business</div><div>Creators</div><div>Growing Teams</div></div></section>
+<section class="section" id="services-preview">
+<div class="container">
+<div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Everything you need to <span>get online.</span></h2></div><a class="text-link desktop-link" data-page="services" href="#services">View all services <span>→</span></a></div>
+<div class="service-grid">
+<article class="service-card"><div class="service-icon icon-blue">⌘</div><p class="card-number">01 / DESIGN</p><h3>Website Design</h3><p>Clean, user-friendly designs that reflect your brand and make every visit count.</p><a class="card-link" data-page="services" data-scroll-target="design" href="#services">Explore design <span>↗</span></a></article>
+<article class="service-card featured"><div class="service-icon icon-orange">〈/〉</div><p class="card-number">02 / DEVELOPMENT</p><h3>Web Development</h3><p>Reliable, responsive websites built with modern front-end and back-end technologies.</p><a class="card-link" data-page="services" data-scroll-target="development" href="#services">Explore development <span>↗</span></a></article>
+<article class="service-card"><div class="service-icon icon-green">↗</div><p class="card-number">03 / GROWTH</p><h3>SEO &amp; Maintenance</h3><p>Keep your website healthy, discoverable, secure, and ready to grow with your business.</p><a class="card-link" data-page="services" data-scroll-target="maintenance" href="#services">Explore support <span>↗</span></a></article>
+</div>
+</div>
+</section>
+<section class="section process-section"><div class="container process-grid"><div><p class="eyebrow">A SIMPLE PROCESS</p><h2>From first idea to <span>launch day.</span></h2><p class="muted">A clear process keeps your project moving, with you involved at every important step.</p><a class="btn btn-dark" data-page="contact" href="#contact">Let's work together <span>↗</span></a></div><div class="process-list"><div class="process-item"><span>01</span><div><h3>Discover</h3><p>We learn about your goals, audience, and requirements.</p></div></div><div class="process-item"><span>02</span><div><h3>Design &amp; build</h3><p>We shape the experience and develop your responsive website.</p></div></div><div class="process-item"><span>03</span><div><h3>Launch &amp; support</h3><p>We test, launch, and help you keep things running smoothly.</p></div></div></div></div></section>
+<section class="section feedback-section"><div class="container feedback-wrap"><div><p class="eyebrow">YOUR VOICE MATTERS</p><h2>Help us make the web <span>better.</span></h2><p class="muted">Share quick feedback about this website. Your message will be validated and confirmed on screen.</p></div><form class="form-card" id="feedback-form" novalidate=""><label for="feedback-name">Your name</label><input id="feedback-name" minlength="2" name="name" placeholder="e.g. Priya Sharma" required="" type="text"/><label for="feedback-rating">How was your experience?</label><select id="feedback-rating" name="rating" required=""><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Good</option><option value="3">★★★☆☆ — Okay</option><option value="2">★★☆☆☆ — Needs improvement</option><option value="1">★☆☆☆☆ — Poor</option></select><label for="feedback-message">Your feedback</label><textarea id="feedback-message" minlength="5" name="message" placeholder="Tell us what you think..." required="" rows="3"></textarea><button class="btn btn-primary full-width" type="submit">Send feedback <span>↗</span></button><p aria-live="polite" class="form-message" id="feedback-message-status" role="status"></p><small class="form-note">Your feedback is sent through our email service. On first use, verify the recipient email when requested.</small></form></div></section>
+<section class="cta-band"><div class="container cta-inner"><div><p class="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Let's make something great.</h2></div><a class="btn btn-light" data-page="contact" href="#contact">Tell us about it <span>↗</span></a></div></section>
+</div>
+<div class="page-view" data-view="services" hidden="" id="services">
+<section class="page-hero"><div class="container"><p class="eyebrow">OUR SERVICES</p><h1>Digital services built <span>around you.</span></h1><p>From a first idea to a polished online presence, get the practical skills and support your project needs.</p></div></section>
+<section class="section services-detail"><div class="container detail-grid">
+<article class="detail-card" id="design"><div class="service-icon icon-blue">✳</div><p class="card-number">01 / DESIGN</p><h2>Website Design</h2><p>We create intuitive, accessible layouts that communicate your value clearly and make it easy for visitors to take action.</p><ul><li>UI/UX planning and page layouts</li><li>Brand-aligned visual design</li><li>Mobile-first responsive interfaces</li><li>Landing pages and business websites</li></ul><a class="text-link" data-page="contact" href="#contact">Discuss your design <span>→</span></a></article>
+<article class="detail-card" id="development"><div class="service-icon icon-orange">〈/〉</div><p class="card-number">02 / DEVELOPMENT</p><h2>Web Development</h2><p>Fast, maintainable websites using suitable technologies for your goals, budget, and future growth.</p><ul><li>HTML, CSS, and JavaScript websites</li><li>Responsive multi-page websites</li><li>WordPress and CMS websites</li><li>Forms and front-end interactions</li></ul><a class="text-link" data-page="contact" href="#contact">Plan your website <span>→</span></a></article>
+<article class="detail-card" id="maintenance"><div class="service-icon icon-green">↗</div><p class="card-number">03 / GROWTH</p><h2>SEO &amp; Maintenance</h2><p>Keep your website useful and up to date with routine improvements, technical checks, and search-friendly foundations.</p><ul><li>On-page SEO basics</li><li>Content and page updates</li><li>Performance and mobile checks</li><li>Maintenance and troubleshooting</li></ul><a class="text-link" data-page="contact" href="#contact">Get ongoing support <span>→</span></a></article>
+<article class="detail-card"><div class="service-icon icon-purple">◎</div><p class="card-number">04 / CONSULTING</p><h2>Website Consultation</h2><p>Not sure where to begin? Get help defining scope, choosing a platform, and prioritizing the right features.</p><ul><li>Project scope and requirements</li><li>Platform and technology guidance</li><li>Website improvement suggestions</li><li>Launch planning</li></ul><a class="text-link" data-page="contact" href="#contact">Book a conversation <span>→</span></a></article>
+</div></section>
+<section class="cta-band"><div class="container cta-inner"><div><p class="eyebrow">LET'S GET STARTED</p><h2>Have a goal? We can help.</h2></div><a class="btn btn-light" data-page="contact" href="#contact">Request a quote <span>↗</span></a></div></section>
+</div>
+<div class="page-view" data-view="about" hidden="" id="about">
+<section class="page-hero"><div class="container"><p class="eyebrow">ABOUT WEBCRAFT STUDIO</p><h1>Good websites start with <span>good questions.</span></h1><p>We believe a website should do more than look good. It should be clear, useful, accessible, and aligned with the goals behind it.</p></div></section>
+<section class="section"><div class="container about-grid"><div class="about-highlight"><span class="about-symbol">W.</span><p>Thoughtful by design.<br/><strong>Practical by nature.</strong></p></div><div class="about-copy"><p class="eyebrow">OUR APPROACH</p><h2>Clear communication. <span>Careful execution.</span></h2><p class="muted">WebCraft Studio is a sample web development brand created for this demonstration website. The focus is on building responsive, easy-to-use experiences with clean front-end code and straightforward navigation.</p><div class="value-row"><span>01</span><div><h3>People first</h3><p>We prioritize clarity, accessibility, and a smooth user journey.</p></div></div><div class="value-row"><span>02</span><div><h3>Built to adapt</h3><p>Layouts are designed to work across phones, tablets, laptops, and desktops.</p></div></div><div class="value-row"><span>03</span><div><h3>Honest by default</h3><p>We explain what is included, what is a demo, and what needs a real backend.</p></div></div><a class="btn btn-primary" data-page="contact" href="#contact">Tell us your idea <span>↗</span></a></div></div></section>
+<section class="cta-band"><div class="container cta-inner"><div><p class="eyebrow">YOUR PROJECT, YOUR GOALS</p><h2>Let's build the right thing.</h2></div><a class="btn btn-light" data-page="contact" href="#contact">Contact us <span>↗</span></a></div></section>
+</div>
+<div class="page-view" data-view="contact" hidden="" id="contact">
+<section class="page-hero contact-hero"><div class="container"><p class="eyebrow">LET'S TALK</p><h1>Tell us what you're <span>building.</span></h1><p>Share a few details about your project. This demo form checks your inputs and shows feedback before submission.</p></div></section>
+<section class="section contact-section"><div class="container contact-grid"><div class="contact-info"><p class="eyebrow">START A CONVERSATION</p><h2>Great work begins with a <span>simple hello.</span></h2><p class="muted">Use the form to describe your needs, timeline, and the services you are interested in.</p><div class="contact-point"><span>01</span><div><b>Tell us your goal</b><p>New website, redesign, maintenance, or something else.</p></div></div><div class="contact-point"><span>02</span><div><b>Share the essentials</b><p>A few details help make the next conversation useful.</p></div></div><div class="contact-point"><span>03</span><div><b>See instant validation</b><p>Errors and success messages appear right on this page.</p></div></div><div class="contact-note"><span>ⓘ</span><p><b>Demo notice</b><br/>Enquiries are sent to our email service. The recipient may need to verify the address on the first submission.</p></div></div>
+<form class="form-card contact-form" id="contact-form" novalidate="">
+<div class="form-heading"><h2>Project enquiry</h2><p>Fields marked * are required.</p></div>
+<div class="form-row"><div class="field"><label for="name">Full name *</label><input autocomplete="name" id="name" minlength="2" name="name" placeholder="Your name" required="" type="text"/><small class="field-error"></small></div><div class="field"><label for="email">Email address *</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"/><small class="field-error"></small></div></div>
+<div class="form-row"><div class="field"><label for="phone">Phone (optional)</label><input autocomplete="tel" id="phone" name="phone" placeholder="+91 98765 43210" type="tel"/><small class="field-error"></small></div><div class="field"><label for="service">Service needed *</label><select id="service" name="service" required=""><option value="">Select a service</option><option>Website Design</option><option>Web Development</option><option>WordPress Website</option><option>SEO &amp; Maintenance</option><option>Website Consultation</option><option>Other</option></select><small class="field-error"></small></div></div>
+<div class="field"><label for="budget">Estimated budget</label><select id="budget" name="budget"><option value="">Choose a range (optional)</option><option>Under ₹10,000</option><option>₹10,000–₹25,000</option><option>₹25,000–₹50,000</option><option>₹50,000+</option><option>Not decided yet</option></select></div>
+<div class="field"><label for="project">Tell us about your project *</label><textarea id="project" minlength="10" name="project" placeholder="What do you want your website to do?" required="" rows="5"></textarea><small class="field-error"></small></div>
+<label class="checkbox-label"><input id="consent" required="" type="checkbox"/><span>I agree that the information above may be used to respond to my enquiry. *</span></label><small class="field-error consent-error"></small>
+<button class="btn btn-primary full-width" type="submit">Submit enquiry <span>↗</span></button><p aria-live="polite" class="form-message" id="contact-status" role="status"></p><small class="form-note">Your enquiry is sent to aqa29178@gmail.com after email-service verification.</small>
+</form></div></section>
+</div>
+</main>
+<footer class="site-footer"><div class="container footer-main"><div><a class="logo footer-logo" data-page="home" href="#home"><span class="logo-mark">W</span> WebCraft<span>Studio</span></a><p>Thoughtful websites for ambitious businesses.</p></div><div class="footer-links"><div><b>Explore</b><a data-page="home" href="#home">Home</a><a data-page="services" href="#services">Services</a><a data-page="about" href="#about">About us</a></div><div><b>Get in touch</b><a data-page="contact" href="#contact">Contact</a><a data-page="contact" href="#contact">Request a quote</a></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> WebCraft Studio. Demo website.</span><span>Designed to work on every screen.</span></div></footer>
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  const views = [...document.querySelectorAll('[data-view]')];
+  function showPage(page, target) {
+    if (!views.some(v => v.dataset.view === page)) page = 'home';
+    views.forEach(v => { v.hidden = v.dataset.view !== page; });
+    document.querySelectorAll('.nav a[data-page]').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === page && !a.classList.contains('nav-cta'));
     });
-
-    const result = await response.json().catch(() => null);
-    if (!response.ok || !result || result.success === 'false' || result.success === false) {
-      throw new Error((result && result.message) || 'The form service could not accept this request.');
-    }
-
-    formFeedback.className = 'form-feedback success';
-    formFeedback.textContent = 'Thank you! Your request has been sent. The website owner will review it and contact you soon. If this is your first submission, the inbox may still need one-time activation.';
-    bookingForm.reset();
-  } catch (error) {
-    formFeedback.className = 'form-feedback error';
-    if (!navigator.onLine) {
-      formFeedback.textContent = 'Internet connection lost. Reconnect and submit the form again.';
-    } else {
-      formFeedback.textContent = 'We could not connect to the form service. Make sure the site is opened with internet access. If you opened this as a local file (file://), publish it on Vercel or GitHub Pages and try again. The FormSubmit inbox must also be activated once.';
-    }
-  } finally {
-    submitButton.disabled = false;
-    submitButton.innerHTML = originalButton;
+    if (nav) nav.classList.remove('open');
+    if (menuButton) { menuButton.setAttribute('aria-expanded','false'); menuButton.setAttribute('aria-label','Open navigation'); }
+    history.replaceState(null, '', '#' + page);
+    window.scrollTo({top:0, behavior:'smooth'});
+    if (target) setTimeout(() => { const el=document.getElementById(target); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
   }
-});
+  document.querySelectorAll('a[data-page]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); showPage(a.dataset.page, a.dataset.scrollTarget || null);
+  }));
+  if (menuButton && nav) {
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !menuButton.contains(e.target)) nav.classList.remove('open');
+    });
+  }
+  const year=document.getElementById('year'); if(year) year.textContent=new Date().getFullYear();
 
-</script>
-</body>
-</html>
+  // Email delivery via FormSubmit AJAX. First submission triggers an email verification request.
+  const recipient='aqa29178@gmail.com';
+  async function sendEmailForm(form, fields, status) {
+    const button=form.querySelector('button[type="submit"]'); const original=button ? button.innerHTML : '';
+    status.className='form-message'; status.textContent='Sending your message...';
+    if(button){button.disabled=true;button.textContent='Sending...';}
+    try {
+      const payload={...fields, _subject: fields.form_type==='feedback' ? 'New Website Feedback' : 'New Website Project Enquiry', _template:'table', _captcha:'false'};
+      delete payload.form_type;
+      const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(recipient), {
+        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(payload)
+      });
+      const result=await response.json();
+      if(!response.ok || result.success===false || result.success==='false') throw new Error(result.message || 'Email could not be sent. Please try again later.');
+      status.textContent='Thank you! Your details have been submitted successfully.';
+      status.classList.add('success'); form.reset(); return true;
+    } catch(err) {
+      status.textContent='We could not send your message. Check your internet connection or contact us at '+recipient+'.';
+      status.classList.add('error'); return false;
+    } finally { if(button){button.disabled=false;button.innerHTML=original;} }
+  }
+  const feedback=document.getElementById('feedback-form');
+  if(feedback) feedback.addEventListener('submit', e=>{
+    e.preventDefault(); const status=document.getElementById('feedback-message-status');
+    const name=feedback.elements.name.value.trim(), rating=feedback.elements.rating.value, message=feedback.elements.message.value.trim();
+    status.className='form-message';
+    if(name.length<2 || !rating || message.length<5){status.textContent='Please enter your name, choose a rating, and write at least 5 characters of feedback.';status.classList.add('error');return;}
+    sendEmailForm(feedback,{form_type:'feedback',Name:name,Rating:rating+'/5',Feedback:message},status);
+  });
+  const contact=document.getElementById('contact-form');
+  if(contact){
+    const status=document.getElementById('contact-status'); const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    function showError(field,msg){field.classList.add('invalid');const err=field.closest('.field')?.querySelector('.field-error');if(err)err.textContent=msg;}
+    function clearError(field){field.classList.remove('invalid');const err=field.closest('.field')?.querySelector('.field-error');if(err)err.textContent='';}
+    contact.querySelectorAll('input:not([type=checkbox]),select,textarea').forEach(f=>{f.addEventListener('input',()=>clearError(f));f.addEventListener('change',()=>clearError(f));});
+    contact.addEventListener('submit',e=>{
+      e.preventDefault(); status.className='form-message';status.textContent='';let valid=true;
+      const name=contact.elements.name,email=contact.elements.email,phone=contact.elements.phone,service=contact.elements.service,project=contact.elements.project,consent=document.getElementById('consent');
+      [name,email,phone,service,project].forEach(clearError);const ce=document.querySelector('.consent-error');if(ce)ce.textContent='';
+      if(name.value.trim().length<2){showError(name,'Please enter at least 2 characters.');valid=false;}
+      if(!emailPattern.test(email.value.trim())){showError(email,'Enter a valid email address.');valid=false;}
+      if(!service.value){showError(service,'Please choose a service.');valid=false;}
+      if(project.value.trim().length<10){showError(project,'Please describe your project in at least 10 characters.');valid=false;}
+      if(phone.value.trim()&&!/^[+()\d\s.-]{7,20}$/.test(phone.value.trim())){showError(phone,'Please enter a valid phone number.');valid=false;}
+      if(!consent.checked){if(ce)ce.textContent='Please confirm before submitting.';valid=false;}
+      if(!valid){status.textContent='Please review the highlighted fields and try again.';status.classList.add('error');const first=contact.querySelector('.invalid, #consent:not(:checked)');if(first)first.focus();return;}
+      sendEmailForm(contact,{form_type:'contact',Name:name.value.trim(),'Customer Email':email.value.trim(),Phone:phone.value.trim()||'Not provided',Service:service.value,Budget:contact.elements.budget.value||'Not specified','Project Details':project.value.trim()},status);
+    });
+  }
+  const initial=(location.hash||'#home').slice(1).split('?')[0]; showPage(['home','services','about','contact'].includes(initial)?initial:'home');
+});</script>
+</body></html>
